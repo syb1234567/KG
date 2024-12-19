@@ -1,0 +1,311 @@
+{
+    "nodes": [
+        {
+            "name": "柴葛解肌汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "升麻葛根汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "火郁汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "程氏柴葛解肌汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "柴胡升麻汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "栀子豉汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "栀子甘草豉汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "栀子生姜豉汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "枳实栀子豉汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "桑杏汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "连朴饮",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "栀子厚朴汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "栀子干姜汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "白虎汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "白虎加人参汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "白虎加桂枝汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "白虎加苍术汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "竹叶石膏汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "竹皮大丸",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "玉女煎",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "化斑汤",
+            "type": "方剂",
+            "attributes": {}
+        },
+        {
+            "name": "清热解肌",
+            "type": "药理",
+            "attributes": {}
+        },
+        {
+            "name": "宣郁透热",
+            "type": "药理",
+            "attributes": {}
+        },
+        {
+            "name": "清热救燥",
+            "type": "药理",
+            "attributes": {}
+        },
+        {
+            "name": "柴胡",
+            "type": "药材",
+            "attributes": {}
+        },
+        {
+            "name": "葛根",
+            "type": "药材",
+            "attributes": {}
+        },
+        {
+            "name": "甘草",
+            "type": "药材",
+            "attributes": {}
+        },
+        {
+            "name": "黄芩",
+            "type": "药材",
+            "attributes": {}
+        },
+        {
+            "name": "芍药",
+            "type": "药材",
+            "attributes": {}
+        },
+        {
+            "name": "羌活",
+            "type": "药材",
+            "attributes": {}
+        },
+        {
+            "name": "白芷",
+            "type": "药材",
+            "attributes": {}
+        },
+        {
+            "name": "桔梗",
+            "type": "药材",
+            "attributes": {}
+        }
+    ],
+    "edges": [
+        {
+            "source": "柴葛解肌汤",
+            "target": "清热解肌",
+            "relation_type": "治法"
+        },
+        {
+            "source": "柴葛解肌汤",
+            "target": "柴胡",
+            "relation_type": "方剂组成包含"
+        },
+        {
+            "source": "柴葛解肌汤",
+            "target": "葛根",
+            "relation_type": "方剂组成包含"
+        },
+        {
+            "source": "柴葛解肌汤",
+            "target": "甘草",
+            "relation_type": "方剂组成包含"
+        },
+        {
+            "source": "柴葛解肌汤",
+            "target": "黄芩",
+            "relation_type": "方剂组成包含"
+        },
+        {
+            "source": "柴葛解肌汤",
+            "target": "芍药",
+            "relation_type": "方剂组成包含"
+        },
+        {
+            "source": "柴葛解肌汤",
+            "target": "羌活",
+            "relation_type": "方剂组成包含"
+        },
+        {
+            "source": "柴葛解肌汤",
+            "target": "白芷",
+            "relation_type": "方剂组成包含"
+        },
+        {
+            "source": "柴葛解肌汤",
+            "target": "桔梗",
+            "relation_type": "方剂组成包含"
+        },
+        {
+            "source": "升麻葛根汤",
+            "target": "清热解肌",
+            "relation_type": "治法"
+        },
+        {
+            "source": "火郁汤",
+            "target": "清热解肌",
+            "relation_type": "治法"
+        },
+        {
+            "source": "程氏柴葛解肌汤",
+            "target": "清热解肌",
+            "relation_type": "治法"
+        },
+        {
+            "source": "柴胡升麻汤",
+            "target": "清热解肌",
+            "relation_type": "治法"
+        },
+        {
+            "source": "栀子豉汤",
+            "target": "宣郁透热",
+            "relation_type": "治法"
+        },
+        {
+            "source": "栀子甘草豉汤",
+            "target": "宣郁透热",
+            "relation_type": "治法"
+        },
+        {
+            "source": "栀子生姜豉汤",
+            "target": "宣郁透热",
+            "relation_type": "治法"
+        },
+        {
+            "source": "枳实栀子豉汤",
+            "target": "宣郁透热",
+            "relation_type": "治法"
+        },
+        {
+            "source": "桑杏汤",
+            "target": "宣郁透热",
+            "relation_type": "治法"
+        },
+        {
+            "source": "连朴饮",
+            "target": "宣郁透热",
+            "relation_type": "治法"
+        },
+        {
+            "source": "栀子厚朴汤",
+            "target": "宣郁透热",
+            "relation_type": "治法"
+        },
+        {
+            "source": "栀子干姜汤",
+            "target": "宣郁透热",
+            "relation_type": "治法"
+        },
+        {
+            "source": "白虎汤",
+            "target": "清热救燥",
+            "relation_type": "治法"
+        },
+        {
+            "source": "白虎加人参汤",
+            "target": "清热救燥",
+            "relation_type": "治法"
+        },
+        {
+            "source": "白虎加桂枝汤",
+            "target": "清热救燥",
+            "relation_type": "治法"
+        },
+        {
+            "source": "白虎加苍术汤",
+            "target": "清热救燥",
+            "relation_type": "治法"
+        },
+        {
+            "source": "竹叶石膏汤",
+            "target": "清热救燥",
+            "relation_type": "治法"
+        },
+        {
+            "source": "竹皮大丸",
+            "target": "清热救燥",
+            "relation_type": "治法"
+        },
+        {
+            "source": "玉女煎",
+            "target": "清热救燥",
+            "relation_type": "治法"
+        },
+        {
+            "source": "化斑汤",
+            "target": "清热救燥",
+            "relation_type": "治法"
+        }
+    ]
+}

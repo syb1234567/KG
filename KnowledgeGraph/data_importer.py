@@ -1,109 +1,137 @@
-from neo4j import GraphDatabase
 import json
+import chardet
 import pandas as pd
 
 class DataImporter:
-    def __init__(self, data_manager):
+    def __init__(self, graph_data_manager):
+        self.graph_data_manager = graph_data_manager
+
+    def detect_encoding(self, file_path):
+        """检测文件编码"""
+        with open(file_path, "rb") as f:
+            result = chardet.detect(f.read())
+            encoding = result.get("encoding", "utf-8")
+            return encoding
+
+    def read_csv_with_fallback(self, file_path, primary_encoding):
         """
-        初始化数据导入模块
+        尝试使用 primary_encoding 解码和常见分隔符，如果失败则尝试其它编码和分隔符
+        优先使用指定编码，若失败则尝试常用编码集和分隔符集
         """
-        self.data_manager = data_manager
+        encodings_to_try = [primary_encoding, "GB18030", "GBK", "UTF-8", "latin-1"]
+        delimiters_to_try = [',', '\t', ';']
 
-    def import_from_word(self, file_path):
-        """
-        从 Word 文件导入数据
-        """
-        try:
-            document = Document(file_path)
+        # 尝试各种编码和分隔符
+        for enc in encodings_to_try:
+            for sep in delimiters_to_try:
+                try:
+                    print(f"Trying to read CSV with encoding: {enc} and delimiter: {repr(sep)}")
+                    # 使用engine='python'和on_bad_lines='skip'（需要pandas>=1.3）
+                    # 如果pandas版本较低可尝试error_bad_lines=False
+                    df = pd.read_csv(file_path, encoding=enc, sep=sep, engine='python', on_bad_lines='skip')
+                    print(f"Successfully read CSV with encoding: {enc} and delimiter: {repr(sep)}")
+                    return df
+                except UnicodeDecodeError as e:
+                    print(f"Failed with encoding {enc} sep {repr(sep)} (UnicodeDecodeError): {e}")
+                except pd.errors.ParserError as pe:
+                    print(f"Parser error with encoding {enc} sep {repr(sep)}: {pe}")
+                except Exception as ex:
+                    print(f"Unexpected error with encoding {enc} sep {repr(sep)}: {ex}")
 
+        # 如果全部失败，最后尝试使用latin-1和python engine跳过行
+        print("All common encodings and delimiters failed, trying latin-1 with python engine and skipping bad lines")
+        df = pd.read_csv(file_path, encoding='latin-1', sep=',', engine='python', on_bad_lines='skip')
+        return df
 
-            for table in document.tables:
-                for row in table.rows:
-                    cells = [cell.text.strip() for cell in row.cells]
-                    if len(cells) >= 5:
-                        source_name, source_type, attributes, relation_type, target_name = cells
-                        source_id = self._get_or_create_node(source_name, source_type, attributes)
-                        target_id = self._get_or_create_node(target_name, "节点类型未定义")
-                        self.data_manager.add_relationship(source_id, target_id, relation_type)
-            print("Word 文件数据导入成功！")
-        except Exception as e:
-            print(f"导入 Word 文件时发生错误：{e}")
+    def import_data_from_json(self, json_filepath):
+        with open(json_filepath, 'r', encoding='utf-8') as f:
+            data = json.load(f)
 
-    def import_from_json(self, file_path):
-        """
-        从 JSON 文件导入数据
-        """
-        try:
-            with open(file_path, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                for node in data.get("nodes", []):
-                    cleaned_node = self._clean_node_data(node)
-                    self._get_or_create_node(cleaned_node["name"], cleaned_node["type"], cleaned_node.get("attributes"))
-                for relation in data.get("relationships", []):
-                    source_id = self._get_node_id_by_name(relation["source"])
-                    target_id = self._get_node_id_by_name(relation["target"])
-                    if source_id and target_id:
-                        self.data_manager.add_relationship(source_id, target_id, relation["type"])
-            print("JSON 文件数据导入成功！")
-        except Exception as e:
-            print(f"导入 JSON 文件时发生错误：{e}")
+        for node in data.get("nodes", []):
+            self.graph_data_manager.add_node(
+                name=node["name"],
+                node_type=node.get("type", "Undefined"),
+                attributes=node.get("attributes", {})
+            )
 
-    def import_from_excel(self, file_path):
-        """
-        从 Excel 文件导入数据
-        """
-        try:
-            # 使用 pandas 读取 Excel 文件
-            df = pd.read_excel(file_path, engine='openpyxl')
+        for edge in data.get("edges", []):
+            self.graph_data_manager.add_relationship(
+                source_name=edge["source"],
+                target_name=edge["target"],
+                relation_type=edge.get("relation_type", "RELATED_TO")
+            )
 
-            for index, row in df.iterrows():
-                source_name = row['节点名称']
-                source_type = row['节点类型']
-                attributes = row['属性']
-                relation_type = row['关系类型']
-                target_name = row['目标节点']
+    def import_data_from_csv(self, csv_filepath, node_file=True):
+        encoding = self.detect_encoding(csv_filepath)
+        print(f"Detected file encoding: {encoding}")
 
-                # 添加源节点
-                source_id = self._get_or_create_node(source_name, source_type, attributes)
+        # 尝试用检测到的编码，如果失败则用备用编码和分隔符
+        df = self.read_csv_with_fallback(csv_filepath, encoding)
 
-                # 添加目标节点
-                target_id = self._get_or_create_node(target_name, "节点类型未定义")
+        # 检查必须列是否存在
+        if node_file:
+            required_columns = ["name", "type", "attributes"]
+            for col in required_columns:
+                if col not in df.columns:
+                    print(f"Warning: {col} column not found in node file. Please check file format.")
+        else:
+            required_columns = ["source", "target", "relation_type"]
+            for col in required_columns:
+                if col not in df.columns:
+                    print(f"Warning: {col} column not found in relationship file. Please check file format.")
 
-                # 添加关系
-                self.data_manager.add_relationship(source_id, target_id, relation_type)
+        if node_file:
+            # 节点文件应有 name, type, attributes 列
+            for _, row in df.iterrows():
+                attributes = {}
+                if "attributes" in df.columns and pd.notna(row.get("attributes")):
+                    try:
+                        attributes = json.loads(row["attributes"])
+                    except json.JSONDecodeError:
+                        attributes = {}
+                self.graph_data_manager.add_node(
+                    name=row["name"],
+                    node_type=row.get("type", "Undefined"),
+                    attributes=attributes
+                )
+        else:
+            # 关系文件应有 source, target, relation_type 列
+            for _, row in df.iterrows():
+                self.graph_data_manager.add_relationship(
+                    source_name=row["source"],
+                    target_name=row["target"],
+                    relation_type=row.get("relation_type", "RELATED_TO")
+                )
 
-            print("Excel 文件数据导入成功！")
-        except Exception as e:
-            print(f"导入 Excel 文件时发生错误：{e}")
+    def import_data_from_excel(self, excel_filepath, sheet_name='Sheet1', node_file=True):
+        df = pd.read_excel(excel_filepath, sheet_name=sheet_name)
+        if node_file:
+            for _, row in df.iterrows():
+                attributes = {}
+                if "attributes" in df.columns and pd.notna(row.get("attributes")):
+                    try:
+                        attributes = json.loads(row["attributes"])
+                    except json.JSONDecodeError:
+                        attributes = {}
+                self.graph_data_manager.add_node(
+                    name=row["name"],
+                    node_type=row.get("type", "Undefined"),
+                    attributes=attributes
+                )
+        else:
+            for _, row in df.iterrows():
+                self.graph_data_manager.add_relationship(
+                    source_name=row["source"],
+                    target_name=row["target"],
+                    relation_type=row.get("relation_type", "RELATED_TO")
+                )
 
-    def _get_or_create_node(self, name, node_type, attributes=None):
-        """
-        查询节点是否存在，不存在则创建并返回节点 ID
-        """
-        existing_node = self.data_manager.get_node_by_name(name)
-        if existing_node:
-            return existing_node["id"]
-        # 如果没有找到节点，创建新的节点
-        return self.data_manager.add_node(name, node_type, attributes)
-
-    def _get_node_id_by_name(self, name):
-        """
-        根据名称查找节点 ID
-        """
-        node = self.data_manager.get_node_by_name(name)
-        if node:
-            return node["id"]
-        return None
-
-    def _clean_node_data(self, node_data):
-        """
-        清理节点数据，去除无关字段，只保留 id, label 和属性
-        """
-        cleaned_node = {
-            "name": node_data.get("label"),
-            "type": node_data.get("type", "未知类型"),
-            "attributes": node_data.get("properties", {})
-        }
-        return cleaned_node
-
-
+    def import_data(self, file_path, file_type, node_file=True):
+        if file_type == 'json':
+            self.import_data_from_json(file_path)
+        elif file_type == 'csv':
+            self.import_data_from_csv(file_path, node_file=node_file)
+        elif file_type in ['xlsx', 'xls']:
+            self.import_data_from_excel(file_path, node_file=node_file)
+        else:
+            raise ValueError(f"Unsupported file type: {file_type}")

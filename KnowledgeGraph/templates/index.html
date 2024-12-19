@@ -1,91 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>知识图谱应用</title>
+    <title>中医知识图谱应用</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vis-network@9.1.2/styles/vis-network.min.css" rel="stylesheet"/>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin:0; /* 去掉默认margin */
+            padding:0; /* 去掉默认padding */
+            height: 100vh; /* 让body占满整个视窗高度 */
+            display: flex;
+            flex-direction: column;
         }
+
+        /* 调小导航栏高度 */
+        .navbar {
+            padding: 0.5rem 1rem; /* 缩小内边距 */
+        }
+
+        .navbar-brand {
+            font-size: 1rem; /* 缩小品牌文字大小 */
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 0.9rem; /* 缩小导航文字大小 */
+            padding: 0.5rem 0.75rem; /* 缩小导航项内边距 */
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 0.5rem 0; /* 缩小页脚内边距 */
+            text-align: center;
+            font-size: 0.9rem; /* 缩小文字 */
+        }
+
+        /* 使容器在页脚上方自适应高度 */
         .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+            flex: 1 1 auto;
+            margin-top: 60px; /* 确保导航栏不遮挡内容 */
         }
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #0779e4 3px solid;
+
+        #mynetwork {
+            width: 100%;
+            height: 80vh; /* 使用80%视窗高度，提高图谱占比 */
+            border: 1px solid lightgray;
+            background-color: white;
         }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
+
+        #node-details {
+            position: absolute;
+            top: 100px;
+            right: 20px;
+            width: 300px;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: none;
+            z-index: 1000;
         }
-        header ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            overflow: hidden;
-        }
-        header li {
-            float: left;
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
-        header #branding {
-            float: left;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
-        header .highlight, header .current a {
-            color: #e8491d;
-            font-weight: bold;
-        }
-        header a:hover {
-            color: #ffffff;
-            font-weight: bold;
-        }
+
+        /* 让footer固定在底部较为灵活：使用flex布局的column模式时，footer自然在底部 */
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1><span class="highlight">知识</span>图谱应用</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="/">主页</a></li>
-                    <li><a href="/plugins">插件</a></li>
-                    <li><a href="/graph">图谱</a></li>
-                    <li><a href="/import">导入数据</a></li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">中医知识图谱应用</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="切换导航">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">主页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/plugins">插件</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/graph">图谱</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/import">导入数据</a></li>
                 </ul>
-            </nav>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <div class="container">
-        <section id="main">
-            <h1>欢迎来到知识图谱应用</h1>
-            <p>这是一个基于 Flask 的知识图谱应用，用于展示和管理知识图谱数据。</p>
-        </section>
+        <div class="py-2 text-center"> <!-- 减小py值缩小上下间距 -->
+            <h1 style="font-size:1.5rem;"><span class="highlight">中医</span>知识图谱应用</h1> <!-- 缩小标题字号 -->
+            <p class="lead" style="font-size:0.9rem;">这是一个基于Flask的中医知识图谱应用，用于展示和管理中医知识数据。</p>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 style="font-size:1.2rem;">知识图谱</h2> <!-- 缩小二级标题字号 -->
+                <div id="mynetwork"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Node Details Modal -->
+    <div id="node-details" class="card">
+        <div class="card-body">
+            <h5 class="card-title" id="node-name">节点名称</h5>
+            <p class="card-text" id="node-type">类型: </p>
+            <p class="card-text" id="node-attributes">属性: </p>
+            <button class="btn btn-secondary" id="close-details">关闭</button>
+        </div>
     </div>
 
     <footer>
-        <p>知识图谱应用, 版权所有 &copy; 2023</p>
+        <div class="container">
+            <p>中医知识图谱应用, 版权所有 &copy; 2024</p>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.2/standalone/umd/vis-network.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var container = document.getElementById('mynetwork');
+            var data = {
+                nodes: new vis.DataSet([]),
+                edges: new vis.DataSet([])
+            };
+            var options = {
+                nodes: { shape: 'dot', size: 16, font: { size: 14, color: '#000000' }, borderWidth: 2 },
+                edges: { width: 2, color: { inherit: 'from' }, smooth: { type: 'continuous' } },
+                groups: {
+                    '药材': { color: { background: '#e8491d' } },
+                    '方剂': { color: { background: '#1d7ee8' } }
+                },
+                physics: { stabilization: false }
+            };
+            var network = new vis.Network(container, data, options);
+
+            var nodeDetails = document.getElementById('node-details');
+            var nodeName = document.getElementById('node-name');
+            var nodeType = document.getElementById('node-type');
+            var nodeAttributes = document.getElementById('node-attributes');
+            var closeDetailsBtn = document.getElementById('close-details');
+
+            closeDetailsBtn.addEventListener('click', function() {
+                nodeDetails.style.display = 'none';
+            });
+
+            network.on("click", function(params) {
+                if (params.nodes.length > 0) {
+                    var nodeId = params.nodes[0];
+                    var node = data.nodes.get(nodeId);
+                    nodeName.textContent = node.label;
+                    nodeType.textContent = "类型: " + node.group;
+                    let attributes = node.attributes || {};
+                    if (node.title) {
+                        try {
+                            attributes = JSON.parse(node.title);
+                        } catch(e) {}
+                    }
+                    nodeAttributes.textContent = "属性: " + JSON.stringify(attributes, null, 2);
+                    nodeDetails.style.display = 'block';
+                } else {
+                    nodeDetails.style.display = 'none';
+                }
+            });
+
+            function loadGraphData() {
+                // 使用 /graph_data 获取数据
+                fetch('/graph_data')
+                    .then(response => response.json())
+                    .then(graphData => {
+                        data.nodes.clear();
+                        data.edges.clear();
+                        data.nodes.add(graphData.nodes);
+                        data.edges.add(graphData.edges);
+                        network.setData(data);
+                    })
+                    .catch(err => console.error("加载图数据出错:", err));
+            }
+
+            loadGraphData();
+        });
+    </script>
 </body>
 </html>

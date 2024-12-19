@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>图谱 - 中医知识图谱应用</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vis-network@9.1.2/styles/vis-network.min.css" rel="stylesheet"/>
+    <style>
+        body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .navbar-brand { font-weight: bold; }
+        .toolbar {
+            margin-top: 80px;
+            margin-bottom: 20px;
+        }
+        #mynetwork {
+            width: 100%;
+            height: 600px;
+            border: 1px solid lightgray;
+            background-color: white;
+        }
+        #node-details {
+            position: absolute;
+            top: 100px;
+            right: 20px;
+            width: 300px;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: none;
+            z-index: 1000;
+        }
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">中医知识图谱应用</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="切换导航">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">主页</a></li>
+                <li class="nav-item"><a class="nav-link" href="/plugins">插件</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/graph">图谱</a></li>
+                <li class="nav-item"><a class="nav-link" href="/import">导入数据</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container toolbar">
+    <div class="row">
+        <div class="col-md-12 d-flex align-items-center">
+            <input type="text" class="form-control me-2" id="searchNode" placeholder="搜索节点...">
+            <select id="nodeTypeFilter" class="form-select me-2" style="width:auto;">
+                <option value="">所有类型</option>
+                <option value="药材">药材</option>
+                <option value="方剂">方剂</option>
+            </select>
+            <button class="btn btn-secondary me-2" onclick="applyFilters()">应用筛选</button>
+            <button class="btn btn-info me-2" onclick="switchLayout()">切换布局</button>
+            <button class="btn btn-success me-2" onclick="exportGraph()">导出数据</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div id="mynetwork"></div>
+</div>
+
+<div id="node-details">
+    <h5 id="node-name">节点名称</h5>
+    <p id="node-type">类型:</p>
+    <pre id="node-attributes">属性:</pre>
+    <button class="btn btn-secondary" id="close-details">关闭</button>
+</div>
+
+<footer>
+    <div class="container">
+        <p>中医知识图谱应用, 版权所有 &copy; 2024</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.2/standalone/umd/vis-network.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var container = document.getElementById('mynetwork');
+    var data = {
+        nodes: new vis.DataSet([]),
+        edges: new vis.DataSet([])
+    };
+    var options = {
+        nodes: { shape: 'dot', size: 16, font: { size: 14, color: '#000000' }, borderWidth: 2 },
+        edges: { width: 2, color: { inherit: 'from' }, smooth: { type: 'continuous' } },
+        groups: {
+            '药材': { color: { background: '#e8491d' } },
+            '方剂': { color: { background: '#1d7ee8' } }
+        },
+        physics: { stabilization: false }
+    };
+    var network = new vis.Network(container, data, options);
+
+    var nodeDetails = document.getElementById('node-details');
+    var nodeName = document.getElementById('node-name');
+    var nodeType = document.getElementById('node-type');
+    var nodeAttributes = document.getElementById('node-attributes');
+    var closeDetailsBtn = document.getElementById('close-details');
+
+    closeDetailsBtn.addEventListener('click', function() {
+        nodeDetails.style.display = 'none';
+    });
+
+    network.on("click", function(params) {
+        if (params.nodes.length > 0) {
+            var nodeId = params.nodes[0];
+            var node = data.nodes.get(nodeId);
+            nodeName.textContent = node.label;
+            nodeType.textContent = "类型: " + node.group;
+            let attributes = {};
+            if (node.title) {
+                try {
+                    attributes = JSON.parse(node.title);
+                } catch(e) {}
+            }
+            nodeAttributes.textContent = "属性:\n" + JSON.stringify(attributes, null, 2);
+            nodeDetails.style.display = 'block';
+        } else {
+            nodeDetails.style.display = 'none';
+        }
+    });
+
+    function loadGraphData(queryParams="") {
+        // 使用 /graph_data 而不是 /graph
+        fetch('/graph_data'+queryParams)
+            .then(response => response.json())
+            .then(graphData => {
+                data.nodes.clear();
+                data.edges.clear();
+                data.nodes.add(graphData.nodes);
+                data.edges.add(graphData.edges);
+                network.setData(data);
+            })
+            .catch(err => console.error("加载图数据出错:", err));
+    }
+
+    function applyFilters() {
+        var search = document.getElementById("searchNode").value.trim();
+        var type = document.getElementById("nodeTypeFilter").value;
+        var query = "?";
+        if (type) query += "type=" + encodeURIComponent(type) + "&";
+        if (search) query += "search=" + encodeURIComponent(search);
+        loadGraphData(query);
+    }
+
+    function switchLayout() {
+        alert("布局切换功能暂未实现，请根据需要扩展。");
+    }
+
+    function exportGraph() {
+        var nodesData = data.nodes.get();
+        var edgesData = data.edges.get();
+        var blob = new Blob([JSON.stringify({nodes:nodesData, edges:edgesData}, null, 2)], {type: "application/json"});
+        var url = URL.createObjectURL(blob);
+
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = "graph_data.json";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    // 初始加载整个图数据
+    loadGraphData();
+});
+</script>
+</body>
+</html>

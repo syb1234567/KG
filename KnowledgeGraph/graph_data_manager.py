@@ -1,68 +1,151 @@
-from neo4j import GraphDatabase
+import networkx as nx
+import json
+import os
 
 class GraphDataManager:
-    def __init__(self, uri, user, password):
-        self._uri = uri
-        self._user = user
-        self._password = password
-        self._driver = GraphDatabase.driver(uri, auth=(user, password))
+    def __init__(self, storage_path):
+        """
+        初始化图数据库管理器
+        :param storage_path: 图数据库存储路径，存储为 JSON 格式
+        """
+        self._storage_path = storage_path
+        self._graph = nx.Graph()  # 或 nx.DiGraph()，取决于图的类型（有向或无向）
+
+        # 如果存储路径存在，加载现有数据
+        if os.path.exists(self._storage_path):
+            self.load_graph_from_json()
+        else:
+            print(f"[GraphDataManager] No existing graph data found at {self._storage_path}. Starting with an empty graph.")
 
     def close(self):
-        self._driver.close()
+        """
+        关闭图数据库连接，保存图数据
+        """
+        self.save_graph_to_json()
+        print("[GraphDataManager] Graph data saved and connection closed.")
 
-    def execute_query(self, query, parameters=None):
-        with self._driver.session() as session:
-            result = session.run(query, parameters)
-            return result
+    # ------------------- 节点操作 -------------------
+    def add_node(self, name, node_type, attributes=None):
+        """
+        添加节点
+        :param name: 节点名称
+        :param node_type: 节点类型
+        :param attributes: 节点属性
+        """
+        print(f"[GraphDataManager] Adding node: {name}, type: {node_type}, attributes: {attributes}")
+        self._graph.add_node(name, type=node_type, attributes=attributes or {})
+        self.save_graph_to_json()
+        print("[GraphDataManager] Node added successfully.")
+        print("[GraphDataManager] Current nodes:", self.get_all_nodes())
 
-    def fetch_all(self, query, parameters=None):
-        result = self.execute_query(query, parameters)
-        return [record for record in result]
+    def get_all_nodes(self):
+        """
+        获取所有节点
+        """
+        return [{"name": node, "type": data["type"], "attributes": data["attributes"]}
+                for node, data in self._graph.nodes(data=True)]
 
-    def fetch_one(self, query, parameters=None):
-        result = self.execute_query(query, parameters)
-        return result.single()
+    def update_node(self, name, node_type=None, attributes=None):
+        """
+        更新节点信息
+        """
+        if name in self._graph:
+            print(f"[GraphDataManager] Updating node: {name}")
+            if node_type:
+                self._graph.nodes[name]["type"] = node_type
+            if attributes:
+                self._graph.nodes[name]["attributes"] = attributes
+            self.save_graph_to_json()
+            print("[GraphDataManager] Node updated successfully.")
+        else:
+            print(f"[GraphDataManager] Node {name} does not exist. Cannot update.")
 
-    def initialize_graph(self):
-        # 创建唯一约束等初始化操作
-        constraints = [
-            "CREATE CONSTRAINT ON (n:Entity) ASSERT n.name IS UNIQUE",
-            # 添加其他需要的约束
+    def delete_node(self, name):
+        """
+        删除节点及相关关系
+        """
+        if name in self._graph:
+            print(f"[GraphDataManager] Deleting node: {name}")
+            self._graph.remove_node(name)
+            self.save_graph_to_json()
+            print("[GraphDataManager] Node deleted successfully.")
+        else:
+            print(f"[GraphDataManager] Node {name} does not exist. Cannot delete.")
+
+    # ------------------- 关系操作 -------------------
+    def add_relationship(self, source_name, target_name, relation_type):
+        """
+        添加节点之间的关系
+        """
+        print(f"[GraphDataManager] Adding relationship: {source_name} -> {target_name}, type: {relation_type}")
+        if source_name in self._graph and target_name in self._graph:
+            self._graph.add_edge(source_name, target_name, relation_type=relation_type)
+            self.save_graph_to_json()
+            print("[GraphDataManager] Relationship added successfully.")
+        else:
+            print(f"[GraphDataManager] Cannot add relationship. One of the nodes ({source_name}, {target_name}) does not exist.")
+        print("[GraphDataManager] Current edges:", self.get_all_relationships())
+
+    def get_all_relationships(self):
+        """
+        获取所有关系
+        """
+        return [
+            {"source": source, "target": target, "relation_type": data["relation_type"]}
+            for source, target, data in self._graph.edges(data=True)
         ]
-        for constraint in constraints:
-            self.execute_query(constraint)
 
-    def create_node(self, node_name, node_type, properties):
-        query = f"""
-        CREATE (n:{node_type} {{name: $name, type: $type}}
-        SET n += $properties
-        RETURN id(n)
+    def delete_relationship(self, source_name, target_name):
         """
-        parameters = {
-            "name": node_name,
-            "type": node_type,
-            "properties": properties
-        }
-        return self.fetch_one(query, parameters)
-
-    def create_relationship(self, source_node_name, target_node_name, relationship_type):
-        query = f"""
-        MATCH (source), (target)
-        WHERE source.name = $source_name AND target.name = $target_name
-        CREATE (source)-[r:{relationship_type}]->(target)
-        RETURN type(r)
+        删除节点之间的关系
         """
-        parameters = {
-            "source_name": source_node_name,
-            "target_name": target_node_name,
-            "relationship_type": relationship_type
-        }
-        return self.fetch_one(query, parameters)
+        if self._graph.has_edge(source_name, target_name):
+            print(f"[GraphDataManager] Deleting relationship: {source_name} - {target_name}")
+            self._graph.remove_edge(source_name, target_name)
+            self.save_graph_to_json()
+            print("[GraphDataManager] Relationship deleted successfully.")
+        else:
+            print(f"[GraphDataManager] Relationship between {source_name} and {target_name} does not exist.")
 
-# 使用示例
-if __name__ == "__main__":
-    manager = GraphDataManager("bolt://localhost:7687", "neo4j", "password")
-    manager.initialize_graph()
-    manager.create_node("Node1", "Entity", {"prop1": "value1"})
-    manager.create_relationship("Node1", "Node2", "RELATED_TO")
-    manager.close()
+    # ------------------- 辅助方法 -------------------
+    def save_graph_to_json(self):
+        """
+        将图数据保存为 JSON 格式
+        """
+        graph_data = {
+            "nodes": [
+                {"name": node, "type": data["type"], "attributes": data["attributes"]}
+                for node, data in self._graph.nodes(data=True)
+            ],
+            "edges": [
+                {"source": source, "target": target, "relation_type": data["relation_type"]}
+                for source, target, data in self._graph.edges(data=True)
+            ]
+        }
+        with open(self._storage_path, "w", encoding="utf-8") as f:
+            json.dump(graph_data, f, ensure_ascii=False, indent=4)
+        print(f"[GraphDataManager] Graph saved to {self._storage_path}.")
+
+    def load_graph_from_json(self):
+        """
+        从 JSON 文件加载图数据
+        """
+        print(f"[GraphDataManager] Loading graph from JSON file: {self._storage_path}")
+        with open(self._storage_path, "r", encoding="utf-8") as f:
+            graph_data = json.load(f)
+
+        # 清空当前图，然后加载数据
+        self._graph.clear()
+
+        # 加载节点
+        for node in graph_data.get("nodes", []):
+            self._graph.add_node(node["name"], type=node.get("type", "Undefined"),
+                                 attributes=node.get("attributes", {}))
+
+        # 加载边（关系）
+        for edge in graph_data.get("edges", []):
+            self._graph.add_edge(edge["source"], edge["target"], relation_type=edge.get("relation_type", "RELATED_TO"))
+
+        print("[GraphDataManager] Graph loaded successfully.")
+        print("[GraphDataManager] Current nodes:", self.get_all_nodes())
+        print("[GraphDataManager] Current edges:", self.get_all_relationships())

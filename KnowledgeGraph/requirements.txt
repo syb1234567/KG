@@ -1,0 +1,5 @@
+Flask
+networkx
+pandas
+openpyxl  # 用于处理 Excel 文件
+werkzeug
