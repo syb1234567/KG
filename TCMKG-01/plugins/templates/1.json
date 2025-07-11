@@ -1,0 +1,14 @@
+{
+  "builtin": [],
+  "regex": [],
+  "mapping": [
+    {
+      "field": "name",
+      "map": {
+        "TCM_Heart": "心脏",
+        "TCM_Liver": "肝脏",
+        "1": "10"
+      }
+    }
+  ]
+}

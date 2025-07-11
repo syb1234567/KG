@@ -1,0 +1,2693 @@
+{
+    "nodes": [
+        {
+            "name": "柴葛解肌汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "升麻葛根汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "火郁汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "程氏柴葛解肌汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "柴胡升麻汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "栀子豉汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "栀子甘草豉汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "栀子生姜豉汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "枳实栀子豉汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "桑杏汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "连朴饮",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "栀子厚朴汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "栀子干姜汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "白虎汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "白虎加人参汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "白虎加桂枝汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "白虎加苍术汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "竹叶石膏汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "竹皮大丸",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "玉女煎",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "化斑汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "清热解肌",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "宣郁透热",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "清热救燥",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "柴胡",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "葛根",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "甘草",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "黄芩",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "芍药",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "羌活",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "白芷",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "桔梗",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "麻黄汤",
+            "type": "方剂",
+            "attributes": {},
+            "resources": [
+                {
+                    "path": "C:/Users/lenovo/Desktop/KG软件开发/麻黄汤.png",
+                    "type": "Image"
+                }
+            ]
+        },
+        {
+            "name": "阳明病",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "麻黄",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "里",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "六经",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "三阴",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "三阳",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "六经经气",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "风木",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "寒水",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "相火",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "燥金",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "湿土",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "君火",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "本气",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "标气",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "阳",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "阴",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "厥阴",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "太阴",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "少阴",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "少阳",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "太阳",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "阳明",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "八卦",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "一阳",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "二阳",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "一阴",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "二阴",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "三阳卦体",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "三阴卦体",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "人体体构",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "脉象",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "五行",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "天一",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "地二",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "天三",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "地四",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "天五",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "地六",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "天七",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "地八",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "天九",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "地十",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "水",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "土",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "金",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "火",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "木",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "天之六气",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "天",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "天干",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "胆",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "肝",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "小肠",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "心",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "胃",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "脾",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "大肠",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "肺",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "膀胱",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "肾",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "地支",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "脏腑",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "阳腑",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "阴脏",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "子",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "丑",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "寅",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "卯",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "辰",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "巳",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "离合",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "乾",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "坤",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "离",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "坎",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "兑",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "震",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "艮",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "巽",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "表",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "半表半里",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "寸脉",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "关脉",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "尺脉",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "风",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "寒",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "暑",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "湿",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "燥",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "甲",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "乙",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "丙",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "戊",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "丁",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "庚",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "辛",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "壬",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "癸",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "己",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "酉",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "申",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "亥",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "戌",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "未",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "午",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "三焦",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "背",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "胸胃",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "脐下",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "上腹",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "胸胁",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "少腹，季胁",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "开",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "阖",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "枢",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "心包",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "北",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "南",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "东",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "西",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "东南",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "东北",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "西北",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "西南",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "伏羲八卦图",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "纯阳无阴",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "纯阴无阳",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "表证",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "半表半里证",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "里证",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "1",
+            "type": "1",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "3",
+            "type": "33",
+            "attributes": 3,
+            "resources": []
+        }
+    ],
+    "edges": [
+        {
+            "source": "柴葛解肌汤",
+            "target": "清热解肌",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "柴葛解肌汤",
+            "target": "柴胡",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "柴葛解肌汤",
+            "target": "葛根",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "柴葛解肌汤",
+            "target": "甘草",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "柴葛解肌汤",
+            "target": "黄芩",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "柴葛解肌汤",
+            "target": "芍药",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "柴葛解肌汤",
+            "target": "羌活",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "柴葛解肌汤",
+            "target": "白芷",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "柴葛解肌汤",
+            "target": "桔梗",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "升麻葛根汤",
+            "target": "清热解肌",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "火郁汤",
+            "target": "清热解肌",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "程氏柴葛解肌汤",
+            "target": "清热解肌",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "柴胡升麻汤",
+            "target": "清热解肌",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "栀子豉汤",
+            "target": "宣郁透热",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "栀子甘草豉汤",
+            "target": "宣郁透热",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "栀子生姜豉汤",
+            "target": "宣郁透热",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "枳实栀子豉汤",
+            "target": "宣郁透热",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "桑杏汤",
+            "target": "宣郁透热",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "连朴饮",
+            "target": "宣郁透热",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "栀子厚朴汤",
+            "target": "宣郁透热",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "栀子干姜汤",
+            "target": "宣郁透热",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "白虎汤",
+            "target": "清热救燥",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "白虎加人参汤",
+            "target": "清热救燥",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "白虎加桂枝汤",
+            "target": "清热救燥",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "白虎加苍术汤",
+            "target": "清热救燥",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "竹叶石膏汤",
+            "target": "清热救燥",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "竹皮大丸",
+            "target": "清热救燥",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "玉女煎",
+            "target": "清热救燥",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "化斑汤",
+            "target": "清热救燥",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "清热解肌",
+            "target": "阳明病",
+            "relation_type": "证治治法包括",
+            "resources": []
+        },
+        {
+            "source": "宣郁透热",
+            "target": "阳明病",
+            "relation_type": "证治治法包括",
+            "resources": []
+        },
+        {
+            "source": "清热救燥",
+            "target": "阳明病",
+            "relation_type": "证治治法包括",
+            "resources": []
+        },
+        {
+            "source": "阳明病",
+            "target": "清热解肌",
+            "relation_type": "证治治法包括",
+            "resources": []
+        },
+        {
+            "source": "阳明病",
+            "target": "宣郁透热",
+            "relation_type": "证治治法包括",
+            "resources": []
+        },
+        {
+            "source": "阳明病",
+            "target": "清热救燥",
+            "relation_type": "证治治法包括",
+            "resources": []
+        },
+        {
+            "source": "里",
+            "target": "里证",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "六经",
+            "target": "三阴",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "六经",
+            "target": "三阳",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "六经",
+            "target": "六经经气",
+            "relation_type": "本气为",
+            "resources": []
+        },
+        {
+            "source": "三阴",
+            "target": "厥阴",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "三阴",
+            "target": "少阴",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "三阴",
+            "target": "太阴",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "三阳",
+            "target": "少阳",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "三阳",
+            "target": "阳明",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "三阳",
+            "target": "太阳",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "六经经气",
+            "target": "风木",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "六经经气",
+            "target": "寒水",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "六经经气",
+            "target": "相火",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "六经经气",
+            "target": "燥金",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "六经经气",
+            "target": "湿土",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "六经经气",
+            "target": "君火",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "六经经气",
+            "target": "六经",
+            "relation_type": "对应于",
+            "resources": []
+        },
+        {
+            "source": "风木",
+            "target": "厥阴",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "寒水",
+            "target": "太阳",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "寒水",
+            "target": "坎",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "相火",
+            "target": "少阳",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "燥金",
+            "target": "阳明",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "湿土",
+            "target": "太阴",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "君火",
+            "target": "少阴",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "本气",
+            "target": "阳",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "本气",
+            "target": "阴",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "标气",
+            "target": "阴",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "标气",
+            "target": "阳",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "阳",
+            "target": "君火",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "阳",
+            "target": "风木",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "阳",
+            "target": "相火",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "阴",
+            "target": "湿土",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "阴",
+            "target": "燥金",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "阴",
+            "target": "寒水",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "厥阴",
+            "target": "阴",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "厥阴",
+            "target": "少阳",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "厥阴",
+            "target": "少腹，季胁",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "厥阴",
+            "target": "巳",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "厥阴",
+            "target": "亥",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "厥阴",
+            "target": "厥阴",
+            "relation_type": "标本相异",
+            "resources": []
+        },
+        {
+            "source": "厥阴",
+            "target": "燥金",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "厥阴",
+            "target": "阖",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "厥阴",
+            "target": "肝",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "厥阴",
+            "target": "心包",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "太阴",
+            "target": "阴",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "太阴",
+            "target": "阳明",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "太阴",
+            "target": "上腹",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "太阴",
+            "target": "丑",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "太阴",
+            "target": "未",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "太阴",
+            "target": "太阴",
+            "relation_type": "标本相同",
+            "resources": []
+        },
+        {
+            "source": "太阴",
+            "target": "风木",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "太阴",
+            "target": "开",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "太阴",
+            "target": "肺",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "太阴",
+            "target": "脾",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "少阴",
+            "target": "阴",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "少阴",
+            "target": "太阳",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "少阴",
+            "target": "脐下",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "少阴",
+            "target": "午",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "少阴",
+            "target": "子",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "少阴",
+            "target": "少阴",
+            "relation_type": "标本相反",
+            "resources": []
+        },
+        {
+            "source": "少阴",
+            "target": "君火",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "少阴",
+            "target": "枢",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "少阴",
+            "target": "心",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "少阴",
+            "target": "肾",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "少阳",
+            "target": "阳",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "少阳",
+            "target": "厥阴",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "少阳",
+            "target": "胸胁",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "少阳",
+            "target": "寅",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "少阳",
+            "target": "申",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "少阳",
+            "target": "少阳",
+            "relation_type": "标本相同",
+            "resources": []
+        },
+        {
+            "source": "少阳",
+            "target": "寒水",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "少阳",
+            "target": "枢",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "少阳",
+            "target": "三焦",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "少阳",
+            "target": "胆",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "太阳",
+            "target": "阳",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "太阳",
+            "target": "少阴",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "太阳",
+            "target": "背",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "太阳",
+            "target": "戌",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "太阳",
+            "target": "辰",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "太阳",
+            "target": "太阳",
+            "relation_type": "标本相反",
+            "resources": []
+        },
+        {
+            "source": "太阳",
+            "target": "湿土",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "太阳",
+            "target": "开",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "太阳",
+            "target": "膀胱",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "太阳",
+            "target": "小肠",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "阳明",
+            "target": "阳",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "阳明",
+            "target": "太阴",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "阳明",
+            "target": "胸胃",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "阳明",
+            "target": "酉",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "阳明",
+            "target": "卯",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "阳明",
+            "target": "阳明",
+            "relation_type": "标本相异",
+            "resources": []
+        },
+        {
+            "source": "阳明",
+            "target": "相火",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "阳明",
+            "target": "阖",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "阳明",
+            "target": "大肠",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "阳明",
+            "target": "胃",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "八卦",
+            "target": "坤",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "八卦",
+            "target": "乾",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "八卦",
+            "target": "兑",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "八卦",
+            "target": "离",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "八卦",
+            "target": "震",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "八卦",
+            "target": "巽",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "八卦",
+            "target": "坎",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "八卦",
+            "target": "艮",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "八卦",
+            "target": "伏羲八卦图",
+            "relation_type": "版本为",
+            "resources": []
+        },
+        {
+            "source": "一阳",
+            "target": "少阳",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "二阳",
+            "target": "阳明",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "一阴",
+            "target": "厥阴",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "二阴",
+            "target": "少阴",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "三阳卦体",
+            "target": "兑",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "三阳卦体",
+            "target": "离",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "三阳卦体",
+            "target": "巽",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "三阴卦体",
+            "target": "震",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "三阴卦体",
+            "target": "坎",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "三阴卦体",
+            "target": "艮",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "人体体构",
+            "target": "表",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "人体体构",
+            "target": "里",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "人体体构",
+            "target": "半表半里",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "脉象",
+            "target": "寸脉",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "脉象",
+            "target": "关脉",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "脉象",
+            "target": "尺脉",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "五行",
+            "target": "金",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "五行",
+            "target": "木",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "五行",
+            "target": "水",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "五行",
+            "target": "火",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "五行",
+            "target": "土",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天一",
+            "target": "水",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "地二",
+            "target": "火",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "天三",
+            "target": "木",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "地四",
+            "target": "金",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "天五",
+            "target": "土",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "地六",
+            "target": "水",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "天七",
+            "target": "火",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "地八",
+            "target": "木",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "天九",
+            "target": "金",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "地十",
+            "target": "土",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "水",
+            "target": "天一",
+            "relation_type": "生数为",
+            "resources": []
+        },
+        {
+            "source": "水",
+            "target": "地六",
+            "relation_type": "成数为",
+            "resources": []
+        },
+        {
+            "source": "水",
+            "target": "木",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "水",
+            "target": "肾",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "水",
+            "target": "膀胱",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "水",
+            "target": "辛",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "水",
+            "target": "丙",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "水",
+            "target": "火",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "土",
+            "target": "天五",
+            "relation_type": "生数为",
+            "resources": []
+        },
+        {
+            "source": "土",
+            "target": "地十",
+            "relation_type": "成数为",
+            "resources": []
+        },
+        {
+            "source": "土",
+            "target": "金",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "土",
+            "target": "脾",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "土",
+            "target": "胃",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "土",
+            "target": "甲",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "土",
+            "target": "己",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "金",
+            "target": "地四",
+            "relation_type": "生数为",
+            "resources": []
+        },
+        {
+            "source": "金",
+            "target": "天九",
+            "relation_type": "成数为",
+            "resources": []
+        },
+        {
+            "source": "金",
+            "target": "水",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "金",
+            "target": "大肠",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "金",
+            "target": "肺",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "金",
+            "target": "乙",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "金",
+            "target": "庚",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "火",
+            "target": "地二",
+            "relation_type": "生数为",
+            "resources": []
+        },
+        {
+            "source": "火",
+            "target": "天七",
+            "relation_type": "成数为",
+            "resources": []
+        },
+        {
+            "source": "火",
+            "target": "土",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "火",
+            "target": "心",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "火",
+            "target": "小肠",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "火",
+            "target": "癸",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "火",
+            "target": "戊",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "木",
+            "target": "天三",
+            "relation_type": "生数为",
+            "resources": []
+        },
+        {
+            "source": "木",
+            "target": "地八",
+            "relation_type": "成数为",
+            "resources": []
+        },
+        {
+            "source": "木",
+            "target": "火",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "木",
+            "target": "胆",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "木",
+            "target": "肝",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "木",
+            "target": "丁",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "木",
+            "target": "壬",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "天之六气",
+            "target": "风",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天之六气",
+            "target": "寒",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天之六气",
+            "target": "暑",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天之六气",
+            "target": "湿",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天之六气",
+            "target": "燥",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天之六气",
+            "target": "火",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天",
+            "target": "六经经气",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天",
+            "target": "天之六气",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天干",
+            "target": "甲",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天干",
+            "target": "乙",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天干",
+            "target": "丙",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天干",
+            "target": "戊",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天干",
+            "target": "丁",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天干",
+            "target": "庚",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天干",
+            "target": "辛",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天干",
+            "target": "壬",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天干",
+            "target": "癸",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "天干",
+            "target": "己",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "胆",
+            "target": "甲",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "肝",
+            "target": "乙",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "小肠",
+            "target": "丙",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "心",
+            "target": "丁",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "胃",
+            "target": "戊",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "脾",
+            "target": "己",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "大肠",
+            "target": "庚",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "肺",
+            "target": "辛",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "膀胱",
+            "target": "壬",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "肾",
+            "target": "癸",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "地支",
+            "target": "酉",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "地支",
+            "target": "申",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "地支",
+            "target": "亥",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "地支",
+            "target": "戌",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "地支",
+            "target": "卯",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "地支",
+            "target": "寅",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "地支",
+            "target": "丑",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "地支",
+            "target": "辰",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "地支",
+            "target": "子",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "地支",
+            "target": "未",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "地支",
+            "target": "午",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "地支",
+            "target": "巳",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "脏腑",
+            "target": "阴脏",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "脏腑",
+            "target": "阳腑",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "脏腑",
+            "target": "心包",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "阳腑",
+            "target": "胆",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "阳腑",
+            "target": "小肠",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "阳腑",
+            "target": "胃",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "阳腑",
+            "target": "大肠",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "阳腑",
+            "target": "膀胱",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "阳腑",
+            "target": "三焦",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "阴脏",
+            "target": "肝",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "阴脏",
+            "target": "心",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "阴脏",
+            "target": "脾",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "阴脏",
+            "target": "肺",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "阴脏",
+            "target": "肾",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "子",
+            "target": "少阴",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "丑",
+            "target": "太阴",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "寅",
+            "target": "少阳",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "卯",
+            "target": "阳明",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "辰",
+            "target": "太阳",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "巳",
+            "target": "厥阴",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "离合",
+            "target": "开",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "离合",
+            "target": "阖",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "离合",
+            "target": "枢",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "乾",
+            "target": "北",
+            "relation_type": "方位于",
+            "resources": []
+        },
+        {
+            "source": "乾",
+            "target": "纯阳无阴",
+            "relation_type": "属性为",
+            "resources": []
+        },
+        {
+            "source": "坤",
+            "target": "南",
+            "relation_type": "方位于",
+            "resources": []
+        },
+        {
+            "source": "坤",
+            "target": "纯阴无阳",
+            "relation_type": "属性为",
+            "resources": []
+        },
+        {
+            "source": "离",
+            "target": "东",
+            "relation_type": "方位于",
+            "resources": []
+        },
+        {
+            "source": "坎",
+            "target": "西",
+            "relation_type": "方位于",
+            "resources": []
+        },
+        {
+            "source": "兑",
+            "target": "东南",
+            "relation_type": "方位于",
+            "resources": []
+        },
+        {
+            "source": "震",
+            "target": "东北",
+            "relation_type": "方位于",
+            "resources": []
+        },
+        {
+            "source": "艮",
+            "target": "西北",
+            "relation_type": "方位于",
+            "resources": []
+        },
+        {
+            "source": "巽",
+            "target": "西南",
+            "relation_type": "方位于",
+            "resources": []
+        },
+        {
+            "source": "表",
+            "target": "表证",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "半表半里",
+            "target": "半表半里证",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "关脉",
+            "target": "1",
+            "relation_type": "2",
+            "resources": []
+        }
+    ]
+}

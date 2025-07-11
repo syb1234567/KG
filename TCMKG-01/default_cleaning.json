@@ -1,0 +1,35 @@
+{
+  "builtin": [
+    "remove_null",
+    "normalize_names",
+    "remove_isolated_nodes",
+    "deduplicate_edges"
+  ],
+  "regex": [
+    {
+      "field": "name",
+      "pattern": "^\\s+|\\s+$",
+      "replacement": ""
+    },
+    {
+      "field": "name",
+      "pattern": "\\s{2,}",
+      "replacement": " "
+    },
+    {
+      "field": "name",
+      "pattern": "[，,\\.、；;：:]",
+      "replacement": ""
+    }
+  ],
+  "mapping": [
+    {
+      "field": "name",
+      "map": {
+        "TCM_Heart": "心脏",
+        "TCM_Liver": "肝脏",
+        "1": "10"
+      }
+    }
+  ]
+}
