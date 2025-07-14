@@ -1,4 +1,4 @@
-![Uploading image.png…]()
+<img width="350" height="205" alt="image" src="https://github.com/user-attachments/assets/2bb2d597-62f2-4df9-9f4a-469553ba70a8" />
 
 # KG
 中心性分析：
