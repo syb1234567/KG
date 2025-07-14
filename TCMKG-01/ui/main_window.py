@@ -69,7 +69,6 @@ class MainWindow(QMainWindow):
         self.init_web_view()
         self.populate_plugins()
         self.update_window_title()
-
     def update_window_title(self):
         """更新窗口标题"""
         self.setWindowTitle(self.lang_manager.get_text("window_title"))
@@ -86,7 +85,10 @@ class MainWindow(QMainWindow):
 
         # 右侧面板（分为节点详情与插件列表）
         self.right_splitter = QSplitter(Qt.Vertical)
-        self.node_detail = NodeDetailWidget(self.graph_manager, self.safe_update)
+        
+        
+        self.node_detail = NodeDetailWidget(self.graph_manager, self.safe_update, self.lang_manager)
+        
         self.plugin_list = QListWidget()
         self.plugin_list.setMinimumHeight(150)
         self.plugin_list.itemDoubleClicked.connect(self.run_plugin)
@@ -106,7 +108,6 @@ class MainWindow(QMainWindow):
         self.init_toolbar()
         self.status_bar = QStatusBar()
         self.setStatusBar(self.status_bar)
-
     def init_toolbar(self):
         """增强版工具栏 - 包含显示模式控制和语言切换"""
         # 主工具栏
@@ -283,11 +284,18 @@ class MainWindow(QMainWindow):
         self.mode_label.setText(self.lang_manager.get_text("display_mode"))
         self.refresh_view_btn.setText(self.lang_manager.get_text("refresh_view"))
         
+        # 【修复】：更新控制栏中的显示模式标签
+        if hasattr(self, 'display_mode_label'):
+            self.display_mode_label.setText(self.lang_manager.get_text("display_mode"))
+        
         # 更新快速模式按钮
         self.update_quick_mode_button()
         
         # 更新状态和其他动态文本
         self.update_toolbar_stats()
+        
+        # 【重要添加】：更新节点详情面板的文本
+        self.node_detail.update_ui_texts()
         
         # 如果当前在数据模式，重新渲染以应用新语言
         if hasattr(self, 'current_mode') and self.current_mode == "data":
@@ -320,7 +328,6 @@ class MainWindow(QMainWindow):
 
         if hasattr(self, 'graph_status'):
             self.update_graph_status(self.lang_manager.get_text("graph_loading"))
-
     def update_menu_texts(self):
         """更新菜单文本"""
         # 清空并重新添加菜单项以应用新语言
@@ -676,8 +683,11 @@ class MainWindow(QMainWindow):
             """)
             self.refresh_btn.clicked.connect(self.refresh_current_mode)
             
+            # 【修复】：将匿名QLabel保存为实例变量
+            self.display_mode_label = QLabel(self.lang_manager.get_text("display_mode"))
+            
             # 布局控制栏
-            control_layout.addWidget(QLabel(self.lang_manager.get_text("display_mode")))
+            control_layout.addWidget(self.display_mode_label)  # 使用实例变量
             control_layout.addWidget(self.mode_status_label)
             control_layout.addWidget(self.mode_switch_btn)
             control_layout.addStretch()
@@ -714,7 +724,6 @@ class MainWindow(QMainWindow):
             print(f"❌ 双模式显示初始化失败: {e}")
             import traceback
             traceback.print_exc()
-
     def create_graph_mode(self):
         """创建图形显示模式"""
         try:
@@ -1273,7 +1282,6 @@ class MainWindow(QMainWindow):
 
         dialog.setLayout(layout)
         dialog.exec_()
-
     def add_node_from_dialog(self, name, node_type, attributes_str, dialog):
         """从对话框中添加节点"""
         try:
@@ -1288,6 +1296,7 @@ class MainWindow(QMainWindow):
                                self.lang_manager.get_text("error"), 
                                self.lang_manager.get_text("invalid_json"))
         except Exception as e:
+            QMessageBox.critical(self, self.lang_manager.get_text("error"), str(e))
             QMessageBox.critical(self, self.lang_manager.get_text("error"), str(e))
 
     def import_data(self):
