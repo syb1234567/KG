@@ -1,5 +1,3 @@
-<img width="350" height="205" alt="image" src="https://github.com/user-attachments/assets/2bb2d597-62f2-4df9-9f4a-469553ba70a8" />
-
 # KG
 中心性分析：
 1.度中心性（Degree Centrality）：衡量一个节点与其他节点的直接连接数量。度中心性高的节点在网络中具有广泛的直接联系
