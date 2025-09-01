@@ -67,6 +67,7 @@ class MainWindow(QMainWindow):
         self.setGeometry(100, 100, 1600, 900)
         self.init_ui()
         self.init_web_view()
+        
         self.populate_plugins()
         self.update_window_title()
     def update_window_title(self):
@@ -108,6 +109,7 @@ class MainWindow(QMainWindow):
         self.init_toolbar()
         self.status_bar = QStatusBar()
         self.setStatusBar(self.status_bar)
+        
     def init_toolbar(self):
         """增强版工具栏 - 包含显示模式控制和语言切换"""
         # 主工具栏
@@ -465,7 +467,9 @@ class MainWindow(QMainWindow):
             else:
                 # 回退到原始方法
                 QTimer.singleShot(0, self.graph_view.render)
-            
+            # 更新导航器
+            if hasattr(self, 'navigator'):
+                QTimer.singleShot(500, self.navigator.force_refresh)
             # 更新工具栏统计
             QTimer.singleShot(500, self.update_toolbar_stats)
             
@@ -876,11 +880,25 @@ class MainWindow(QMainWindow):
             
             # 延迟渲染
             QTimer.singleShot(1000, self.render_graph_mode)
-            
+             # 在这里创建并添加导航器
+             # 在这里创建并添加导航器
+            QTimer.singleShot(2000, self.create_navigator)
         except Exception as e:
             print(f"❌ 图形模式初始化失败: {e}")
-            self.update_graph_status(f"❌ 图形模式不可用: {str(e)}")
-
+            
+    def create_navigator(self):
+        """创建导航器"""
+        try:
+            from plugins.navigator import NavigatorWidget  # 导入你的导航器
+            
+            self.navigator = NavigatorWidget(self.graph_manager, self.graph_view, self)
+            self.right_splitter.addWidget(self.navigator)
+            self.right_splitter.setSizes([100, 100, 100])  # 调整三个部分的大小比例
+            
+            print("导航器已创建并添加到界面")
+            
+        except Exception as e:
+            print(f"导航器创建失败: {e}")
     def render_graph_mode(self):
         """渲染图形模式"""
         try:
@@ -1539,7 +1557,9 @@ class MainWindow(QMainWindow):
                                self.lang_manager.get_text("error"), 
                                self.lang_manager.get_text("save_error", error=str(e)))
         event.accept()
+    
 
+    
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()

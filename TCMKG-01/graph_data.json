@@ -4,7 +4,12 @@
             "name": "123",
             "type": "213",
             "attributes": {},
-            "resources": []
+            "resources": [
+                {
+                    "path": "E:/桌面/证件照).jpg",
+                    "type": "Image"
+                }
+            ]
         },
         {
             "name": "柴葛解肌汤",

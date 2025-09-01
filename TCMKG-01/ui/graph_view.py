@@ -129,3 +129,7 @@ class GraphView(QWebEngineView):
             edges_js=json.dumps(edges),
         )
         self.setHtml(html, QUrl("about:blank"))
+
+    def on_view_changed(self, x, y, width, height, zoom):
+        if hasattr(self, 'navigator'):
+            self.navigator.update_viewport(x, y, width, height, zoom)
