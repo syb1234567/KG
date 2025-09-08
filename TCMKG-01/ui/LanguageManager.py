@@ -131,7 +131,22 @@ class LanguageManager:
                 "theme_switch_coming": "主题切换功能即将推出！",
                 "theme_switch": "主题切换",
                 "plugin_result": "插件 '{name}' 返回: {result}",
-                "plugin_run_result": "插件运行结果"
+                "plugin_run_result": "插件运行结果",
+                
+                "search_title": "知识图谱检索",
+                "search_type": "搜索类型:",
+                "search_all": "全部",
+                "search_nodes": "仅节点",
+                "search_relationships": "仅关系",
+                "search_placeholder": "输入搜索关键词...",
+                "search": "搜索",
+                "search_results": "搜索结果",
+                "search_ready": "准备搜索",
+                "search_empty": "请输入搜索关键词",
+                "search_no_results": "未找到匹配的结果",
+                "search_found_results": "找到 {} 个相关结果",
+                "clear": "清空",
+                "locate_in_graph": "在图中定位"
             },
             
             "en": {
@@ -238,7 +253,23 @@ class LanguageManager:
                 "theme_switch_coming": "Theme switching feature coming soon!",
                 "theme_switch": "Theme Switch",
                 "plugin_result": "Plugin '{name}' returned: {result}",
-                "plugin_run_result": "Plugin Run Result"
+                "plugin_run_result": "Plugin Run Result",
+                "search_title": "Knowledge Graph Search",
+
+                "search_title": "Knowledge Graph Search",
+                "search_type": "Search Type:",
+                "search_all": "All",
+                "search_nodes": "Nodes Only", 
+                "search_relationships": "Relationships Only",
+                "search_placeholder": "Enter search keywords...",
+                "search": "Search",
+                "search_results": "Search Results",
+                "search_ready": "Ready to search",
+                "search_empty": "Please enter search keywords",
+                "search_no_results": "No results found for '{}'",
+                "search_found_results": "Found {} results for '{}'",
+                "clear": "Clear",
+                "locate_in_graph": "Locate in Graph"
             }
         }
     

@@ -1543,7 +1543,7 @@ class MainWindow(QMainWindow):
     def run_plugin(self, item):
         """当在插件列表中双击插件时运行该插件"""
         plugin_name = item.text()
-        result = self.plugin_manager.run_plugin(plugin_name)
+        result = self.plugin_manager.run_plugin(plugin_name, parent=self)
         QMessageBox.information(self, 
                               self.lang_manager.get_text("plugin_run_result"), 
                               self.lang_manager.get_text("plugin_result", name=plugin_name, result=result))

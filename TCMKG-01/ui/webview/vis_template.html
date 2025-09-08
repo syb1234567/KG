@@ -5,187 +5,510 @@
     <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
     <style>
+        body {{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }}
         #mynetwork {{
             width: 100%;
-            height: 80vh;
+            height: calc(100vh - 60px);
             border: 1px solid #ddd;
         }}
-        #controls {{
-            margin: 10px;
+        .controls {{
+            height: 60px;
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            gap: 10px;
+        }}
+        .btn {{
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }}
+        .btn:hover {{
+            background-color: #0056b3;
+        }}
+        .btn.secondary {{
+            background-color: #6c757d;
+        }}
+        .btn.secondary:hover {{
+            background-color: #545b62;
+        }}
+        .status {{
+            margin-left: auto;
+            color: #666;
+            font-size: 14px;
         }}
     </style>
 </head>
 <body>
-    <div id="controls">
-        <button id="startPolygonBtn">开始绘制区域</button>
-        <button id="finishPolygonBtn" style="display:none;">完成绘制</button>
-        <button id="cancelPolygonBtn" style="display:none;">取消绘制</button>
+    <div class="controls">
+        <button class="btn" onclick="saveLayout()">保存布局</button>
+        <button class="btn secondary" onclick="resetLayout()">重置布局</button>
+        <button class="btn secondary" onclick="autoLayout()">自动排列</button>
+        <div class="status" id="status">图谱已就绪</div>
     </div>
     <div id="mynetwork"></div>
     <script>
-        // 从 Python 注入的数据
-        var nodes = new vis.DataSet({nodes_js});
-        var edges = new vis.DataSet({edges_js});
-
-        var container = document.getElementById('mynetwork');
-        var options = {{
-            manipulation: {{
-                enabled: true,
-                initiallyActive: true,
-                addNode: function(data, callback) {{
-                    data.label = prompt("请输入节点名称:", "");
-                    if (data.label === null || data.label.trim() === "") {{
-                        callback(null);
-                        return;
-                    }}
-                    data.type = prompt("请输入节点类型:", "");
-                    if (data.type === null || data.type.trim() === "") {{
-                        callback(null);
-                        return;
-                    }}
-                    var attr = prompt("请输入节点属性（JSON格式）:", "{{}}");
-                    try {{
-                        data.attributes = JSON.parse(attr);
-                    }} catch(e) {{
-                        data.attributes = {{}};
-                    }}
-                    py_obj.create_node(JSON.stringify(data));
-                    callback(data);
-                }},
-                addEdge: function(data, callback) {{
-                    if (data.from === data.to) {{
-                        alert("不能创建自环");
-                        callback(null);
-                        return;
-                    }}
-                    data.label = prompt("请输入关系类型:", "");
-                    if (data.label === null || data.label.trim() === "") {{
-                        callback(null);
-                        return;
-                    }}
-                    py_obj.create_edge(JSON.stringify(data));
-                    callback(data);
-                }},
-                editNode: function(data, callback) {{
-                    data.label = prompt("修改节点名称:", data.label);
-                    data.type = prompt("修改节点类型:", data.type);
-                    var attr = prompt("修改节点属性（JSON格式）:", JSON.stringify(data.attributes));
-                    try {{
-                        data.attributes = JSON.parse(attr);
-                    }} catch(e) {{
-                        data.attributes = {{}};
-                    }}
-                    callback(data);
-                }},
-                editEdge: function(data, callback) {{
-                    data.label = prompt("修改关系类型:", data.label);
-                    callback(data);
-                }},
-                deleteNode: true,
-                deleteEdge: true
-            }},
-            physics: {{
-                stabilization: {{ iterations: 1000 }},
-                forceAtlas2Based: {{
-                    gravitationalConstant: -50,
-                    centralGravity: 0.01,
-                    springLength: 200,
-                    springConstant: 0.08
-                }}
-            }},
-            nodes: {{
-                font: {{ size: 14, color: "#333" }},
-                borderWidth: 1,
-                shape: "dot",
-                shadow: false
-            }},
-            edges: {{
-                arrows: {{ to: {{ enabled: true, scaleFactor: 1 }} }},
-                smooth: {{ type: "continuous" }},
-                color: {{ color: "#848484", highlight: "#848484" }}
-            }},
-            interaction: {{ hover: true }}
-        }};
-        var network = new vis.Network(container, {{ nodes: nodes, edges: edges }}, options);
-
-        // 多边形选择模式
-        var isPolygonMode = false;
-        var polygonPoints = [];
-
-        function pointInPolygon(point, vs) {{
-            var x = point.x, y = point.y, inside = false;
-            for (var i = 0, j = vs.length - 1; i < vs.length; j = i++) {{
-                var xi = vs[i].x, yi = vs[i].y;
-                var xj = vs[j].x, yj = vs[j].y;
-                var intersect = ((yi > y) != (yj > y)) &&
-                                (x < (xj - xi) * (y - yi) / ((yj - yi) || 0.000001) + xi);
-                if (intersect) inside = !inside;
-            }}
-            return inside;
+        // 确保数据正确加载
+        var rawNodesData = {nodes_js};
+        var rawEdgesData = {edges_js};
+        
+        // 验证数据格式
+        if (!Array.isArray(rawNodesData)) {{
+            console.error('Nodes data is not an array:', rawNodesData);
+            rawNodesData = [];
         }}
-
-        document.getElementById("startPolygonBtn").addEventListener("click", function() {{
-            isPolygonMode = true;
-            polygonPoints = [];
-            this.style.display = "none";
-            document.getElementById("finishPolygonBtn").style.display = "inline";
-            document.getElementById("cancelPolygonBtn").style.display = "inline";
-            alert("区域选择模式开启，请在画布上点击以确定多边形顶点。");
-        }});
-
-        document.getElementById("finishPolygonBtn").addEventListener("click", function() {{
-            isPolygonMode = false;
-            var positions = network.getPositions();
-            var count = 0, nodesInPolygon = [];
-            for (var nodeId in positions) {{
-                var pos = positions[nodeId];
-                if (pointInPolygon({{ x: pos.x, y: pos.y }}, polygonPoints)) {{
-                    count++;
-                    nodesInPolygon.push(nodeId);
-                }}
+        if (!Array.isArray(rawEdgesData)) {{
+            console.error('Edges data is not an array:', rawEdgesData);
+            rawEdgesData = [];
+        }}
+        
+        var network = null;
+        var pyObj = null;
+        var nodes = null;
+        var edges = null;
+        
+        // 计算网格布局位置
+        function calculateGridPositions(nodeCount) {{
+            var positions = {{}};
+            if (nodeCount === 0) return positions;
+            
+            var cols = Math.ceil(Math.sqrt(nodeCount));
+            var spacing = 150;
+            var startX = -(cols - 1) * spacing / 2;
+            var startY = -(Math.ceil(nodeCount / cols) - 1) * spacing / 2;
+            
+            for (var i = 0; i < nodeCount; i++) {{
+                var row = Math.floor(i / cols);
+                var col = i % cols;
+                var nodeId = rawNodesData[i].id;
+                positions[nodeId] = {{
+                    x: startX + col * spacing,
+                    y: startY + row * spacing
+                }};
             }}
-            py_obj.polygon_node_count_result(JSON.stringify({{ count: count, nodes: nodesInPolygon }}));
-            document.getElementById("startPolygonBtn").style.display = "inline";
-            this.style.display = "none";
-            document.getElementById("cancelPolygonBtn").style.display = "none";
-            polygonPoints = [];
-        }});
-
-        document.getElementById("cancelPolygonBtn").addEventListener("click", function() {{
-            isPolygonMode = false;
-            polygonPoints = [];
-            document.getElementById("startPolygonBtn").style.display = "inline";
-            document.getElementById("finishPolygonBtn").style.display = "none";
-            this.style.display = "none";
-        }});
-
-        network.on("click", function(params) {{
-            if (isPolygonMode) {{
-                polygonPoints.push({{ x: params.pointer.canvas.x, y: params.pointer.canvas.y }});
+            
+            return positions;
+        }}
+        
+        // 应用保存的布局或默认布局
+        function prepareNodesWithPositions(savedLayout) {{
+            var positions = savedLayout || calculateGridPositions(rawNodesData.length);
+            
+            var preparedNodes = rawNodesData.map(function(node) {{
+                var pos = positions[node.id] || {{ x: 0, y: 0 }};
+                var newNode = {{}};
+                for (var key in node) {{
+                    newNode[key] = node[key];
+                }}
+                newNode.x = pos.x;
+                newNode.y = pos.y;
+                newNode.physics = false;
+                newNode.fixed = {{ x: false, y: false }};
+                return newNode;
+            }});
+            
+            return preparedNodes;
+        }}
+        
+        // 保存当前布局
+        function saveLayout() {{
+            if (!network) {{
+                updateStatus('网络未初始化');
                 return;
             }}
-            if (params.nodes.length) {{
-                var node = nodes.get(params.nodes[0]);
-                py_obj.display_node_info(JSON.stringify(node));
-            }}
-        }});
-
-        network.on("afterDrawing", function(ctx) {{
-            if (polygonPoints.length > 0) {{
-                ctx.beginPath();
-                ctx.moveTo(polygonPoints[0].x, polygonPoints[0].y);
-                for (var i = 1; i < polygonPoints.length; i++) {{
-                    ctx.lineTo(polygonPoints[i].x, polygonPoints[i].y);
+            
+            try {{
+                var positions = network.getPositions();
+                if (pyObj && typeof pyObj.save_layout === 'function') {{
+                    pyObj.save_layout(JSON.stringify(positions));
+                    updateStatus('布局已保存');
+                }} else {{
+                    updateStatus('无法连接到Python后端');
                 }}
-                ctx.closePath();
-                ctx.strokeStyle = "red";
-                ctx.lineWidth = 2;
-                ctx.stroke();
+            }} catch(e) {{
+                console.error('保存布局失败:', e);
+                updateStatus('保存失败: ' + e.message);
             }}
-        }});
+        }}
+        
+        // 重置布局
+        function resetLayout() {{
+            try {{
+                // 通知Python端清除保存的布局
+                if (pyObj && typeof pyObj.clear_layout === 'function') {{
+                    pyObj.clear_layout();
+                }}
+                
+                // 使用网格布局重新排列节点
+                var positions = calculateGridPositions(rawNodesData.length);
+                var nodeUpdates = [];
+                
+                Object.keys(positions).forEach(function(nodeId) {{
+                    nodeUpdates.push({{
+                        id: nodeId,
+                        x: positions[nodeId].x,
+                        y: positions[nodeId].y,
+                        physics: false
+                    }});
+                }});
+                
+                if (nodeUpdates.length > 0) {{
+                    nodes.update(nodeUpdates);
+                }}
+                
+                updateStatus('布局已重置为网格排列');
+                
+            }} catch(e) {{
+                console.error('重置布局失败:', e);
+                updateStatus('重置失败: ' + e.message);
+            }}
+        }}
+        
+        // 自动排列 - 圆形布局
+        function autoLayout() {{
+            if (!network) {{
+                updateStatus('网络未初始化');
+                return;
+            }}
+            
+            try {{
+                var nodeCount = rawNodesData.length;
+                if (nodeCount > 0) {{
+                    var radius = Math.max(200, nodeCount * 30);
+                    var angleStep = (2 * Math.PI) / nodeCount;
+                    
+                    var nodeUpdates = [];
+                    rawNodesData.forEach(function(node, index) {{
+                        var angle = index * angleStep;
+                        nodeUpdates.push({{
+                            id: node.id,
+                            x: radius * Math.cos(angle),
+                            y: radius * Math.sin(angle),
+                            physics: false
+                        }});
+                    }});
+                    
+                    nodes.update(nodeUpdates);
+                    updateStatus('已排列为圆形布局，如需保存请点击"保存布局"');
+                }}
+            }} catch(e) {{
+                console.error('自动排列失败:', e);
+                updateStatus('自动排列失败: ' + e.message);
+            }}
+        }}
+        
+        // 更新状态信息
+        function updateStatus(message) {{
+            var statusEl = document.getElementById('status');
+            if (statusEl) {{
+                statusEl.textContent = message;
+                setTimeout(function() {{
+                    if (statusEl.textContent === message) {{
+                        statusEl.textContent = '拖动节点后点击"保存布局"来保存位置';
+                    }}
+                }}, 3000);
+            }}
+        }}
 
-        new QWebChannel(qt.webChannelTransport, function(channel) {{
-            window.py_obj = channel.objects.py_obj;
+        // 初始化网络
+        function initNetwork(savedLayout) {{
+            var container = document.getElementById('mynetwork');
+            if (!container) {{
+                console.error('找不到网络容器元素');
+                return;
+            }}
+            
+            // 准备带位置的节点数据
+            var preparedNodes = prepareNodesWithPositions(savedLayout);
+            
+            // 创建DataSet
+            nodes = new vis.DataSet(preparedNodes);
+            edges = new vis.DataSet(rawEdgesData);
+            
+            var options = {{
+                manipulation: {{
+                    enabled: true,
+                    initiallyActive: true,
+                    addNode: function(data, callback) {{
+                        try {{
+                            data.label = prompt("请输入节点名称:", "");
+                            if (data.label === null || data.label.trim() === "") {{
+                                callback(null);
+                                return;
+                            }}
+                            data.type = prompt("请输入节点类型:", "");
+                            if (data.type === null || data.type.trim() === "") {{
+                                callback(null);
+                                return;
+                            }}
+                            var attr = prompt("请输入节点属性（JSON格式）:", "{{}}");
+                            try {{
+                                data.attributes = JSON.parse(attr);
+                            }} catch(e) {{
+                                data.attributes = {{}};
+                            }}
+                            
+                            if (pyObj && typeof pyObj.create_node === 'function') {{
+                                pyObj.create_node(JSON.stringify(data));
+                            }}
+                            callback(data);
+                        }} catch(e) {{
+                            console.error('添加节点错误:', e);
+                            callback(null);
+                        }}
+                    }},
+                    addEdge: function(data, callback) {{
+                        try {{
+                            if (data.from === data.to) {{
+                                alert("不能创建自环");
+                                callback(null);
+                                return;
+                            }}
+                            data.label = prompt("请输入关系类型:", "");
+                            if (data.label === null || data.label.trim() === "") {{
+                                callback(null);
+                                return;
+                            }}
+                            
+                            if (pyObj && typeof pyObj.create_edge === 'function') {{
+                                pyObj.create_edge(JSON.stringify(data));
+                            }}
+                            callback(data);
+                        }} catch(e) {{
+                            console.error('添加边错误:', e);
+                            callback(null);
+                        }}
+                    }},
+                    editNode: function(data, callback) {{
+                        try {{
+                            var originalLabel = data.label;
+                            data.label = prompt("修改节点名称:", data.label || "");
+                            if (data.label === null || data.label.trim() === "") {{
+                                callback(null);
+                                return;
+                            }}
+                            data.type = prompt("修改节点类型:", data.type || "");
+                            var attr = prompt("修改节点属性（JSON格式）:", JSON.stringify(data.attributes || {{}}));
+                            try {{
+                                data.attributes = JSON.parse(attr);
+                            }} catch(e) {{
+                                data.attributes = {{}};
+                            }}
+                            
+                            // 如果节点名称发生变化，通知后端
+                            if (originalLabel !== data.label && pyObj && typeof pyObj.edit_node === 'function') {{
+                                pyObj.edit_node(JSON.stringify({{
+                                    old_name: originalLabel,
+                                    new_name: data.label,
+                                    type: data.type,
+                                    attributes: data.attributes
+                                }}));
+                            }}
+                            callback(data);
+                        }} catch(e) {{
+                            console.error('编辑节点错误:', e);
+                            callback(null);
+                        }}
+                    }},
+                    editEdge: function(data, callback) {{
+                        try {{
+                            var originalLabel = data.label;
+                            data.label = prompt("修改关系类型:", data.label || "");
+                            
+                            // 通知后端关系类型发生变化
+                            if (pyObj && typeof pyObj.edit_edge === 'function') {{
+                                pyObj.edit_edge(JSON.stringify({{
+                                    source: data.from,
+                                    target: data.to,
+                                    old_relation_type: originalLabel,
+                                    new_relation_type: data.label
+                                }}));
+                            }}
+                            callback(data);
+                        }} catch(e) {{
+                            console.error('编辑边错误:', e);
+                            callback(null);
+                        }}
+                    }},
+                    deleteNode: function(data, callback) {{
+                        try {{
+                            // 确认删除
+                            if (confirm("确定要删除节点 '" + data.nodes[0] + "' 吗？这将同时删除与该节点相关的所有连接。")) {{
+                                // 通知Python后端删除节点
+                                if (pyObj && typeof pyObj.delete_node === 'function') {{
+                                    pyObj.delete_node(data.nodes[0]);
+                                }}
+                                callback(data);
+                                updateStatus('节点已删除');
+                            }} else {{
+                                callback(null);
+                            }}
+                        }} catch(e) {{
+                            console.error('删除节点错误:', e);
+                            callback(null);
+                        }}
+                    }},
+                    deleteEdge: function(data, callback) {{
+                        try {{
+                            // 确认删除
+                            if (confirm("确定要删除选中的关系吗？")) {{
+                                // 通知Python后端删除边
+                                data.edges.forEach(function(edgeId) {{
+                                    var edge = edges.get(edgeId);
+                                    if (edge && pyObj && typeof pyObj.delete_edge === 'function') {{
+                                        pyObj.delete_edge(JSON.stringify({{
+                                            source: edge.from,
+                                            target: edge.to
+                                        }}));
+                                    }}
+                                }});
+                                callback(data);
+                                updateStatus('关系已删除');
+                            }} else {{
+                                callback(null);
+                            }}
+                        }} catch(e) {{
+                            console.error('删除边错误:', e);
+                            callback(null);
+                        }}
+                    }}
+                }},
+                physics: false,
+                nodes: {{
+                    font: {{ size: 14, color: "#333" }},
+                    borderWidth: 2,
+                    shape: "dot",
+                    shadow: false,
+                    size: 25,
+                    physics: false
+                }},
+                edges: {{
+                    arrows: {{ to: {{ enabled: true, scaleFactor: 1 }} }},
+                    smooth: {{ type: "continuous" }},
+                    color: {{ color: "#848484", highlight: "#848484" }},
+                    length: 200,
+                    physics: false
+                }},
+                interaction: {{
+                    hover: true,
+                    dragNodes: true,
+                    dragView: true,
+                    selectConnectedEdges: false,
+                    tooltipDelay: 300,
+                    zoomView: true
+                }},
+                layout: {{
+                    randomSeed: undefined,
+                    improvedLayout: false,
+                    clusterThreshold: 150,
+                    hierarchical: false
+                }},
+                configure: {{
+                    enabled: false
+                }}
+            }};
+            
+            try {{
+                // 创建网络
+                network = new vis.Network(container, {{ nodes: nodes, edges: edges }}, options);
+                
+                // 立即设置为静态模式
+                network.setOptions({{
+                    physics: {{
+                        enabled: false,
+                        stabilization: {{ enabled: false }}
+                    }}
+                }});
+
+                // 监听节点拖动事件
+                network.on("dragEnd", function(params) {{
+                    if (params.nodes.length > 0) {{
+                        updateStatus('节点位置已改变，点击"保存布局"来保存');
+                    }}
+                }});
+
+                // 监听节点点击事件
+                network.on("click", function(params) {{
+                    try {{
+                        if (params.nodes.length) {{
+                            var node = nodes.get(params.nodes[0]);
+                            if (pyObj && typeof pyObj.display_node_info === 'function') {{
+                                pyObj.display_node_info(JSON.stringify(node));
+                            }}
+                        }}
+                    }} catch(e) {{
+                        console.error('节点点击事件错误:', e);
+                    }}
+                }});
+                
+                updateStatus('图谱初始化完成，可以拖动节点');
+                console.log('网络已创建，节点数量:', nodes.length, '边数量:', edges.length);
+                
+            }} catch(e) {{
+                console.error('网络初始化失败:', e);
+                updateStatus('网络初始化失败: ' + e.message);
+            }}
+        }}
+
+        // QWebChannel 初始化
+        function initQWebChannel() {{
+            if (typeof qt !== 'undefined' && qt.webChannelTransport) {{
+                try {{
+                    new QWebChannel(qt.webChannelTransport, function(channel) {{
+                        pyObj = channel.objects.py_obj;
+                        console.log('QWebChannel 连接成功');
+                        updateStatus('与Python连接成功');
+                    }});
+                }} catch(e) {{
+                    console.error('QWebChannel 初始化失败:', e);
+                }}
+            }} else {{
+                console.log('QWebChannel 不可用，可能在浏览器环境中运行');
+            }}
+        }}
+        
+        // 暴露给Python调用的函数
+        window.applyLayoutFromPython = function(layoutJson) {{
+            try {{
+                var layoutData = JSON.parse(layoutJson);
+                console.log('收到Python布局数据，节点数量:', Object.keys(layoutData).length);
+                
+                // 重新初始化网络使用保存的布局
+                initNetwork(layoutData);
+                updateStatus('已加载保存的布局');
+            }} catch(e) {{
+                console.error('从Python应用布局失败:', e);
+                // 失败时使用默认布局
+                initNetwork(null);
+            }}
+        }};
+        
+        // 页面加载完成后初始化
+        window.addEventListener('DOMContentLoaded', function() {{
+            console.log('页面加载完成，开始初始化');
+            console.log('原始节点数量:', rawNodesData.length);
+            console.log('原始边数量:', rawEdgesData.length);
+            
+            initQWebChannel();
+            
+            // 立即初始化网络，不等待Python
+            initNetwork(null);
+        }});
+        
+        // 错误处理
+        window.addEventListener('error', function(event) {{
+            console.error('JavaScript错误:', event.error);
+            updateStatus('发生错误，请检查控制台');
         }});
     </script>
 </body>

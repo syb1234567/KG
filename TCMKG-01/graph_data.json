@@ -1,29 +1,6 @@
 {
     "nodes": [
         {
-            "name": "123",
-            "type": "213",
-            "attributes": {},
-            "resources": [
-                {
-                    "path": "E:/桌面/证件照).jpg",
-                    "type": "Image"
-                }
-            ]
-        },
-        {
-            "name": "柴葛解肌汤",
-            "type": "方剂",
-            "attributes": {},
-            "resources": []
-        },
-        {
-            "name": "升麻葛根汤",
-            "type": "方剂",
-            "attributes": {},
-            "resources": []
-        },
-        {
             "name": "火郁汤",
             "type": "方剂",
             "attributes": {},
@@ -186,12 +163,6 @@
         },
         {
             "name": "芍药",
-            "type": "药材",
-            "attributes": {},
-            "resources": []
-        },
-        {
-            "name": "羌活",
             "type": "药材",
             "attributes": {},
             "resources": []
@@ -965,12 +936,6 @@
             "resources": []
         },
         {
-            "name": "伏羲八卦图",
-            "type": "中医概念",
-            "attributes": {},
-            "resources": []
-        },
-        {
             "name": "纯阳无阴",
             "type": "中医概念",
             "attributes": {},
@@ -1041,69 +1006,15 @@
             "type": "124",
             "attributes": 4214124,
             "resources": []
+        },
+        {
+            "name": "三阳阳",
+            "type": "123",
+            "attributes": {},
+            "resources": []
         }
     ],
     "edges": [
-        {
-            "source": "柴葛解肌汤",
-            "target": "清热解肌",
-            "relation_type": "治法",
-            "resources": []
-        },
-        {
-            "source": "柴葛解肌汤",
-            "target": "柴胡",
-            "relation_type": "方剂组成包含",
-            "resources": []
-        },
-        {
-            "source": "柴葛解肌汤",
-            "target": "葛根",
-            "relation_type": "方剂组成包含",
-            "resources": []
-        },
-        {
-            "source": "柴葛解肌汤",
-            "target": "甘草",
-            "relation_type": "方剂组成包含",
-            "resources": []
-        },
-        {
-            "source": "柴葛解肌汤",
-            "target": "黄芩",
-            "relation_type": "方剂组成包含",
-            "resources": []
-        },
-        {
-            "source": "柴葛解肌汤",
-            "target": "芍药",
-            "relation_type": "方剂组成包含",
-            "resources": []
-        },
-        {
-            "source": "柴葛解肌汤",
-            "target": "羌活",
-            "relation_type": "方剂组成包含",
-            "resources": []
-        },
-        {
-            "source": "柴葛解肌汤",
-            "target": "白芷",
-            "relation_type": "方剂组成包含",
-            "resources": []
-        },
-        {
-            "source": "柴葛解肌汤",
-            "target": "桔梗",
-            "relation_type": "方剂组成包含",
-            "resources": []
-        },
-        {
-            "source": "升麻葛根汤",
-            "target": "清热解肌",
-            "relation_type": "治法",
-            "resources": []
-        },
         {
             "source": "火郁汤",
             "target": "清热解肌",
@@ -1864,12 +1775,6 @@
             "source": "八卦",
             "target": "艮",
             "relation_type": "包含",
-            "resources": []
-        },
-        {
-            "source": "八卦",
-            "target": "伏羲八卦图",
-            "relation_type": "版本为",
             "resources": []
         },
         {

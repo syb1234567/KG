@@ -1,0 +1,5106 @@
+{
+    "nodes": [
+        {
+            "name": "节点_1_32de73",
+            "type": "方剂",
+            "attributes": 650,
+            "resources": []
+        },
+        {
+            "name": "节点_2_b607d1",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_3_11503d",
+            "type": "药材",
+            "attributes": 433,
+            "resources": []
+        },
+        {
+            "name": "节点_4_0cddd4",
+            "type": "药材",
+            "attributes": 168,
+            "resources": []
+        },
+        {
+            "name": "节点_5_f7247e",
+            "type": "方剂",
+            "attributes": 672,
+            "resources": []
+        },
+        {
+            "name": "节点_6_b02c5d",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_7_ca9c72",
+            "type": "中医概念",
+            "attributes": 888,
+            "resources": []
+        },
+        {
+            "name": "节点_8_b6ef3e",
+            "type": "药理",
+            "attributes": 211,
+            "resources": []
+        },
+        {
+            "name": "节点_9_67e6bf",
+            "type": "药材",
+            "attributes": 475,
+            "resources": []
+        },
+        {
+            "name": "节点_10_6dd00f",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_11_414980",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_12_f97d11",
+            "type": "方剂",
+            "attributes": 816,
+            "resources": []
+        },
+        {
+            "name": "节点_13_59e6e9",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_14_1c8a3f",
+            "type": "疾病",
+            "attributes": 473,
+            "resources": []
+        },
+        {
+            "name": "节点_15_b56beb",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_16_19cf9b",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_17_5bb270",
+            "type": "药理",
+            "attributes": 444,
+            "resources": []
+        },
+        {
+            "name": "节点_18_9c1baf",
+            "type": "药材",
+            "attributes": 576,
+            "resources": []
+        },
+        {
+            "name": "节点_19_6d639a",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_20_d8d576",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_21_16f198",
+            "type": "药理",
+            "attributes": 288,
+            "resources": []
+        },
+        {
+            "name": "节点_22_36abbf",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_23_a938e6",
+            "type": "疾病",
+            "attributes": 752,
+            "resources": []
+        },
+        {
+            "name": "节点_24_d385c2",
+            "type": "药材",
+            "attributes": 807,
+            "resources": []
+        },
+        {
+            "name": "节点_25_1f377b",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_26_26c74d",
+            "type": "药理",
+            "attributes": 173,
+            "resources": []
+        },
+        {
+            "name": "节点_27_ae0cae",
+            "type": "疾病",
+            "attributes": 97,
+            "resources": []
+        },
+        {
+            "name": "节点_28_332cbd",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_29_197fcf",
+            "type": "药理",
+            "attributes": 425,
+            "resources": []
+        },
+        {
+            "name": "节点_30_fb2f71",
+            "type": "中医概念",
+            "attributes": 396,
+            "resources": []
+        },
+        {
+            "name": "节点_31_22090e",
+            "type": "疾病",
+            "attributes": 785,
+            "resources": []
+        },
+        {
+            "name": "节点_32_33040e",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_33_cdc584",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_34_5b18ca",
+            "type": "疾病",
+            "attributes": 303,
+            "resources": []
+        },
+        {
+            "name": "节点_35_8f520c",
+            "type": "药材",
+            "attributes": 72,
+            "resources": []
+        },
+        {
+            "name": "节点_36_55fd2a",
+            "type": "药理",
+            "attributes": 643,
+            "resources": []
+        },
+        {
+            "name": "节点_37_4fdda2",
+            "type": "疾病",
+            "attributes": 845,
+            "resources": []
+        },
+        {
+            "name": "节点_38_34f40b",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_39_188879",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_40_a78597",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_41_8661bb",
+            "type": "疾病",
+            "attributes": 386,
+            "resources": []
+        },
+        {
+            "name": "节点_42_69c571",
+            "type": "药理",
+            "attributes": 520,
+            "resources": []
+        },
+        {
+            "name": "节点_43_743870",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_44_5416a2",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_45_deb031",
+            "type": "方剂",
+            "attributes": 327,
+            "resources": []
+        },
+        {
+            "name": "节点_46_781988",
+            "type": "中医概念",
+            "attributes": 399,
+            "resources": []
+        },
+        {
+            "name": "节点_47_dd5c7b",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_48_393c08",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_49_34bb1f",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_50_6ada09",
+            "type": "药理",
+            "attributes": 278,
+            "resources": []
+        },
+        {
+            "name": "节点_51_ffc22b",
+            "type": "药理",
+            "attributes": 760,
+            "resources": []
+        },
+        {
+            "name": "节点_52_feb101",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_53_d229b0",
+            "type": "疾病",
+            "attributes": 825,
+            "resources": []
+        },
+        {
+            "name": "节点_54_8c9a55",
+            "type": "疾病",
+            "attributes": 548,
+            "resources": []
+        },
+        {
+            "name": "节点_55_a7c353",
+            "type": "药材",
+            "attributes": 241,
+            "resources": []
+        },
+        {
+            "name": "节点_56_35c5c6",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_57_2ec39a",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_58_82c8f7",
+            "type": "药材",
+            "attributes": 540,
+            "resources": []
+        },
+        {
+            "name": "节点_59_24f585",
+            "type": "方剂",
+            "attributes": 27,
+            "resources": []
+        },
+        {
+            "name": "节点_60_542f82",
+            "type": "方剂",
+            "attributes": 831,
+            "resources": []
+        },
+        {
+            "name": "节点_61_de08d3",
+            "type": "方剂",
+            "attributes": 30,
+            "resources": []
+        },
+        {
+            "name": "节点_62_b9c4c4",
+            "type": "中医概念",
+            "attributes": 814,
+            "resources": []
+        },
+        {
+            "name": "节点_63_baacd8",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_64_39447c",
+            "type": "药材",
+            "attributes": 365,
+            "resources": []
+        },
+        {
+            "name": "节点_65_bc6f6e",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_66_cf4c75",
+            "type": "中医概念",
+            "attributes": 273,
+            "resources": []
+        },
+        {
+            "name": "节点_67_49bdb3",
+            "type": "药材",
+            "attributes": 214,
+            "resources": []
+        },
+        {
+            "name": "节点_68_b9af7f",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_69_b22d7f",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_70_d93b98",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_71_affe85",
+            "type": "方剂",
+            "attributes": 701,
+            "resources": []
+        },
+        {
+            "name": "节点_72_d40f0f",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_73_83c333",
+            "type": "疾病",
+            "attributes": 972,
+            "resources": []
+        },
+        {
+            "name": "节点_74_3f96af",
+            "type": "疾病",
+            "attributes": 441,
+            "resources": []
+        },
+        {
+            "name": "节点_75_9ba914",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_76_e04e68",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_77_14a4d9",
+            "type": "中医概念",
+            "attributes": 342,
+            "resources": []
+        },
+        {
+            "name": "节点_78_7e86e1",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_79_7eb903",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_80_b518ba",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_81_708c0c",
+            "type": "中医概念",
+            "attributes": 302,
+            "resources": []
+        },
+        {
+            "name": "节点_82_0c78bf",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_83_88cf6a",
+            "type": "中医概念",
+            "attributes": 903,
+            "resources": []
+        },
+        {
+            "name": "节点_84_c1e251",
+            "type": "中医概念",
+            "attributes": 167,
+            "resources": []
+        },
+        {
+            "name": "节点_85_ee9952",
+            "type": "疾病",
+            "attributes": 828,
+            "resources": []
+        },
+        {
+            "name": "节点_86_b8753c",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_87_a280fa",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_88_b552e4",
+            "type": "方剂",
+            "attributes": 728,
+            "resources": []
+        },
+        {
+            "name": "节点_89_626d24",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_90_cf82d7",
+            "type": "药材",
+            "attributes": 587,
+            "resources": []
+        },
+        {
+            "name": "节点_91_8f6fa7",
+            "type": "方剂",
+            "attributes": 561,
+            "resources": []
+        },
+        {
+            "name": "节点_92_cba943",
+            "type": "方剂",
+            "attributes": 996,
+            "resources": []
+        },
+        {
+            "name": "节点_93_56228a",
+            "type": "疾病",
+            "attributes": 42,
+            "resources": []
+        },
+        {
+            "name": "节点_94_ec2ef9",
+            "type": "方剂",
+            "attributes": 297,
+            "resources": []
+        },
+        {
+            "name": "节点_95_b75eb1",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_96_990251",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_97_9da78f",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_98_6fbc95",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_99_918efc",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_100_35af85",
+            "type": "方剂",
+            "attributes": 619,
+            "resources": []
+        },
+        {
+            "name": "节点_101_26aa31",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_102_084bc8",
+            "type": "药材",
+            "attributes": 329,
+            "resources": []
+        },
+        {
+            "name": "节点_103_cde3dc",
+            "type": "药材",
+            "attributes": 895,
+            "resources": []
+        },
+        {
+            "name": "节点_104_4f5210",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_105_139e20",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_106_e41715",
+            "type": "药理",
+            "attributes": 60,
+            "resources": []
+        },
+        {
+            "name": "节点_107_d8ef47",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_108_b6b5a7",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_109_b3c621",
+            "type": "疾病",
+            "attributes": 628,
+            "resources": []
+        },
+        {
+            "name": "节点_110_133a27",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_111_633984",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_112_8325ef",
+            "type": "疾病",
+            "attributes": 335,
+            "resources": []
+        },
+        {
+            "name": "节点_113_b9b171",
+            "type": "方剂",
+            "attributes": 173,
+            "resources": []
+        },
+        {
+            "name": "节点_114_1240ef",
+            "type": "药理",
+            "attributes": 679,
+            "resources": []
+        },
+        {
+            "name": "节点_115_8c8c13",
+            "type": "中医概念",
+            "attributes": 507,
+            "resources": []
+        },
+        {
+            "name": "节点_116_23e473",
+            "type": "药材",
+            "attributes": 801,
+            "resources": []
+        },
+        {
+            "name": "节点_117_905cf5",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_118_3906c4",
+            "type": "中医概念",
+            "attributes": 21,
+            "resources": []
+        },
+        {
+            "name": "节点_119_cda8bb",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_120_0cbd84",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_121_269ee4",
+            "type": "药材",
+            "attributes": 425,
+            "resources": []
+        },
+        {
+            "name": "节点_122_07cf7f",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_123_c97f27",
+            "type": "疾病",
+            "attributes": 963,
+            "resources": []
+        },
+        {
+            "name": "节点_124_29ba25",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_125_5da358",
+            "type": "药材",
+            "attributes": 503,
+            "resources": []
+        },
+        {
+            "name": "节点_126_218b65",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_127_fa376e",
+            "type": "药材",
+            "attributes": 469,
+            "resources": []
+        },
+        {
+            "name": "节点_128_279492",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_129_292e41",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_130_1ad2a7",
+            "type": "疾病",
+            "attributes": 240,
+            "resources": []
+        },
+        {
+            "name": "节点_131_307894",
+            "type": "方剂",
+            "attributes": 824,
+            "resources": []
+        },
+        {
+            "name": "节点_132_b6528f",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_133_46fb2e",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_134_f0c13e",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_135_99b71a",
+            "type": "方剂",
+            "attributes": 465,
+            "resources": []
+        },
+        {
+            "name": "节点_136_756cf1",
+            "type": "药材",
+            "attributes": 920,
+            "resources": []
+        },
+        {
+            "name": "节点_137_f09418",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_138_5fc29d",
+            "type": "方剂",
+            "attributes": 775,
+            "resources": []
+        },
+        {
+            "name": "节点_139_fefcf2",
+            "type": "药理",
+            "attributes": 483,
+            "resources": []
+        },
+        {
+            "name": "节点_140_b37048",
+            "type": "中医概念",
+            "attributes": 106,
+            "resources": []
+        },
+        {
+            "name": "节点_141_681194",
+            "type": "方剂",
+            "attributes": 717,
+            "resources": []
+        },
+        {
+            "name": "节点_142_4a6266",
+            "type": "药理",
+            "attributes": 670,
+            "resources": []
+        },
+        {
+            "name": "节点_143_ad015a",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_144_68da44",
+            "type": "中医概念",
+            "attributes": 195,
+            "resources": []
+        },
+        {
+            "name": "节点_145_d20472",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_146_cfabe5",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_147_a0473c",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_148_ca05c7",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_149_c6aa15",
+            "type": "方剂",
+            "attributes": 832,
+            "resources": []
+        },
+        {
+            "name": "节点_150_4673eb",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_151_c3269a",
+            "type": "方剂",
+            "attributes": 355,
+            "resources": []
+        },
+        {
+            "name": "节点_152_9fbcbe",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_153_960be6",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_154_894d57",
+            "type": "方剂",
+            "attributes": 31,
+            "resources": []
+        },
+        {
+            "name": "节点_155_d733ed",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_156_65ee05",
+            "type": "药材",
+            "attributes": 319,
+            "resources": []
+        },
+        {
+            "name": "节点_157_597035",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_158_352262",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_159_f8b26a",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_160_b39ee7",
+            "type": "中医概念",
+            "attributes": 808,
+            "resources": []
+        },
+        {
+            "name": "节点_161_2d501c",
+            "type": "方剂",
+            "attributes": 688,
+            "resources": []
+        },
+        {
+            "name": "节点_162_a21c1f",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_163_6f3abd",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_164_6d0ec8",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_165_0b03c3",
+            "type": "中医概念",
+            "attributes": 301,
+            "resources": []
+        },
+        {
+            "name": "节点_166_73a9d5",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_167_e00f1c",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_168_340028",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_169_971346",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_170_6a2947",
+            "type": "药材",
+            "attributes": 180,
+            "resources": []
+        },
+        {
+            "name": "节点_171_4432fc",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_172_af269a",
+            "type": "方剂",
+            "attributes": 275,
+            "resources": []
+        },
+        {
+            "name": "节点_173_4d0b2c",
+            "type": "中医概念",
+            "attributes": 362,
+            "resources": []
+        },
+        {
+            "name": "节点_174_aa3c84",
+            "type": "药理",
+            "attributes": 966,
+            "resources": []
+        },
+        {
+            "name": "节点_175_1a3c3d",
+            "type": "中医概念",
+            "attributes": 304,
+            "resources": []
+        },
+        {
+            "name": "节点_176_aca082",
+            "type": "药材",
+            "attributes": 741,
+            "resources": []
+        },
+        {
+            "name": "节点_177_b57780",
+            "type": "药理",
+            "attributes": 167,
+            "resources": []
+        },
+        {
+            "name": "节点_178_65f364",
+            "type": "药材",
+            "attributes": 205,
+            "resources": []
+        },
+        {
+            "name": "节点_179_f7819e",
+            "type": "中医概念",
+            "attributes": 882,
+            "resources": []
+        },
+        {
+            "name": "节点_180_28e344",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_181_0a7148",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_182_cdb42b",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_183_de8ebb",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_184_3b60a9",
+            "type": "药材",
+            "attributes": 209,
+            "resources": []
+        },
+        {
+            "name": "节点_185_dd5f46",
+            "type": "药理",
+            "attributes": 283,
+            "resources": []
+        },
+        {
+            "name": "节点_186_e593a7",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_187_7e3eac",
+            "type": "疾病",
+            "attributes": 147,
+            "resources": []
+        },
+        {
+            "name": "节点_188_09d6a7",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_189_c98465",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_190_39c2ea",
+            "type": "药材",
+            "attributes": 280,
+            "resources": []
+        },
+        {
+            "name": "节点_191_e7b511",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_192_6cdca1",
+            "type": "药理",
+            "attributes": 310,
+            "resources": []
+        },
+        {
+            "name": "节点_193_ef60f2",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_194_fb89d0",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_195_522995",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_196_bb0c67",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_197_d00c10",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_198_545868",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_199_ea0775",
+            "type": "中医概念",
+            "attributes": 175,
+            "resources": []
+        },
+        {
+            "name": "节点_200_8335d8",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_201_f1a624",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_202_ca2bc4",
+            "type": "中医概念",
+            "attributes": 703,
+            "resources": []
+        },
+        {
+            "name": "节点_203_f00318",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_204_336b66",
+            "type": "药材",
+            "attributes": 261,
+            "resources": []
+        },
+        {
+            "name": "节点_205_16a873",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_206_9c6928",
+            "type": "中医概念",
+            "attributes": 657,
+            "resources": []
+        },
+        {
+            "name": "节点_207_7a63a1",
+            "type": "中医概念",
+            "attributes": 886,
+            "resources": []
+        },
+        {
+            "name": "节点_208_4c69bb",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_209_fb857f",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_210_4b075e",
+            "type": "药材",
+            "attributes": 112,
+            "resources": []
+        },
+        {
+            "name": "节点_211_c0947b",
+            "type": "方剂",
+            "attributes": 585,
+            "resources": []
+        },
+        {
+            "name": "节点_212_2cee96",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_213_846cc9",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_214_ef5d93",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_215_8e1dd2",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_216_e1c4e6",
+            "type": "中医概念",
+            "attributes": 775,
+            "resources": []
+        },
+        {
+            "name": "节点_217_988b0d",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_218_935036",
+            "type": "药理",
+            "attributes": 981,
+            "resources": []
+        },
+        {
+            "name": "节点_219_8ee7ab",
+            "type": "方剂",
+            "attributes": 210,
+            "resources": []
+        },
+        {
+            "name": "节点_220_c668ba",
+            "type": "疾病",
+            "attributes": 524,
+            "resources": []
+        },
+        {
+            "name": "节点_221_4496f0",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_222_67849b",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_223_483448",
+            "type": "方剂",
+            "attributes": 816,
+            "resources": []
+        },
+        {
+            "name": "节点_224_35d306",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_225_4bcce7",
+            "type": "药理",
+            "attributes": 658,
+            "resources": []
+        },
+        {
+            "name": "节点_226_3dc0ed",
+            "type": "药材",
+            "attributes": 605,
+            "resources": []
+        },
+        {
+            "name": "节点_227_58f61d",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_228_b20e21",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_229_bd1c04",
+            "type": "药材",
+            "attributes": 406,
+            "resources": []
+        },
+        {
+            "name": "节点_230_773e35",
+            "type": "药材",
+            "attributes": 186,
+            "resources": []
+        },
+        {
+            "name": "节点_231_46866c",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_232_2685e1",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_233_f9a4cb",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_234_60e92f",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_235_7ccc4a",
+            "type": "中医概念",
+            "attributes": 842,
+            "resources": []
+        },
+        {
+            "name": "节点_236_e7fcba",
+            "type": "药理",
+            "attributes": 643,
+            "resources": []
+        },
+        {
+            "name": "节点_237_19158c",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_238_c9d354",
+            "type": "药材",
+            "attributes": 616,
+            "resources": []
+        },
+        {
+            "name": "节点_239_a04116",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_240_a65e20",
+            "type": "药理",
+            "attributes": 543,
+            "resources": []
+        },
+        {
+            "name": "节点_241_28833a",
+            "type": "中医概念",
+            "attributes": 95,
+            "resources": []
+        },
+        {
+            "name": "节点_242_1e76c6",
+            "type": "疾病",
+            "attributes": 556,
+            "resources": []
+        },
+        {
+            "name": "节点_243_a1ad9a",
+            "type": "中医概念",
+            "attributes": 490,
+            "resources": []
+        },
+        {
+            "name": "节点_244_d8399e",
+            "type": "药理",
+            "attributes": 900,
+            "resources": []
+        },
+        {
+            "name": "节点_245_21a152",
+            "type": "药理",
+            "attributes": 689,
+            "resources": []
+        },
+        {
+            "name": "节点_246_6aa1b9",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_247_191c05",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_248_063713",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_249_f244be",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_250_c83dbf",
+            "type": "疾病",
+            "attributes": 270,
+            "resources": []
+        },
+        {
+            "name": "节点_251_59a3ee",
+            "type": "中医概念",
+            "attributes": 187,
+            "resources": []
+        },
+        {
+            "name": "节点_252_f8de86",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_253_0486ee",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_254_fdb793",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_255_00f895",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_256_e86902",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_257_113d8b",
+            "type": "药材",
+            "attributes": 496,
+            "resources": []
+        },
+        {
+            "name": "节点_258_284945",
+            "type": "方剂",
+            "attributes": 188,
+            "resources": []
+        },
+        {
+            "name": "节点_259_03b93a",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_260_d056e6",
+            "type": "药理",
+            "attributes": 489,
+            "resources": []
+        },
+        {
+            "name": "节点_261_256a60",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_262_67dc2c",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_263_852ccf",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_264_34e23a",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_265_4417e0",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_266_7fb64c",
+            "type": "药材",
+            "attributes": 64,
+            "resources": []
+        },
+        {
+            "name": "节点_267_436558",
+            "type": "疾病",
+            "attributes": 279,
+            "resources": []
+        },
+        {
+            "name": "节点_268_388bfb",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_269_28f902",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_270_afef41",
+            "type": "药理",
+            "attributes": 467,
+            "resources": []
+        },
+        {
+            "name": "节点_271_b4c9af",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_272_6d6d34",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_273_511937",
+            "type": "方剂",
+            "attributes": 703,
+            "resources": []
+        },
+        {
+            "name": "节点_274_10f384",
+            "type": "疾病",
+            "attributes": 45,
+            "resources": []
+        },
+        {
+            "name": "节点_275_10d68c",
+            "type": "方剂",
+            "attributes": 829,
+            "resources": []
+        },
+        {
+            "name": "节点_276_3569e3",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_277_5ab8af",
+            "type": "药材",
+            "attributes": 31,
+            "resources": []
+        },
+        {
+            "name": "节点_278_68d5b4",
+            "type": "方剂",
+            "attributes": 210,
+            "resources": []
+        },
+        {
+            "name": "节点_279_f45229",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_280_51c31f",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_281_fb4b38",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_282_1d0384",
+            "type": "方剂",
+            "attributes": 527,
+            "resources": []
+        },
+        {
+            "name": "节点_283_3ae03b",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_284_a4ead7",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_285_bed660",
+            "type": "疾病",
+            "attributes": 23,
+            "resources": []
+        },
+        {
+            "name": "节点_286_432509",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_287_ff146d",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_288_7ce85e",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_289_6abe6d",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_290_d89a66",
+            "type": "方剂",
+            "attributes": 19,
+            "resources": []
+        },
+        {
+            "name": "节点_291_7049af",
+            "type": "药材",
+            "attributes": 349,
+            "resources": []
+        },
+        {
+            "name": "节点_292_52358f",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_293_c1f129",
+            "type": "中医概念",
+            "attributes": 248,
+            "resources": []
+        },
+        {
+            "name": "节点_294_7523e8",
+            "type": "中医概念",
+            "attributes": 612,
+            "resources": []
+        },
+        {
+            "name": "节点_295_5f60b6",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_296_0b18b6",
+            "type": "方剂",
+            "attributes": 892,
+            "resources": []
+        },
+        {
+            "name": "节点_297_ba3de0",
+            "type": "方剂",
+            "attributes": 401,
+            "resources": []
+        },
+        {
+            "name": "节点_298_7dbdf0",
+            "type": "药理",
+            "attributes": 42,
+            "resources": []
+        },
+        {
+            "name": "节点_299_f94f5b",
+            "type": "方剂",
+            "attributes": 682,
+            "resources": []
+        },
+        {
+            "name": "节点_300_05f3f0",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_301_10b36c",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_302_48b08b",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_303_08b086",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_304_98ec6b",
+            "type": "中医概念",
+            "attributes": 873,
+            "resources": []
+        },
+        {
+            "name": "节点_305_00cdeb",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_306_2c73e7",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_307_1e723e",
+            "type": "方剂",
+            "attributes": 135,
+            "resources": []
+        },
+        {
+            "name": "节点_308_97dee2",
+            "type": "疾病",
+            "attributes": 576,
+            "resources": []
+        },
+        {
+            "name": "节点_309_efd99c",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_310_a60474",
+            "type": "药理",
+            "attributes": 325,
+            "resources": []
+        },
+        {
+            "name": "节点_311_3d621a",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_312_bb1f89",
+            "type": "中医概念",
+            "attributes": 967,
+            "resources": []
+        },
+        {
+            "name": "节点_313_243dd4",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_314_ce1918",
+            "type": "药材",
+            "attributes": 576,
+            "resources": []
+        },
+        {
+            "name": "节点_315_4b09dd",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_316_977b35",
+            "type": "疾病",
+            "attributes": 284,
+            "resources": []
+        },
+        {
+            "name": "节点_317_b5b2e7",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_318_803085",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_319_2e8f8a",
+            "type": "方剂",
+            "attributes": 971,
+            "resources": []
+        },
+        {
+            "name": "节点_320_815e66",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_321_7e7936",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_322_51354d",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_323_6b39ee",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_324_3a2725",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_325_035844",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_326_66119d",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_327_24bed4",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_328_cb7bbe",
+            "type": "疾病",
+            "attributes": 716,
+            "resources": []
+        },
+        {
+            "name": "节点_329_745f96",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_330_77a1de",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_331_2dd37d",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_332_c52f4c",
+            "type": "药材",
+            "attributes": 887,
+            "resources": []
+        },
+        {
+            "name": "节点_333_0515ba",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_334_07e676",
+            "type": "药材",
+            "attributes": 666,
+            "resources": []
+        },
+        {
+            "name": "节点_335_eb9f28",
+            "type": "药材",
+            "attributes": 578,
+            "resources": []
+        },
+        {
+            "name": "节点_336_d6d4cc",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_337_a684f6",
+            "type": "中医概念",
+            "attributes": 419,
+            "resources": []
+        },
+        {
+            "name": "节点_338_baad20",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_339_1d6fd0",
+            "type": "药理",
+            "attributes": 192,
+            "resources": []
+        },
+        {
+            "name": "节点_340_996c9a",
+            "type": "中医概念",
+            "attributes": 607,
+            "resources": []
+        },
+        {
+            "name": "节点_341_1648a0",
+            "type": "药理",
+            "attributes": 851,
+            "resources": []
+        },
+        {
+            "name": "节点_342_ab8755",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_343_023a7f",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_344_cab057",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_345_68b87e",
+            "type": "疾病",
+            "attributes": 98,
+            "resources": []
+        },
+        {
+            "name": "节点_346_70d5af",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_347_f1af98",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_348_155d1f",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_349_38553e",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_350_ce6c8f",
+            "type": "方剂",
+            "attributes": 793,
+            "resources": []
+        },
+        {
+            "name": "节点_351_220f26",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_352_e3e362",
+            "type": "中医概念",
+            "attributes": 855,
+            "resources": []
+        },
+        {
+            "name": "节点_353_8164fe",
+            "type": "药材",
+            "attributes": 674,
+            "resources": []
+        },
+        {
+            "name": "节点_354_65678b",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_355_7d0c5e",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_356_c39380",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_357_cf7f76",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_358_2db980",
+            "type": "中医概念",
+            "attributes": 64,
+            "resources": []
+        },
+        {
+            "name": "节点_359_566634",
+            "type": "疾病",
+            "attributes": 768,
+            "resources": []
+        },
+        {
+            "name": "节点_360_3dea44",
+            "type": "疾病",
+            "attributes": 2,
+            "resources": []
+        },
+        {
+            "name": "节点_361_9d9f26",
+            "type": "药材",
+            "attributes": 213,
+            "resources": []
+        },
+        {
+            "name": "节点_362_63d1d2",
+            "type": "中医概念",
+            "attributes": 914,
+            "resources": []
+        },
+        {
+            "name": "节点_363_77d2d4",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_364_6042b5",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_365_30f628",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_366_617f58",
+            "type": "药材",
+            "attributes": 730,
+            "resources": []
+        },
+        {
+            "name": "节点_367_49b005",
+            "type": "方剂",
+            "attributes": 18,
+            "resources": []
+        },
+        {
+            "name": "节点_368_818e9c",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_369_bc347f",
+            "type": "疾病",
+            "attributes": 517,
+            "resources": []
+        },
+        {
+            "name": "节点_370_657339",
+            "type": "方剂",
+            "attributes": 908,
+            "resources": []
+        },
+        {
+            "name": "节点_371_5057bf",
+            "type": "方剂",
+            "attributes": 376,
+            "resources": []
+        },
+        {
+            "name": "节点_372_40e7ed",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_373_ad7c79",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_374_40dd61",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_375_1bc801",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_376_3b2c72",
+            "type": "疾病",
+            "attributes": 68,
+            "resources": []
+        },
+        {
+            "name": "节点_377_f93ded",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_378_25c675",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_379_d00a3f",
+            "type": "药材",
+            "attributes": 183,
+            "resources": []
+        },
+        {
+            "name": "节点_380_2fe8b3",
+            "type": "方剂",
+            "attributes": 174,
+            "resources": []
+        },
+        {
+            "name": "节点_381_5f03dd",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_382_02da02",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_383_5bca6a",
+            "type": "方剂",
+            "attributes": 24,
+            "resources": []
+        },
+        {
+            "name": "节点_384_984980",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_385_4a2432",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_386_a7ed52",
+            "type": "药理",
+            "attributes": 421,
+            "resources": []
+        },
+        {
+            "name": "节点_387_edac02",
+            "type": "中医概念",
+            "attributes": 711,
+            "resources": []
+        },
+        {
+            "name": "节点_388_1a9ba0",
+            "type": "疾病",
+            "attributes": 563,
+            "resources": []
+        },
+        {
+            "name": "节点_389_63cbff",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_390_4fe5b1",
+            "type": "药理",
+            "attributes": 460,
+            "resources": []
+        },
+        {
+            "name": "节点_391_7a9bbc",
+            "type": "方剂",
+            "attributes": 637,
+            "resources": []
+        },
+        {
+            "name": "节点_392_f14b1d",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_393_cdc2da",
+            "type": "药理",
+            "attributes": 265,
+            "resources": []
+        },
+        {
+            "name": "节点_394_14e064",
+            "type": "疾病",
+            "attributes": 489,
+            "resources": []
+        },
+        {
+            "name": "节点_395_344594",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_396_a01381",
+            "type": "药材",
+            "attributes": 518,
+            "resources": []
+        },
+        {
+            "name": "节点_397_f6a493",
+            "type": "方剂",
+            "attributes": 837,
+            "resources": []
+        },
+        {
+            "name": "节点_398_6211dc",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_399_6d1c98",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_400_6ce54c",
+            "type": "方剂",
+            "attributes": 15,
+            "resources": []
+        },
+        {
+            "name": "节点_401_ea3867",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_402_0b49dd",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_403_0ce5d9",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_404_ed54ce",
+            "type": "中医概念",
+            "attributes": 870,
+            "resources": []
+        },
+        {
+            "name": "节点_405_0be9c3",
+            "type": "疾病",
+            "attributes": 520,
+            "resources": []
+        },
+        {
+            "name": "节点_406_e2b535",
+            "type": "方剂",
+            "attributes": 473,
+            "resources": []
+        },
+        {
+            "name": "节点_407_a46ab5",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_408_22862a",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_409_2ae446",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_410_ef4bf9",
+            "type": "方剂",
+            "attributes": 200,
+            "resources": []
+        },
+        {
+            "name": "节点_411_0e75d6",
+            "type": "中医概念",
+            "attributes": 136,
+            "resources": []
+        },
+        {
+            "name": "节点_412_297893",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_413_5c9578",
+            "type": "药材",
+            "attributes": 408,
+            "resources": []
+        },
+        {
+            "name": "节点_414_5cac3c",
+            "type": "药材",
+            "attributes": 211,
+            "resources": []
+        },
+        {
+            "name": "节点_415_ee8834",
+            "type": "中医概念",
+            "attributes": 963,
+            "resources": []
+        },
+        {
+            "name": "节点_416_0f466f",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_417_88bb69",
+            "type": "方剂",
+            "attributes": 898,
+            "resources": []
+        },
+        {
+            "name": "节点_418_07ab22",
+            "type": "方剂",
+            "attributes": 690,
+            "resources": []
+        },
+        {
+            "name": "节点_419_52c280",
+            "type": "药理",
+            "attributes": 238,
+            "resources": []
+        },
+        {
+            "name": "节点_420_d91f5a",
+            "type": "药理",
+            "attributes": 954,
+            "resources": []
+        },
+        {
+            "name": "节点_421_eed989",
+            "type": "疾病",
+            "attributes": 661,
+            "resources": []
+        },
+        {
+            "name": "节点_422_3dc288",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_423_fe3ab7",
+            "type": "药理",
+            "attributes": 580,
+            "resources": []
+        },
+        {
+            "name": "节点_424_fdbe1c",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_425_002761",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_426_5d46eb",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_427_9ef338",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_428_540b10",
+            "type": "方剂",
+            "attributes": 521,
+            "resources": []
+        },
+        {
+            "name": "节点_429_f243d5",
+            "type": "药理",
+            "attributes": 955,
+            "resources": []
+        },
+        {
+            "name": "节点_430_1795cc",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_431_46654a",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_432_566bb5",
+            "type": "中医概念",
+            "attributes": 173,
+            "resources": []
+        },
+        {
+            "name": "节点_433_b7f976",
+            "type": "药材",
+            "attributes": 881,
+            "resources": []
+        },
+        {
+            "name": "节点_434_aad3cd",
+            "type": "中医概念",
+            "attributes": 312,
+            "resources": []
+        },
+        {
+            "name": "节点_435_6ff1df",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_436_9c5707",
+            "type": "中医概念",
+            "attributes": 170,
+            "resources": []
+        },
+        {
+            "name": "节点_437_12b445",
+            "type": "中医概念",
+            "attributes": 757,
+            "resources": []
+        },
+        {
+            "name": "节点_438_2aef24",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_439_14d11b",
+            "type": "药材",
+            "attributes": 285,
+            "resources": []
+        },
+        {
+            "name": "节点_440_8f6742",
+            "type": "药理",
+            "attributes": 536,
+            "resources": []
+        },
+        {
+            "name": "节点_441_721b3c",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_442_8b4713",
+            "type": "药理",
+            "attributes": 177,
+            "resources": []
+        },
+        {
+            "name": "节点_443_9ac172",
+            "type": "药材",
+            "attributes": 305,
+            "resources": []
+        },
+        {
+            "name": "节点_444_02c276",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_445_0ed8f3",
+            "type": "方剂",
+            "attributes": 813,
+            "resources": []
+        },
+        {
+            "name": "节点_446_34c876",
+            "type": "药理",
+            "attributes": 558,
+            "resources": []
+        },
+        {
+            "name": "节点_447_49e095",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_448_2db0a2",
+            "type": "药材",
+            "attributes": 189,
+            "resources": []
+        },
+        {
+            "name": "节点_449_e136c5",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_450_4f9e1b",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_451_e45e26",
+            "type": "药材",
+            "attributes": 585,
+            "resources": []
+        },
+        {
+            "name": "节点_452_b8333f",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_453_0bccc6",
+            "type": "疾病",
+            "attributes": 391,
+            "resources": []
+        },
+        {
+            "name": "节点_454_a2b0b4",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_455_7349fc",
+            "type": "中医概念",
+            "attributes": 564,
+            "resources": []
+        },
+        {
+            "name": "节点_456_c68d77",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_457_cf2512",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_458_b51cd9",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_459_74b0c2",
+            "type": "方剂",
+            "attributes": 101,
+            "resources": []
+        },
+        {
+            "name": "节点_460_121e11",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_461_f9bb83",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_462_6f1bf3",
+            "type": "疾病",
+            "attributes": 649,
+            "resources": []
+        },
+        {
+            "name": "节点_463_e05133",
+            "type": "方剂",
+            "attributes": 744,
+            "resources": []
+        },
+        {
+            "name": "节点_464_bb1c6e",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_465_aababc",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_466_692d2b",
+            "type": "疾病",
+            "attributes": 42,
+            "resources": []
+        },
+        {
+            "name": "节点_467_6837ee",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_468_274013",
+            "type": "中医概念",
+            "attributes": 120,
+            "resources": []
+        },
+        {
+            "name": "节点_469_ac6e24",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_470_c67c1c",
+            "type": "药理",
+            "attributes": 998,
+            "resources": []
+        },
+        {
+            "name": "节点_471_6e166b",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_472_6c46fc",
+            "type": "方剂",
+            "attributes": 272,
+            "resources": []
+        },
+        {
+            "name": "节点_473_f81efc",
+            "type": "疾病",
+            "attributes": 173,
+            "resources": []
+        },
+        {
+            "name": "节点_474_1603ff",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_475_49f33e",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_476_5ba36c",
+            "type": "药理",
+            "attributes": 559,
+            "resources": []
+        },
+        {
+            "name": "节点_477_f953f2",
+            "type": "方剂",
+            "attributes": 332,
+            "resources": []
+        },
+        {
+            "name": "节点_478_c1e917",
+            "type": "疾病",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_479_12a15c",
+            "type": "疾病",
+            "attributes": 423,
+            "resources": []
+        },
+        {
+            "name": "节点_480_70a3f8",
+            "type": "疾病",
+            "attributes": 663,
+            "resources": []
+        },
+        {
+            "name": "节点_481_b35378",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_482_2d53ef",
+            "type": "药材",
+            "attributes": 796,
+            "resources": []
+        },
+        {
+            "name": "节点_483_9729fc",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_484_1253d8",
+            "type": "药理",
+            "attributes": 323,
+            "resources": []
+        },
+        {
+            "name": "节点_485_788334",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_486_13bf26",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_487_fe1824",
+            "type": "方剂",
+            "attributes": 201,
+            "resources": []
+        },
+        {
+            "name": "节点_488_0bddd5",
+            "type": "疾病",
+            "attributes": 127,
+            "resources": []
+        },
+        {
+            "name": "节点_489_243b7b",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_490_66d93c",
+            "type": "药材",
+            "attributes": 951,
+            "resources": []
+        },
+        {
+            "name": "节点_491_bd3986",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_492_017d30",
+            "type": "中医概念",
+            "attributes": 25,
+            "resources": []
+        },
+        {
+            "name": "节点_493_1cffcf",
+            "type": "方剂",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_494_018a10",
+            "type": "中医概念",
+            "attributes": 535,
+            "resources": []
+        },
+        {
+            "name": "节点_495_121e08",
+            "type": "药理",
+            "attributes": 451,
+            "resources": []
+        },
+        {
+            "name": "节点_496_307075",
+            "type": "药材",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_497_885609",
+            "type": "中医概念",
+            "attributes": 22,
+            "resources": []
+        },
+        {
+            "name": "节点_498_11bbd2",
+            "type": "药理",
+            "attributes": {},
+            "resources": []
+        },
+        {
+            "name": "节点_499_51ff5b",
+            "type": "中医概念",
+            "attributes": 191,
+            "resources": []
+        },
+        {
+            "name": "节点_500_440097",
+            "type": "中医概念",
+            "attributes": {},
+            "resources": []
+        }
+    ],
+    "edges": [
+        {
+            "source": "节点_172_af269a",
+            "target": "节点_33_cdc584",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_359_566634",
+            "target": "节点_13_59e6e9",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_380_2fe8b3",
+            "target": "节点_351_220f26",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_314_ce1918",
+            "target": "节点_409_2ae446",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_167_e00f1c",
+            "target": "节点_230_773e35",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_179_f7819e",
+            "target": "节点_414_5cac3c",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_200_8335d8",
+            "target": "节点_273_511937",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_98_6fbc95",
+            "target": "节点_33_cdc584",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_448_2db0a2",
+            "target": "节点_35_8f520c",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_194_fb89d0",
+            "target": "节点_212_2cee96",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_239_a04116",
+            "target": "节点_289_6abe6d",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_414_5cac3c",
+            "target": "节点_24_d385c2",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_421_eed989",
+            "target": "节点_471_6e166b",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_371_5057bf",
+            "target": "节点_202_ca2bc4",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_450_4f9e1b",
+            "target": "节点_195_522995",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_193_ef60f2",
+            "target": "节点_205_16a873",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_173_4d0b2c",
+            "target": "节点_487_fe1824",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_374_40dd61",
+            "target": "节点_107_d8ef47",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_132_b6528f",
+            "target": "节点_222_67849b",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_105_139e20",
+            "target": "节点_386_a7ed52",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_467_6837ee",
+            "target": "节点_402_0b49dd",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_99_918efc",
+            "target": "节点_216_e1c4e6",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_139_fefcf2",
+            "target": "节点_307_1e723e",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_99_918efc",
+            "target": "节点_264_34e23a",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_212_2cee96",
+            "target": "节点_343_023a7f",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_224_35d306",
+            "target": "节点_36_55fd2a",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_90_cf82d7",
+            "target": "节点_215_8e1dd2",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_120_0cbd84",
+            "target": "节点_285_bed660",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_142_4a6266",
+            "target": "节点_187_7e3eac",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_433_b7f976",
+            "target": "节点_127_fa376e",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_96_990251",
+            "target": "节点_379_d00a3f",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_325_035844",
+            "target": "节点_141_681194",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_47_dd5c7b",
+            "target": "节点_168_340028",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_280_51c31f",
+            "target": "节点_315_4b09dd",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_152_9fbcbe",
+            "target": "节点_13_59e6e9",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_260_d056e6",
+            "target": "节点_58_82c8f7",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_187_7e3eac",
+            "target": "节点_95_b75eb1",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_232_2685e1",
+            "target": "节点_205_16a873",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_133_46fb2e",
+            "target": "节点_465_aababc",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_37_4fdda2",
+            "target": "节点_141_681194",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_276_3569e3",
+            "target": "节点_194_fb89d0",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_280_51c31f",
+            "target": "节点_356_c39380",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_488_0bddd5",
+            "target": "节点_408_22862a",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_481_b35378",
+            "target": "节点_383_5bca6a",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_124_29ba25",
+            "target": "节点_213_846cc9",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_37_4fdda2",
+            "target": "节点_174_aa3c84",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_69_b22d7f",
+            "target": "节点_388_1a9ba0",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_301_10b36c",
+            "target": "节点_300_05f3f0",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_450_4f9e1b",
+            "target": "节点_101_26aa31",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_369_bc347f",
+            "target": "节点_423_fe3ab7",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_329_745f96",
+            "target": "节点_348_155d1f",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_314_ce1918",
+            "target": "节点_337_a684f6",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_465_aababc",
+            "target": "节点_398_6211dc",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_211_c0947b",
+            "target": "节点_138_5fc29d",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_306_2c73e7",
+            "target": "节点_133_46fb2e",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_381_5f03dd",
+            "target": "节点_435_6ff1df",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_301_10b36c",
+            "target": "节点_373_ad7c79",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_133_46fb2e",
+            "target": "节点_373_ad7c79",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_6_b02c5d",
+            "target": "节点_106_e41715",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_41_8661bb",
+            "target": "节点_174_aa3c84",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_35_8f520c",
+            "target": "节点_354_65678b",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_435_6ff1df",
+            "target": "节点_461_f9bb83",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_385_4a2432",
+            "target": "节点_259_03b93a",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_130_1ad2a7",
+            "target": "节点_107_d8ef47",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_411_0e75d6",
+            "target": "节点_173_4d0b2c",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_222_67849b",
+            "target": "节点_462_6f1bf3",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_447_49e095",
+            "target": "节点_119_cda8bb",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_332_c52f4c",
+            "target": "节点_57_2ec39a",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_478_c1e917",
+            "target": "节点_464_bb1c6e",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_171_4432fc",
+            "target": "节点_269_28f902",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_259_03b93a",
+            "target": "节点_428_540b10",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_423_fe3ab7",
+            "target": "节点_387_edac02",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_139_fefcf2",
+            "target": "节点_226_3dc0ed",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_172_af269a",
+            "target": "节点_83_88cf6a",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_311_3d621a",
+            "target": "节点_92_cba943",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_446_34c876",
+            "target": "节点_456_c68d77",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_241_28833a",
+            "target": "节点_80_b518ba",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_388_1a9ba0",
+            "target": "节点_329_745f96",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_249_f244be",
+            "target": "节点_182_cdb42b",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_413_5c9578",
+            "target": "节点_499_51ff5b",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_55_a7c353",
+            "target": "节点_178_65f364",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_246_6aa1b9",
+            "target": "节点_324_3a2725",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_133_46fb2e",
+            "target": "节点_227_58f61d",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_286_432509",
+            "target": "节点_392_f14b1d",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_126_218b65",
+            "target": "节点_123_c97f27",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_36_55fd2a",
+            "target": "节点_17_5bb270",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_241_28833a",
+            "target": "节点_266_7fb64c",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_68_b9af7f",
+            "target": "节点_354_65678b",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_31_22090e",
+            "target": "节点_366_617f58",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_3_11503d",
+            "target": "节点_145_d20472",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_403_0ce5d9",
+            "target": "节点_265_4417e0",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_418_07ab22",
+            "target": "节点_63_baacd8",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_178_65f364",
+            "target": "节点_408_22862a",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_311_3d621a",
+            "target": "节点_301_10b36c",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_221_4496f0",
+            "target": "节点_396_a01381",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_32_33040e",
+            "target": "节点_325_035844",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_386_a7ed52",
+            "target": "节点_70_d93b98",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_213_846cc9",
+            "target": "节点_150_4673eb",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_64_39447c",
+            "target": "节点_498_11bbd2",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_292_52358f",
+            "target": "节点_37_4fdda2",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_375_1bc801",
+            "target": "节点_442_8b4713",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_219_8ee7ab",
+            "target": "节点_469_ac6e24",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_227_58f61d",
+            "target": "节点_492_017d30",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_438_2aef24",
+            "target": "节点_279_f45229",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_267_436558",
+            "target": "节点_384_984980",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_181_0a7148",
+            "target": "节点_135_99b71a",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_99_918efc",
+            "target": "节点_334_07e676",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_500_440097",
+            "target": "节点_85_ee9952",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_364_6042b5",
+            "target": "节点_380_2fe8b3",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_373_ad7c79",
+            "target": "节点_320_815e66",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_36_55fd2a",
+            "target": "节点_414_5cac3c",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_70_d93b98",
+            "target": "节点_284_a4ead7",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_4_0cddd4",
+            "target": "节点_304_98ec6b",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_481_b35378",
+            "target": "节点_486_13bf26",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_17_5bb270",
+            "target": "节点_355_7d0c5e",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_200_8335d8",
+            "target": "节点_48_393c08",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_342_ab8755",
+            "target": "节点_289_6abe6d",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_177_b57780",
+            "target": "节点_482_2d53ef",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_72_d40f0f",
+            "target": "节点_391_7a9bbc",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_464_bb1c6e",
+            "target": "节点_248_063713",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_306_2c73e7",
+            "target": "节点_446_34c876",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_299_f94f5b",
+            "target": "节点_135_99b71a",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_27_ae0cae",
+            "target": "节点_140_b37048",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_429_f243d5",
+            "target": "节点_56_35c5c6",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_40_a78597",
+            "target": "节点_208_4c69bb",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_183_de8ebb",
+            "target": "节点_437_12b445",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_101_26aa31",
+            "target": "节点_116_23e473",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_272_6d6d34",
+            "target": "节点_396_a01381",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_356_c39380",
+            "target": "节点_58_82c8f7",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_115_8c8c13",
+            "target": "节点_492_017d30",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_90_cf82d7",
+            "target": "节点_69_b22d7f",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_183_de8ebb",
+            "target": "节点_44_5416a2",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_288_7ce85e",
+            "target": "节点_308_97dee2",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_36_55fd2a",
+            "target": "节点_48_393c08",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_141_681194",
+            "target": "节点_220_c668ba",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_393_cdc2da",
+            "target": "节点_67_49bdb3",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_454_a2b0b4",
+            "target": "节点_176_aca082",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_279_f45229",
+            "target": "节点_94_ec2ef9",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_59_24f585",
+            "target": "节点_349_38553e",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_388_1a9ba0",
+            "target": "节点_361_9d9f26",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_349_38553e",
+            "target": "节点_388_1a9ba0",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_406_e2b535",
+            "target": "节点_127_fa376e",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_455_7349fc",
+            "target": "节点_108_b6b5a7",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_454_a2b0b4",
+            "target": "节点_333_0515ba",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_35_8f520c",
+            "target": "节点_69_b22d7f",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_383_5bca6a",
+            "target": "节点_209_fb857f",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_250_c83dbf",
+            "target": "节点_141_681194",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_168_340028",
+            "target": "节点_463_e05133",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_379_d00a3f",
+            "target": "节点_312_bb1f89",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_189_c98465",
+            "target": "节点_368_818e9c",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_218_935036",
+            "target": "节点_473_f81efc",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_88_b552e4",
+            "target": "节点_361_9d9f26",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_118_3906c4",
+            "target": "节点_50_6ada09",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_115_8c8c13",
+            "target": "节点_305_00cdeb",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_316_977b35",
+            "target": "节点_404_ed54ce",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_474_1603ff",
+            "target": "节点_82_0c78bf",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_6_b02c5d",
+            "target": "节点_392_f14b1d",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_40_a78597",
+            "target": "节点_148_ca05c7",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_280_51c31f",
+            "target": "节点_366_617f58",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_115_8c8c13",
+            "target": "节点_324_3a2725",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_209_fb857f",
+            "target": "节点_286_432509",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_404_ed54ce",
+            "target": "节点_169_971346",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_412_297893",
+            "target": "节点_406_e2b535",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_409_2ae446",
+            "target": "节点_314_ce1918",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_130_1ad2a7",
+            "target": "节点_106_e41715",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_372_40e7ed",
+            "target": "节点_309_efd99c",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_381_5f03dd",
+            "target": "节点_485_788334",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_356_c39380",
+            "target": "节点_220_c668ba",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_247_191c05",
+            "target": "节点_437_12b445",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_283_3ae03b",
+            "target": "节点_327_24bed4",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_454_a2b0b4",
+            "target": "节点_495_121e08",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_168_340028",
+            "target": "节点_423_fe3ab7",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_273_511937",
+            "target": "节点_339_1d6fd0",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_140_b37048",
+            "target": "节点_6_b02c5d",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_123_c97f27",
+            "target": "节点_412_297893",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_135_99b71a",
+            "target": "节点_97_9da78f",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_69_b22d7f",
+            "target": "节点_91_8f6fa7",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_81_708c0c",
+            "target": "节点_488_0bddd5",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_490_66d93c",
+            "target": "节点_187_7e3eac",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_28_332cbd",
+            "target": "节点_214_ef5d93",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_299_f94f5b",
+            "target": "节点_496_307075",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_174_aa3c84",
+            "target": "节点_267_436558",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_233_f9a4cb",
+            "target": "节点_253_0486ee",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_355_7d0c5e",
+            "target": "节点_454_a2b0b4",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_303_08b086",
+            "target": "节点_129_292e41",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_4_0cddd4",
+            "target": "节点_316_977b35",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_371_5057bf",
+            "target": "节点_96_990251",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_318_803085",
+            "target": "节点_171_4432fc",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_76_e04e68",
+            "target": "节点_6_b02c5d",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_463_e05133",
+            "target": "节点_274_10f384",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_182_cdb42b",
+            "target": "节点_215_8e1dd2",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_478_c1e917",
+            "target": "节点_111_633984",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_117_905cf5",
+            "target": "节点_13_59e6e9",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_94_ec2ef9",
+            "target": "节点_34_5b18ca",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_3_11503d",
+            "target": "节点_331_2dd37d",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_477_f953f2",
+            "target": "节点_486_13bf26",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_238_c9d354",
+            "target": "节点_400_6ce54c",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_262_67dc2c",
+            "target": "节点_189_c98465",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_138_5fc29d",
+            "target": "节点_43_743870",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_328_cb7bbe",
+            "target": "节点_71_affe85",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_86_b8753c",
+            "target": "节点_320_815e66",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_201_f1a624",
+            "target": "节点_415_ee8834",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_357_cf7f76",
+            "target": "节点_20_d8d576",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_131_307894",
+            "target": "节点_318_803085",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_360_3dea44",
+            "target": "节点_102_084bc8",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_367_49b005",
+            "target": "节点_470_c67c1c",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_94_ec2ef9",
+            "target": "节点_239_a04116",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_393_cdc2da",
+            "target": "节点_330_77a1de",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_232_2685e1",
+            "target": "节点_466_692d2b",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_231_46866c",
+            "target": "节点_228_b20e21",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_254_fdb793",
+            "target": "节点_316_977b35",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_72_d40f0f",
+            "target": "节点_175_1a3c3d",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_175_1a3c3d",
+            "target": "节点_466_692d2b",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_299_f94f5b",
+            "target": "节点_370_657339",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_454_a2b0b4",
+            "target": "节点_271_b4c9af",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_439_14d11b",
+            "target": "节点_163_6f3abd",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_461_f9bb83",
+            "target": "节点_304_98ec6b",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_423_fe3ab7",
+            "target": "节点_191_e7b511",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_61_de08d3",
+            "target": "节点_234_60e92f",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_396_a01381",
+            "target": "节点_150_4673eb",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_323_6b39ee",
+            "target": "节点_437_12b445",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_222_67849b",
+            "target": "节点_393_cdc2da",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_405_0be9c3",
+            "target": "节点_355_7d0c5e",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_197_d00c10",
+            "target": "节点_230_773e35",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_119_cda8bb",
+            "target": "节点_432_566bb5",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_162_a21c1f",
+            "target": "节点_197_d00c10",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_101_26aa31",
+            "target": "节点_82_0c78bf",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_459_74b0c2",
+            "target": "节点_407_a46ab5",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_315_4b09dd",
+            "target": "节点_186_e593a7",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_115_8c8c13",
+            "target": "节点_143_ad015a",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_280_51c31f",
+            "target": "节点_168_340028",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_316_977b35",
+            "target": "节点_159_f8b26a",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_276_3569e3",
+            "target": "节点_480_70a3f8",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_404_ed54ce",
+            "target": "节点_181_0a7148",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_138_5fc29d",
+            "target": "节点_238_c9d354",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_301_10b36c",
+            "target": "节点_103_cde3dc",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_123_c97f27",
+            "target": "节点_367_49b005",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_219_8ee7ab",
+            "target": "节点_306_2c73e7",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_368_818e9c",
+            "target": "节点_485_788334",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_139_fefcf2",
+            "target": "节点_54_8c9a55",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_489_243b7b",
+            "target": "节点_360_3dea44",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_493_1cffcf",
+            "target": "节点_92_cba943",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_96_990251",
+            "target": "节点_322_51354d",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_76_e04e68",
+            "target": "节点_210_4b075e",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_215_8e1dd2",
+            "target": "节点_110_133a27",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_137_f09418",
+            "target": "节点_303_08b086",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_256_e86902",
+            "target": "节点_443_9ac172",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_19_6d639a",
+            "target": "节点_117_905cf5",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_283_3ae03b",
+            "target": "节点_496_307075",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_445_0ed8f3",
+            "target": "节点_149_c6aa15",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_214_ef5d93",
+            "target": "节点_396_a01381",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_105_139e20",
+            "target": "节点_405_0be9c3",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_99_918efc",
+            "target": "节点_175_1a3c3d",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_9_67e6bf",
+            "target": "节点_411_0e75d6",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_228_b20e21",
+            "target": "节点_211_c0947b",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_249_f244be",
+            "target": "节点_268_388bfb",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_121_269ee4",
+            "target": "节点_36_55fd2a",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_260_d056e6",
+            "target": "节点_347_f1af98",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_286_432509",
+            "target": "节点_22_36abbf",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_11_414980",
+            "target": "节点_271_b4c9af",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_314_ce1918",
+            "target": "节点_39_188879",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_326_66119d",
+            "target": "节点_66_cf4c75",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_439_14d11b",
+            "target": "节点_143_ad015a",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_186_e593a7",
+            "target": "节点_16_19cf9b",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_170_6a2947",
+            "target": "节点_120_0cbd84",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_147_a0473c",
+            "target": "节点_455_7349fc",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_259_03b93a",
+            "target": "节点_212_2cee96",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_149_c6aa15",
+            "target": "节点_376_3b2c72",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_122_07cf7f",
+            "target": "节点_90_cf82d7",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_482_2d53ef",
+            "target": "节点_273_511937",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_143_ad015a",
+            "target": "节点_433_b7f976",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_432_566bb5",
+            "target": "节点_409_2ae446",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_192_6cdca1",
+            "target": "节点_308_97dee2",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_149_c6aa15",
+            "target": "节点_179_f7819e",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_314_ce1918",
+            "target": "节点_456_c68d77",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_378_25c675",
+            "target": "节点_437_12b445",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_368_818e9c",
+            "target": "节点_40_a78597",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_124_29ba25",
+            "target": "节点_103_cde3dc",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_197_d00c10",
+            "target": "节点_245_21a152",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_276_3569e3",
+            "target": "节点_146_cfabe5",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_201_f1a624",
+            "target": "节点_245_21a152",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_58_82c8f7",
+            "target": "节点_227_58f61d",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_499_51ff5b",
+            "target": "节点_489_243b7b",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_389_63cbff",
+            "target": "节点_342_ab8755",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_181_0a7148",
+            "target": "节点_425_002761",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_222_67849b",
+            "target": "节点_251_59a3ee",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_134_f0c13e",
+            "target": "节点_464_bb1c6e",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_277_5ab8af",
+            "target": "节点_391_7a9bbc",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_463_e05133",
+            "target": "节点_303_08b086",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_13_59e6e9",
+            "target": "节点_262_67dc2c",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_80_b518ba",
+            "target": "节点_50_6ada09",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_128_279492",
+            "target": "节点_39_188879",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_33_cdc584",
+            "target": "节点_291_7049af",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_41_8661bb",
+            "target": "节点_157_597035",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_48_393c08",
+            "target": "节点_448_2db0a2",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_449_e136c5",
+            "target": "节点_176_aca082",
+            "relation_type": "主导",
+            "resources": []
+        },
+        {
+            "source": "节点_460_121e11",
+            "target": "节点_4_0cddd4",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_307_1e723e",
+            "target": "节点_434_aad3cd",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_468_274013",
+            "target": "节点_169_971346",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_116_23e473",
+            "target": "节点_93_56228a",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_198_545868",
+            "target": "节点_277_5ab8af",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_12_f97d11",
+            "target": "节点_65_bc6f6e",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_285_bed660",
+            "target": "节点_194_fb89d0",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_199_ea0775",
+            "target": "节点_424_fdbe1c",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_359_566634",
+            "target": "节点_312_bb1f89",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_222_67849b",
+            "target": "节点_21_16f198",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_487_fe1824",
+            "target": "节点_11_414980",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_420_d91f5a",
+            "target": "节点_255_00f895",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_272_6d6d34",
+            "target": "节点_288_7ce85e",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_489_243b7b",
+            "target": "节点_51_ffc22b",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_370_657339",
+            "target": "节点_439_14d11b",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_283_3ae03b",
+            "target": "节点_224_35d306",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_44_5416a2",
+            "target": "节点_139_fefcf2",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_182_cdb42b",
+            "target": "节点_102_084bc8",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_278_68d5b4",
+            "target": "节点_144_68da44",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_348_155d1f",
+            "target": "节点_318_803085",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_354_65678b",
+            "target": "节点_416_0f466f",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_71_affe85",
+            "target": "节点_352_e3e362",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_194_fb89d0",
+            "target": "节点_164_6d0ec8",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_417_88bb69",
+            "target": "节点_241_28833a",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_83_88cf6a",
+            "target": "节点_320_815e66",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_70_d93b98",
+            "target": "节点_286_432509",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_61_de08d3",
+            "target": "节点_92_cba943",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_381_5f03dd",
+            "target": "节点_13_59e6e9",
+            "relation_type": "克",
+            "resources": []
+        },
+        {
+            "source": "节点_211_c0947b",
+            "target": "节点_422_3dc288",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_256_e86902",
+            "target": "节点_281_fb4b38",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_257_113d8b",
+            "target": "节点_60_542f82",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_235_7ccc4a",
+            "target": "节点_184_3b60a9",
+            "relation_type": "包含",
+            "resources": []
+        },
+        {
+            "source": "节点_417_88bb69",
+            "target": "节点_401_ea3867",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_9_67e6bf",
+            "target": "节点_353_8164fe",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_94_ec2ef9",
+            "target": "节点_229_bd1c04",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_302_48b08b",
+            "target": "节点_60_542f82",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_24_d385c2",
+            "target": "节点_151_c3269a",
+            "relation_type": "对应",
+            "resources": []
+        },
+        {
+            "source": "节点_384_984980",
+            "target": "节点_334_07e676",
+            "relation_type": "分布于",
+            "resources": []
+        },
+        {
+            "source": "节点_286_432509",
+            "target": "节点_373_ad7c79",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_314_ce1918",
+            "target": "节点_146_cfabe5",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_26_26c74d",
+            "target": "节点_153_960be6",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_236_e7fcba",
+            "target": "节点_271_b4c9af",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_156_65ee05",
+            "target": "节点_224_35d306",
+            "relation_type": "生",
+            "resources": []
+        },
+        {
+            "source": "节点_299_f94f5b",
+            "target": "节点_291_7049af",
+            "relation_type": "产生",
+            "resources": []
+        },
+        {
+            "source": "节点_154_894d57",
+            "target": "节点_326_66119d",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_419_52c280",
+            "target": "节点_481_b35378",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_446_34c876",
+            "target": "节点_210_4b075e",
+            "relation_type": "成",
+            "resources": []
+        },
+        {
+            "source": "节点_452_b8333f",
+            "target": "节点_38_34f40b",
+            "relation_type": "治法",
+            "resources": []
+        },
+        {
+            "source": "节点_229_bd1c04",
+            "target": "节点_155_d733ed",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_206_9c6928",
+            "target": "节点_243_a1ad9a",
+            "relation_type": "中气为",
+            "resources": []
+        },
+        {
+            "source": "节点_303_08b086",
+            "target": "节点_226_3dc0ed",
+            "relation_type": "方剂组成包含",
+            "resources": []
+        },
+        {
+            "source": "节点_150_4673eb",
+            "target": "节点_312_bb1f89",
+            "relation_type": "等同于",
+            "resources": []
+        },
+        {
+            "source": "节点_369_bc347f",
+            "target": "节点_90_cf82d7",
+            "relation_type": "承气为",
+            "resources": []
+        },
+        {
+            "source": "节点_163_6f3abd",
+            "target": "节点_396_a01381",
+            "relation_type": "承气为",
+            "resources": []
+        }
+    ]
+}
