@@ -114,15 +114,14 @@ class PluginManager(QObject):
             self.plugins.remove(plugin)
             self.plugins_updated.emit()
 
-    def run_plugin(self, plugin_name: str):
-        """执行插件主逻辑"""
+
+    def run_plugin(self, plugin_name: str, parent=None):
         plugin = self.get_plugin(plugin_name)
         if not plugin or not plugin.enabled:
             raise PluginLoadError("插件未启用或不存在")
-
         try:
             if hasattr(plugin.instance, 'run'):
-                return plugin.instance.run()
+                return plugin.instance.run(parent=parent)  # 透传给插件实例
             raise PluginLoadError("插件缺少run方法")
         except Exception as e:
             raise PluginLoadError(f"执行插件失败: {str(e)}") from e
