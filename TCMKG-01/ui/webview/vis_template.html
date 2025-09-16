@@ -76,6 +76,7 @@
         var pyObj = null;
         var nodes = null;
         var edges = null;
+        var isInitialized = false;
         
         // 计算网格布局位置
         function calculateGridPositions(nodeCount) {{
@@ -120,6 +121,215 @@
             return preparedNodes;
         }}
         
+        // 【新增】增量更新所有数据（保持布局）
+        window.updateGraphData = function(newNodes, newEdges) {{
+            if (!network || !isInitialized) {{
+                console.warn('网络未初始化，无法更新数据');
+                return;
+            }}
+            
+            try {{
+                // 保存当前节点位置
+                var currentPositions = network.getPositions();
+                
+                // 准备新节点，保持现有位置
+                var updatedNodes = newNodes.map(function(node) {{
+                    var existingPos = currentPositions[node.id];
+                    if (existingPos) {{
+                        node.x = existingPos.x;
+                        node.y = existingPos.y;
+                    }} else {{
+                        // 为新节点分配位置
+                        var nodeCount = Object.keys(currentPositions).length;
+                        var angle = (nodeCount * 0.618) * 2 * Math.PI; // 黄金角度分布
+                        var radius = Math.sqrt(nodeCount) * 50;
+                        node.x = radius * Math.cos(angle);
+                        node.y = radius * Math.sin(angle);
+                    }}
+                    node.physics = false;
+                    node.fixed = {{ x: false, y: false }};
+                    return node;
+                }});
+                
+                // 更新数据集
+                nodes.clear();
+                edges.clear();
+                nodes.add(updatedNodes);
+                edges.add(newEdges);
+                
+                updateStatus('数据已更新，布局保持不变');
+                console.log('数据更新完成，节点数量:', updatedNodes.length, '边数量:', newEdges.length);
+                
+            }} catch(e) {{
+                console.error('更新数据失败:', e);
+                updateStatus('数据更新失败');
+            }}
+        }};
+        
+        // 【新增】增量添加节点
+        window.addNodeIncremental = function(nodeData) {{
+            if (!network || !isInitialized) {{
+                console.warn('网络未初始化，无法添加节点');
+                return;
+            }}
+            
+            try {{
+                // 为新节点分配位置（避免重叠）
+                var existingPositions = network.getPositions();
+                var existingIds = Object.keys(existingPositions);
+                
+                // 找到合适的位置
+                var newX = 0, newY = 0;
+                if (existingIds.length > 0) {{
+                    // 使用黄金角度螺旋分布
+                    var angle = (existingIds.length * 0.618) * 2 * Math.PI;
+                    var radius = Math.sqrt(existingIds.length) * 80;
+                    newX = radius * Math.cos(angle);
+                    newY = radius * Math.sin(angle);
+                }}
+                
+                nodeData.x = newX;
+                nodeData.y = newY;
+                nodeData.physics = false;
+                nodeData.fixed = {{ x: false, y: false }};
+                
+                nodes.add(nodeData);
+                updateStatus('节点已添加: ' + nodeData.label);
+                
+            }} catch(e) {{
+                console.error('添加节点失败:', e);
+                updateStatus('添加节点失败');
+            }}
+        }};
+        
+        // 【新增】增量添加边
+        window.addEdgeIncremental = function(edgeData) {{
+            if (!network || !isInitialized) {{
+                console.warn('网络未初始化，无法添加边');
+                return;
+            }}
+            
+            try {{
+                edges.add(edgeData);
+                updateStatus('关系已添加: ' + edgeData.from + ' -> ' + edgeData.to);
+                
+            }} catch(e) {{
+                console.error('添加边失败:', e);
+                updateStatus('添加边失败');
+            }}
+        }};
+        
+        // 【新增】增量删除节点
+        window.removeNodeIncremental = function(nodeId) {{
+            if (!network || !isInitialized) {{
+                console.warn('网络未初始化，无法删除节点');
+                return;
+            }}
+            
+            try {{
+                nodes.remove(nodeId);
+                updateStatus('节点已删除: ' + nodeId);
+                
+            }} catch(e) {{
+                console.error('删除节点失败:', e);
+                updateStatus('删除节点失败');
+            }}
+        }};
+        
+        // 【新增】增量删除边
+        window.removeEdgeIncremental = function(source, target) {{
+            if (!network || !isInitialized) {{
+                console.warn('网络未初始化，无法删除边');
+                return;
+            }}
+            
+            try {{
+                // 找到对应的边ID
+                var allEdges = edges.get();
+                var edgeToRemove = allEdges.find(function(edge) {{
+                    return edge.from === source && edge.to === target;
+                }});
+                
+                if (edgeToRemove) {{
+                    edges.remove(edgeToRemove.id);
+                    updateStatus('关系已删除: ' + source + ' -> ' + target);
+                }} else {{
+                    console.warn('未找到要删除的边:', source, '->', target);
+                }}
+                
+            }} catch(e) {{
+                console.error('删除边失败:', e);
+                updateStatus('删除边失败');
+            }}
+        }};
+        
+        // 【新增】增量更新节点
+        window.updateNodeIncremental = function(nodeId, newData) {{
+            if (!network || !isInitialized) {{
+                console.warn('网络未初始化，无法更新节点');
+                return;
+            }}
+            
+            try {{
+                var currentNode = nodes.get(nodeId);
+                if (currentNode) {{
+                    // 保持当前位置
+                    var currentPos = network.getPositions()[nodeId];
+                    if (currentPos) {{
+                        newData.x = currentPos.x;
+                        newData.y = currentPos.y;
+                    }}
+                    newData.physics = false;
+                    newData.fixed = {{ x: false, y: false }};
+                    
+                    // 如果节点名称改变，需要更新ID
+                    if (newData.new_name && newData.new_name !== nodeId) {{
+                        nodes.remove(nodeId);
+                        newData.id = newData.new_name;
+                        newData.label = newData.new_name;
+                        nodes.add(newData);
+                        updateStatus('节点已重命名: ' + nodeId + ' -> ' + newData.new_name);
+                    }} else {{
+                        nodes.update(newData);
+                        updateStatus('节点已更新: ' + nodeId);
+                    }}
+                }} else {{
+                    console.warn('未找到要更新的节点:', nodeId);
+                }}
+                
+            }} catch(e) {{
+                console.error('更新节点失败:', e);
+                updateStatus('更新节点失败');
+            }}
+        }};
+        
+        // 【新增】增量更新边
+        window.updateEdgeIncremental = function(source, target, newLabel) {{
+            if (!network || !isInitialized) {{
+                console.warn('网络未初始化，无法更新边');
+                return;
+            }}
+            
+            try {{
+                var allEdges = edges.get();
+                var edgeToUpdate = allEdges.find(function(edge) {{
+                    return edge.from === source && edge.to === target;
+                }});
+                
+                if (edgeToUpdate) {{
+                    edgeToUpdate.label = newLabel;
+                    edges.update(edgeToUpdate);
+                    updateStatus('关系已更新: ' + source + ' -> ' + target + ' (' + newLabel + ')');
+                }} else {{
+                    console.warn('未找到要更新的边:', source, '->', target);
+                }}
+                
+            }} catch(e) {{
+                console.error('更新边失败:', e);
+                updateStatus('更新边失败');
+            }}
+        }};
+        
         // 保存当前布局
         function saveLayout() {{
             if (!network) {{
@@ -150,14 +360,21 @@
                 }}
                 
                 // 使用网格布局重新排列节点
-                var positions = calculateGridPositions(rawNodesData.length);
-                var nodeUpdates = [];
+                var nodeIds = nodes.getIds();
+                var nodeCount = nodeIds.length;
+                var cols = Math.ceil(Math.sqrt(nodeCount));
+                var spacing = 150;
+                var startX = -(cols - 1) * spacing / 2;
+                var startY = -(Math.ceil(nodeCount / cols) - 1) * spacing / 2;
                 
-                Object.keys(positions).forEach(function(nodeId) {{
+                var nodeUpdates = [];
+                nodeIds.forEach(function(nodeId, index) {{
+                    var row = Math.floor(index / cols);
+                    var col = index % cols;
                     nodeUpdates.push({{
                         id: nodeId,
-                        x: positions[nodeId].x,
-                        y: positions[nodeId].y,
+                        x: startX + col * spacing,
+                        y: startY + row * spacing,
                         physics: false
                     }});
                 }});
@@ -182,16 +399,17 @@
             }}
             
             try {{
-                var nodeCount = rawNodesData.length;
+                var nodeIds = nodes.getIds();
+                var nodeCount = nodeIds.length;
                 if (nodeCount > 0) {{
                     var radius = Math.max(200, nodeCount * 30);
                     var angleStep = (2 * Math.PI) / nodeCount;
                     
                     var nodeUpdates = [];
-                    rawNodesData.forEach(function(node, index) {{
+                    nodeIds.forEach(function(nodeId, index) {{
                         var angle = index * angleStep;
                         nodeUpdates.push({{
-                            id: node.id,
+                            id: nodeId,
                             x: radius * Math.cos(angle),
                             y: radius * Math.sin(angle),
                             physics: false
@@ -451,6 +669,7 @@
                     }}
                 }});
                 
+                isInitialized = true;
                 updateStatus('图谱初始化完成，可以拖动节点');
                 console.log('网络已创建，节点数量:', nodes.length, '边数量:', edges.length);
                 
