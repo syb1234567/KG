@@ -33,7 +33,11 @@ class Bridge(QObject):
                 node_type = node["type"]
                 attributes = node.get("attributes", {})
                 self.graph_manager.add_node(name, node_type, attributes)
-                self.update_callback()  # 刷新图谱显示
+                
+                # 使用增量更新而不是完全重新渲染
+                if hasattr(self, 'web_view') and self.web_view:
+                    self.web_view.add_node_incrementally(node)
+                
                 print(f"创建节点成功: {name}")
             else:
                 print("创建节点时数据不完整")
@@ -50,7 +54,11 @@ class Bridge(QObject):
                 target = edge["to"]
                 relation_type = edge["label"]
                 self.graph_manager.add_relationship(source, target, relation_type)
-                self.update_callback()
+                
+                # 使用增量更新而不是完全重新渲染
+                if hasattr(self, 'web_view') and self.web_view:
+                    self.web_view.add_edge_incrementally(edge)
+                
                 print(f"创建关系成功: {source} -> {target} ({relation_type})")
             else:
                 print("创建边时数据不完整")
@@ -63,7 +71,11 @@ class Bridge(QObject):
         try:
             if self.graph_manager.has_node(node_name):
                 self.graph_manager.delete_node(node_name)
-                self.update_callback()  # 刷新图谱显示
+                
+                # 使用增量更新
+                if hasattr(self, 'web_view') and self.web_view:
+                    self.web_view.remove_node_incrementally(node_name)
+                
                 print(f"删除节点成功: {node_name}")
             else:
                 print(f"节点不存在: {node_name}")
@@ -79,7 +91,11 @@ class Bridge(QObject):
                 source = edge["source"]
                 target = edge["target"]
                 self.graph_manager.delete_relationship(source, target)
-                self.update_callback()  # 刷新图谱显示
+                
+                # 使用增量更新
+                if hasattr(self, 'web_view') and self.web_view:
+                    self.web_view.remove_edge_incrementally(source, target)
+                
                 print(f"删除关系成功: {source} -> {target}")
             else:
                 print("删除边时数据不完整")
@@ -128,14 +144,22 @@ class Bridge(QObject):
                             self.graph_manager.graph.add_edge(new_name, succ, **edge_data)
                         
                         self.graph_manager.save_graph_to_json()
-                        self.update_callback()
+                        
+                        # 使用增量更新
+                        if hasattr(self, 'web_view') and self.web_view:
+                            self.web_view.update_node_incrementally(old_name, node)
+                        
                         print(f"节点重命名成功: {old_name} -> {new_name}")
                     else:
                         print(f"节点不存在: {old_name}")
                 else:
                     # 只更新节点属性
                     self.graph_manager.edit_node(old_name, node_type, attributes)
-                    self.update_callback()
+                    
+                    # 使用增量更新
+                    if hasattr(self, 'web_view') and self.web_view:
+                        self.web_view.update_node_incrementally(old_name, node)
+                    
                     print(f"节点编辑成功: {old_name}")
             else:
                 print("编辑节点时数据不完整")
@@ -152,7 +176,11 @@ class Bridge(QObject):
                 target = edge["target"]
                 new_relation_type = edge["new_relation_type"]
                 self.graph_manager.edit_relationship(source, target, new_relation_type)
-                self.update_callback()
+                
+                # 使用增量更新
+                if hasattr(self, 'web_view') and self.web_view:
+                    self.web_view.update_edge_incrementally(source, target, new_relation_type)
+                
                 print(f"关系编辑成功: {source} -> {target} ({new_relation_type})")
             else:
                 print("编辑边时数据不完整")
@@ -219,7 +247,7 @@ class Bridge(QObject):
         self.web_view = web_view
 
 
-# GraphView 只处理"把数据渲染到 vis.js"
+# GraphView 增强版 - 支持增量更新
 _TPL = (Path(__file__).parent / "webview" / "vis_template.html").read_text(encoding="utf-8")
 
 class GraphView(QWebEngineView):
@@ -234,6 +262,7 @@ class GraphView(QWebEngineView):
             self.graph_manager = graph_manager
             self.node_detail_widget = node_detail_widget
             self.update_callback = update_callback
+            self.is_initialized = False  # 标记是否已初始化
 
             # WebChannel + Bridge
             self.channel = QWebChannel(self.page())
@@ -254,11 +283,17 @@ class GraphView(QWebEngineView):
     def _on_load_finished(self, success):
         """页面加载完成后的回调"""
         if success:
+            self.is_initialized = True
             # 页面加载完成后立即尝试加载布局
             QTimer.singleShot(200, self.bridge.load_layout)
 
     def render(self):
-        """渲染图谱数据"""
+        """渲染图谱数据 - 只在初始化时使用"""
+        if self.is_initialized:
+            # 如果已经初始化，使用增量更新
+            self.update_all_data()
+            return
+            
         data = self.graph_manager.get_graph_data()
         # 先做跟你原来一模一样的颜色映射
         nodes = []
@@ -293,6 +328,149 @@ class GraphView(QWebEngineView):
             edges_js=json.dumps(edges),
         )
         self.setHtml(html, QUrl("about:blank"))
+
+    def update_all_data(self):
+        """更新所有数据但保持布局"""
+        if not self.is_initialized:
+            return
+            
+        data = self.graph_manager.get_graph_data()
+        nodes = []
+        for node in data["nodes"]:
+            bg = "#97C2FC"
+            if node["type"] == "方剂":
+                bg = "#FFA07A"
+            elif node["type"] == "药理":
+                bg = "#ADD8E6"
+            elif node["type"] == "药材":
+                bg = "#98FB98"
+            elif node["type"] == "疾病":
+                bg = "#D3D3D3"
+            nodes.append({
+                "id": node["name"],
+                "label": node["name"],
+                "type": node["type"],
+                "resources": node.get("resources", []),
+                "color": {
+                    "background": bg,
+                    "border": "#2B7CE9",
+                    "highlight": {"background": "#D2E5FF", "border": "#2B7CE9"},
+                }
+            })
+        edges = [
+            {"from": e["source"], "to": e["target"], "label": e["relation_type"]}
+            for e in data["edges"]
+        ]
+
+        # 通过JavaScript更新数据而不重置布局
+        script = f"""
+        if (typeof updateGraphData === 'function') {{
+            updateGraphData({json.dumps(nodes)}, {json.dumps(edges)});
+        }}
+        """
+        self.page().runJavaScript(script)
+
+    def add_node_incrementally(self, node_data):
+        """增量添加单个节点"""
+        if not self.is_initialized:
+            return
+            
+        # 确定节点颜色
+        bg = "#97C2FC"
+        node_type = node_data.get("type", "")
+        if node_type == "方剂":
+            bg = "#FFA07A"
+        elif node_type == "药理":
+            bg = "#ADD8E6"
+        elif node_type == "药材":
+            bg = "#98FB98"
+        elif node_type == "疾病":
+            bg = "#D3D3D3"
+            
+        vis_node = {
+            "id": node_data["label"],
+            "label": node_data["label"],
+            "type": node_type,
+            "resources": node_data.get("resources", []),
+            "color": {
+                "background": bg,
+                "border": "#2B7CE9",
+                "highlight": {"background": "#D2E5FF", "border": "#2B7CE9"},
+            }
+        }
+        
+        script = f"""
+        if (typeof addNodeIncremental === 'function') {{
+            addNodeIncremental({json.dumps(vis_node)});
+        }}
+        """
+        self.page().runJavaScript(script)
+
+    def add_edge_incrementally(self, edge_data):
+        """增量添加单个边"""
+        if not self.is_initialized:
+            return
+            
+        vis_edge = {
+            "from": edge_data["from"],
+            "to": edge_data["to"],
+            "label": edge_data["label"]
+        }
+        
+        script = f"""
+        if (typeof addEdgeIncremental === 'function') {{
+            addEdgeIncremental({json.dumps(vis_edge)});
+        }}
+        """
+        self.page().runJavaScript(script)
+
+    def remove_node_incrementally(self, node_id):
+        """增量删除节点"""
+        if not self.is_initialized:
+            return
+            
+        script = f"""
+        if (typeof removeNodeIncremental === 'function') {{
+            removeNodeIncremental('{node_id}');
+        }}
+        """
+        self.page().runJavaScript(script)
+
+    def remove_edge_incrementally(self, source, target):
+        """增量删除边"""
+        if not self.is_initialized:
+            return
+            
+        script = f"""
+        if (typeof removeEdgeIncremental === 'function') {{
+            removeEdgeIncremental('{source}', '{target}');
+        }}
+        """
+        self.page().runJavaScript(script)
+
+    def update_node_incrementally(self, node_id, node_data):
+        """增量更新节点"""
+        if not self.is_initialized:
+            return
+            
+        script = f"""
+        if (typeof updateNodeIncremental === 'function') {{
+            updateNodeIncremental('{node_id}', {json.dumps(node_data)});
+        }}
+        """
+        self.page().runJavaScript(script)
+
+    def update_edge_incrementally(self, source, target, new_label):
+        """增量更新边"""
+        if not self.is_initialized:
+            return
+            
+        script = f"""
+        if (typeof updateEdgeIncremental === 'function') {{
+            updateEdgeIncremental('{source}', '{target}', '{new_label}');
+        }}
+        """
+        self.page().runJavaScript(script)
 
     def save_layout_manually(self):
         """手动保存布局的方法，可以从外部调用"""

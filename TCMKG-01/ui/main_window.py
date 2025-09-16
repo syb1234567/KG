@@ -32,10 +32,9 @@ from dialogs.plugin_dialog import PluginManageDialog
 from dialogs.node_detail_widget import NodeDetailWidget
 from dialogs.relationship_dialog import RelationEditDialog
 from ui.graph_view import GraphView
-from LanguageManager import  LanguageManager
+from LanguageManager import LanguageManager
 import rdflib
 from rdflib.namespace import RDF, RDFS, OWL
-
 
 
 def clean_data(data):
@@ -46,6 +45,7 @@ def clean_data(data):
         return [clean_data(item) for item in data if item is not None]
     else:
         return data
+
 
 # 主窗口类 - 增加国际化支持
 class MainWindow(QMainWindow):
@@ -67,9 +67,10 @@ class MainWindow(QMainWindow):
         self.setGeometry(100, 100, 1600, 900)
         self.init_ui()
         self.init_web_view()
-        
+
         self.populate_plugins()
         self.update_window_title()
+
     def update_window_title(self):
         """更新窗口标题"""
         self.setWindowTitle(self.lang_manager.get_text("window_title"))
@@ -86,10 +87,9 @@ class MainWindow(QMainWindow):
 
         # 右侧面板（分为节点详情与插件列表）
         self.right_splitter = QSplitter(Qt.Vertical)
-        
-        
+
         self.node_detail = NodeDetailWidget(self.graph_manager, self.safe_update, self.lang_manager)
-        
+
         self.plugin_list = QListWidget()
         self.plugin_list.setMinimumHeight(150)
         self.plugin_list.itemDoubleClicked.connect(self.run_plugin)
@@ -109,7 +109,7 @@ class MainWindow(QMainWindow):
         self.init_toolbar()
         self.status_bar = QStatusBar()
         self.setStatusBar(self.status_bar)
-        
+
     def init_toolbar(self):
         """增强版工具栏 - 包含显示模式控制和语言切换"""
         # 主工具栏
@@ -158,7 +158,8 @@ class MainWindow(QMainWindow):
         self.edit_menu = QMenu()
         self.edit_menu.addAction(self.lang_manager.get_text("add_node"), self.show_add_node_dialog)
         self.edit_menu.addAction(self.lang_manager.get_text("batch_edit_nodes_menu"), self.open_batch_edit_dialog)
-        self.edit_menu.addAction(self.lang_manager.get_text("batch_edit_relationships_menu"), self.open_batch_edit_relationship_dialog)
+        self.edit_menu.addAction(self.lang_manager.get_text("batch_edit_relationships_menu"),
+                                 self.open_batch_edit_relationship_dialog)
         self.edit_btn = QPushButton(self.lang_manager.get_text("edit_menu"))
         self.edit_btn.setMenu(self.edit_menu)
         toolbar.addWidget(self.edit_btn)
@@ -174,8 +175,10 @@ class MainWindow(QMainWindow):
 
         # 语言切换菜单
         self.language_menu = QMenu()
-        self.language_menu.addAction(self.lang_manager.get_text("switch_to_chinese"), lambda: self.switch_language("zh"))
-        self.language_menu.addAction(self.lang_manager.get_text("switch_to_english"), lambda: self.switch_language("en"))
+        self.language_menu.addAction(self.lang_manager.get_text("switch_to_chinese"),
+                                     lambda: self.switch_language("zh"))
+        self.language_menu.addAction(self.lang_manager.get_text("switch_to_english"),
+                                     lambda: self.switch_language("en"))
         self.language_btn = QPushButton(self.lang_manager.get_text("language"))
         self.language_btn.setMenu(self.language_menu)
         toolbar.addWidget(self.language_btn)
@@ -271,38 +274,38 @@ class MainWindow(QMainWindow):
         """更新所有界面文本"""
         # 更新窗口标题
         self.update_window_title()
-        
+
         # 更新工具栏按钮文本
         self.file_btn.setText(self.lang_manager.get_text("file_menu"))
         self.edit_btn.setText(self.lang_manager.get_text("edit_menu"))
         self.view_btn.setText(self.lang_manager.get_text("view_menu"))
         self.language_btn.setText(self.lang_manager.get_text("language"))
         self.plugin_btn.setText(self.lang_manager.get_text("plugin_menu"))
-        
+
         # 更新菜单项
         self.update_menu_texts()
-        
+
         # 更新模式相关文本
         self.mode_label.setText(self.lang_manager.get_text("display_mode"))
         self.refresh_view_btn.setText(self.lang_manager.get_text("refresh_view"))
-        
+
         # 【修复】：更新控制栏中的显示模式标签
         if hasattr(self, 'display_mode_label'):
             self.display_mode_label.setText(self.lang_manager.get_text("display_mode"))
-        
+
         # 更新快速模式按钮
         self.update_quick_mode_button()
-        
+
         # 更新状态和其他动态文本
         self.update_toolbar_stats()
-        
+
         # 【重要添加】：更新节点详情面板的文本
         self.node_detail.update_ui_texts()
-        
+
         # 如果当前在数据模式，重新渲染以应用新语言
         if hasattr(self, 'current_mode') and self.current_mode == "data":
             self.render_data_mode()
-        
+
         # 更新模式状态标签
         if hasattr(self, 'mode_status_label'):
             if hasattr(self, 'current_mode'):
@@ -330,6 +333,7 @@ class MainWindow(QMainWindow):
 
         if hasattr(self, 'graph_status'):
             self.update_graph_status(self.lang_manager.get_text("graph_loading"))
+
     def update_menu_texts(self):
         """更新菜单文本"""
         # 清空并重新添加菜单项以应用新语言
@@ -338,21 +342,24 @@ class MainWindow(QMainWindow):
         self.file_menu.addAction(self.lang_manager.get_text("save_data"), self.save_data)
         self.file_menu.addAction(self.lang_manager.get_text("export_data"), self.export_data)
         self.file_menu.addAction(self.lang_manager.get_text("save_jsonld"), self.save_data_as_jsonld)
-        
+
         self.edit_menu.clear()
         self.edit_menu.addAction(self.lang_manager.get_text("add_node"), self.show_add_node_dialog)
         self.edit_menu.addAction(self.lang_manager.get_text("batch_edit_nodes_menu"), self.open_batch_edit_dialog)
-        self.edit_menu.addAction(self.lang_manager.get_text("batch_edit_relationships_menu"), self.open_batch_edit_relationship_dialog)
-        
+        self.edit_menu.addAction(self.lang_manager.get_text("batch_edit_relationships_menu"),
+                                 self.open_batch_edit_relationship_dialog)
+
         self.view_menu.clear()
         self.view_menu.addAction(self.lang_manager.get_text("reset_layout"), self.reset_layout)
         self.view_menu.addAction(self.lang_manager.get_text("fit_window"), self.fit_graph_to_window)
         self.view_menu.addAction(self.lang_manager.get_text("toggle_theme"), self.toggle_theme)
-        
+
         self.language_menu.clear()
-        self.language_menu.addAction(self.lang_manager.get_text("switch_to_chinese"), lambda: self.switch_language("zh"))
-        self.language_menu.addAction(self.lang_manager.get_text("switch_to_english"), lambda: self.switch_language("en"))
-        
+        self.language_menu.addAction(self.lang_manager.get_text("switch_to_chinese"),
+                                     lambda: self.switch_language("zh"))
+        self.language_menu.addAction(self.lang_manager.get_text("switch_to_english"),
+                                     lambda: self.switch_language("en"))
+
         self.plugin_menu.clear()
         self.plugin_menu.addAction(self.lang_manager.get_text("load_plugin"), self.load_plugin)
         self.plugin_menu.addAction(self.lang_manager.get_text("manage_plugins"), self.manage_plugins)
@@ -411,20 +418,20 @@ class MainWindow(QMainWindow):
             data = self.graph_manager.get_graph_data()
             nodes_count = len(data.get('nodes', []))
             edges_count = len(data.get('edges', []))
-            
+
             # 计算节点类型数量
             types = set(node.get('type', '未知') for node in data.get('nodes', []))
             types_count = len(types)
-            
-            stats_text = self.lang_manager.get_text("statistics", 
-                                                  nodes=nodes_count, 
-                                                  edges=edges_count, 
-                                                  types=types_count)
+
+            stats_text = self.lang_manager.get_text("statistics",
+                                                    nodes=nodes_count,
+                                                    edges=edges_count,
+                                                    types=types_count)
             self.data_stats_label.setText(stats_text)
-            
+
             # 定时更新（每30秒）
             QTimer.singleShot(30000, self.update_toolbar_stats)
-            
+
         except Exception as e:
             print(f"❌ 工具栏统计更新失败: {e}")
             self.data_stats_label.setText(self.lang_manager.get_text("stats_unavailable"))
@@ -452,9 +459,9 @@ class MainWindow(QMainWindow):
     def toggle_theme(self):
         """切换主题"""
         try:
-            QMessageBox.information(self, 
-                                  self.lang_manager.get_text("theme_switch"), 
-                                  self.lang_manager.get_text("theme_switch_coming"))
+            QMessageBox.information(self,
+                                    self.lang_manager.get_text("theme_switch"),
+                                    self.lang_manager.get_text("theme_switch_coming"))
         except Exception as e:
             print(f"❌ 主题切换失败: {e}")
 
@@ -472,7 +479,7 @@ class MainWindow(QMainWindow):
                 QTimer.singleShot(500, self.navigator.force_refresh)
             # 更新工具栏统计
             QTimer.singleShot(500, self.update_toolbar_stats)
-            
+
         except Exception as e:
             print(f"❌ 更新失败: {e}")
 
@@ -553,9 +560,9 @@ class MainWindow(QMainWindow):
             self.graph_manager.save_graph_to_jsonld(filepath)
             self.status_bar.showMessage(self.lang_manager.get_text("save_success"), 3000)
         except Exception as e:
-            QMessageBox.critical(self, 
-                               self.lang_manager.get_text("error"), 
-                               self.lang_manager.get_text("save_error", error=str(e)))
+            QMessageBox.critical(self,
+                                 self.lang_manager.get_text("error"),
+                                 self.lang_manager.get_text("save_error", error=str(e)))
 
     def load_plugin(self):
         dialog = PluginManageDialog(
@@ -580,17 +587,17 @@ class MainWindow(QMainWindow):
                     )
                     success_count += 1
                 except Exception as e:
-                    QMessageBox.warning(self, 
-                                      self.lang_manager.get_text("load_failed"), 
-                                      f"无法加载 {plugin['path']}:\n{str(e)}")
+                    QMessageBox.warning(self,
+                                        self.lang_manager.get_text("load_failed"),
+                                        f"无法加载 {plugin['path']}:\n{str(e)}")
 
             # 刷新插件列表
             self.populate_plugins()
             QMessageBox.information(
                 self, self.lang_manager.get_text("load_complete"),
-                self.lang_manager.get_text("load_success_count", 
-                                         success=success_count, 
-                                         total=len(plugins_to_load))
+                self.lang_manager.get_text("load_success_count",
+                                           success=success_count,
+                                           total=len(plugins_to_load))
             )
 
     def manage_plugins(self):
@@ -619,25 +626,25 @@ class MainWindow(QMainWindow):
                     self.plugin_manager.unload_plugin(plugin.name)
 
             self.populate_plugins()
-            QMessageBox.information(self, 
-                                  self.lang_manager.get_text("success"), 
-                                  self.lang_manager.get_text("plugin_config_updated"))
+            QMessageBox.information(self,
+                                    self.lang_manager.get_text("success"),
+                                    self.lang_manager.get_text("plugin_config_updated"))
 
     def init_web_view(self):
         """双模式图谱显示初始化"""
         print("初始化双模式图谱显示...")
-        
+
         try:
             # 创建切换容器
             # 主容器
             self.graph_container = QWidget()
             container_layout = QVBoxLayout(self.graph_container)
-            
+
             # 顶部控制栏
             control_bar = QWidget()
             control_layout = QHBoxLayout(control_bar)
             control_layout.setContentsMargins(10, 5, 10, 5)
-            
+
             # 模式切换按钮
             self.mode_switch_btn = QPushButton(self.lang_manager.get_text("switch_to_data"))
             self.mode_switch_btn.setStyleSheet("""
@@ -656,7 +663,7 @@ class MainWindow(QMainWindow):
                 }
             """)
             self.mode_switch_btn.clicked.connect(self.toggle_display_mode)
-            
+
             # 状态标签
             self.mode_status_label = QLabel(self.lang_manager.get_text("current_graph_mode"))
             self.mode_status_label.setStyleSheet("""
@@ -669,7 +676,7 @@ class MainWindow(QMainWindow):
                     color: #2e7d32;
                 }
             """)
-            
+
             # 刷新按钮
             self.refresh_btn = QPushButton(self.lang_manager.get_text("refresh_view"))
             self.refresh_btn.setStyleSheet("""
@@ -686,48 +693,49 @@ class MainWindow(QMainWindow):
                 }
             """)
             self.refresh_btn.clicked.connect(self.refresh_current_mode)
-            
+
             # 【修复】：将匿名QLabel保存为实例变量
             self.display_mode_label = QLabel(self.lang_manager.get_text("display_mode"))
-            
+
             # 布局控制栏
             control_layout.addWidget(self.display_mode_label)  # 使用实例变量
             control_layout.addWidget(self.mode_status_label)
             control_layout.addWidget(self.mode_switch_btn)
             control_layout.addStretch()
             control_layout.addWidget(self.refresh_btn)
-            
+
             container_layout.addWidget(control_bar)
-            
+
             # 创建堆叠显示区域
             self.display_stack = QStackedWidget()
-            
+
             # 模式1: WebEngine图形模式
             self.graph_mode_widget = self.create_graph_mode()
             self.display_stack.addWidget(self.graph_mode_widget)
-            
+
             # 模式2: 数据显示模式
             self.data_mode_widget = self.create_data_mode()
             self.display_stack.addWidget(self.data_mode_widget)
-            
+
             container_layout.addWidget(self.display_stack)
-            
+
             # 添加到主布局
             self.left_layout.addWidget(self.graph_container)
-            
+
             # 默认显示图形模式
             self.current_mode = "graph"
             self.display_stack.setCurrentWidget(self.graph_mode_widget)
-            
+
             # 初始化图形模式
             self.init_graph_mode()
-            
+
             print("✅ 双模式显示系统初始化完成")
-            
+
         except Exception as e:
             print(f"❌ 双模式显示初始化失败: {e}")
             import traceback
             traceback.print_exc()
+
     def create_graph_mode(self):
         """创建图形显示模式"""
         try:
@@ -736,7 +744,7 @@ class MainWindow(QMainWindow):
             layout = QVBoxLayout(graph_widget)
             layout.setContentsMargins(0, 0, 0, 0)
             layout.setSpacing(2)  # 减少组件间距
-            
+
             # 状态标签 - 设置更紧凑的样式和固定高度
             self.graph_status = QLabel(self.lang_manager.get_text("graph_loading"))
             self.graph_status.setFixedHeight(35)  # 设置固定高度
@@ -752,7 +760,7 @@ class MainWindow(QMainWindow):
                 }
             """)
             layout.addWidget(self.graph_status, 0)  # 拉伸因子为0，不占用额外空间
-            
+
             # GraphView容器 - 占用主要空间
             self.graph_view_container = QWidget()
             self.graph_view_container.setStyleSheet("""
@@ -763,9 +771,9 @@ class MainWindow(QMainWindow):
                 }
             """)
             layout.addWidget(self.graph_view_container, 1)  # 拉伸因子为1，占用主要空间
-            
+
             return graph_widget
-            
+
         except Exception as e:
             print(f"❌ 图形模式创建失败: {e}")
             return QWidget()
@@ -774,12 +782,12 @@ class MainWindow(QMainWindow):
         """创建数据显示模式"""
         data_widget = QWidget()
         layout = QVBoxLayout(data_widget)
-        
+
         # 数据模式标题
         title_bar = QWidget()
         title_layout = QHBoxLayout(title_bar)
         title_layout.setContentsMargins(0, 0, 0, 0)
-        
+
         self.data_mode_title = QLabel(self.lang_manager.get_text("data_detail_mode"))
         self.data_mode_title.setStyleSheet("""
             QLabel {
@@ -789,7 +797,7 @@ class MainWindow(QMainWindow):
                 color: #1565c0;
             }
         """)
-        
+
         # 导出按钮
         self.export_view_btn = QPushButton(self.lang_manager.get_text("export_current_view"))
         self.export_view_btn.setStyleSheet("""
@@ -806,13 +814,13 @@ class MainWindow(QMainWindow):
             }
         """)
         self.export_view_btn.clicked.connect(self.export_data_view)
-        
+
         title_layout.addWidget(self.data_mode_title)
         title_layout.addStretch()
         title_layout.addWidget(self.export_view_btn)
-        
+
         layout.addWidget(title_bar)
-        
+
         # 数据显示区域
         self.data_browser = QTextBrowser()
         self.data_browser.setStyleSheet("""
@@ -825,7 +833,7 @@ class MainWindow(QMainWindow):
             }
         """)
         layout.addWidget(self.data_browser)
-        
+
         # 底部统计信息
         self.data_stats = QLabel(self.lang_manager.get_text("loading"))
         self.data_stats.setStyleSheet("""
@@ -839,26 +847,26 @@ class MainWindow(QMainWindow):
             }
         """)
         layout.addWidget(self.data_stats)
-        
+
         return data_widget
 
     def init_graph_mode(self):
         """初始化图形模式"""
         try:
             print("初始化图形显示模式...")
-            
+
             # 设置环境变量
             import os
             os.environ['QTWEBENGINE_DISABLE_SANDBOX'] = '1'
             os.environ['QTWEBENGINE_CHROMIUM_FLAGS'] = '--disable-gpu --no-sandbox'
-            
+
             # 创建GraphView
             self.graph_view = GraphView(
                 graph_manager=self.graph_manager,
                 node_detail_widget=self.node_detail,
                 update_callback=self.safe_update
             )
-            
+
             # WebEngine设置
             try:
                 from PyQt5.QtWebEngineWidgets import QWebEngineSettings
@@ -868,46 +876,48 @@ class MainWindow(QMainWindow):
                 settings.setAttribute(QWebEngineSettings.ErrorPageEnabled, True)
             except Exception as e:
                 print(f"⚠️ WebEngine设置警告: {e}")
-            
+
             # 连接信号
             self.graph_view.loadFinished.connect(self.on_graph_mode_loaded)
-            self.graph_view.loadStarted.connect(lambda: self.update_graph_status(self.lang_manager.get_text("graph_loading")))
-            
+            self.graph_view.loadStarted.connect(
+                lambda: self.update_graph_status(self.lang_manager.get_text("graph_loading")))
+
             # 添加到容器
             container_layout = QVBoxLayout(self.graph_view_container)
             container_layout.setContentsMargins(5, 5, 5, 5)
             container_layout.addWidget(self.graph_view)
-            
+
             # 延迟渲染
             QTimer.singleShot(1000, self.render_graph_mode)
-             # 在这里创建并添加导航器
-             # 在这里创建并添加导航器
+            # 在这里创建并添加导航器
+            # 在这里创建并添加导航器
             QTimer.singleShot(2000, self.create_navigator)
         except Exception as e:
             print(f"❌ 图形模式初始化失败: {e}")
-            
+
     def create_navigator(self):
         """创建导航器"""
         try:
             from plugins.navigator import NavigatorWidget  # 导入你的导航器
-            
+
             self.navigator = NavigatorWidget(self.graph_manager, self.graph_view, self)
             self.right_splitter.addWidget(self.navigator)
             self.right_splitter.setSizes([100, 100, 100])  # 调整三个部分的大小比例
-            
+
             print("导航器已创建并添加到界面")
-            
+
         except Exception as e:
             print(f"导航器创建失败: {e}")
+
     def render_graph_mode(self):
         """渲染图形模式"""
         try:
             self.update_graph_status(self.lang_manager.get_text("rendering_graph"))
             self.graph_view.render()
-            
+
             # 延迟检查渲染结果
             QTimer.singleShot(3000, self.check_graph_render)
-            
+
         except Exception as e:
             print(f"❌ 图形模式渲染失败: {e}")
             self.update_graph_status(f"❌ 渲染失败: {str(e)}")
@@ -943,7 +953,7 @@ class MainWindow(QMainWindow):
         """更新图形模式状态 - 优化样式"""
         print(f"图形模式: {message}")
         self.graph_status.setText(message)
-        
+
         # 根据状态设置样式，但保持紧凑的设计
         if "✅" in message:
             style = "background-color: #e8f5e9; border-color: #4caf50; color: #2e7d32;"
@@ -953,7 +963,7 @@ class MainWindow(QMainWindow):
             style = "background-color: #fff3e0; border-color: #ff9800; color: #e65100;"
         else:
             style = "background-color: #e3f2fd; border-color: #2196f3; color: #1565c0;"
-        
+
         self.graph_status.setStyleSheet(f"""
             QLabel {{
                 padding: 5px 10px;  /* 保持紧凑的内边距 */
@@ -984,10 +994,10 @@ class MainWindow(QMainWindow):
                         color: #e65100;
                     }
                 """)
-                
+
                 # 渲染数据模式
                 self.render_data_mode()
-                
+
             else:
                 # 切换到图形模式
                 self.current_mode = "graph"
@@ -1004,13 +1014,13 @@ class MainWindow(QMainWindow):
                         color: #2e7d32;
                     }
                 """)
-                
+
                 # 重新渲染图形模式（如果需要）
                 if hasattr(self, 'graph_view'):
                     self.render_graph_mode()
-            
+
             print(f"✅ 已切换到 {self.current_mode} 模式")
-            
+
         except Exception as e:
             print(f"❌ 模式切换失败: {e}")
 
@@ -1024,7 +1034,7 @@ class MainWindow(QMainWindow):
             else:
                 print("🔄 刷新数据模式...")
                 self.render_data_mode()
-            
+
         except Exception as e:
             print(f"❌ 刷新失败: {e}")
 
@@ -1035,43 +1045,45 @@ class MainWindow(QMainWindow):
             data = self.graph_manager.get_graph_data()
             nodes = data.get('nodes', [])
             edges = data.get('edges', [])
-            
+
             # 统计信息
             type_stats = {}
             for node in nodes:
-                node_type = node.get('type', '未分类' if self.lang_manager.current_language == 'zh' else 'Uncategorized')
+                node_type = node.get('type',
+                                     '未分类' if self.lang_manager.current_language == 'zh' else 'Uncategorized')
                 type_stats[node_type] = type_stats.get(node_type, 0) + 1
-            
+
             # 关系类型统计
             relation_stats = {}
             for edge in edges:
-                relation_type = edge.get('relation_type', '未知关系' if self.lang_manager.current_language == 'zh' else 'Unknown Relation')
+                relation_type = edge.get('relation_type',
+                                         '未知关系' if self.lang_manager.current_language == 'zh' else 'Unknown Relation')
                 relation_stats[relation_type] = relation_stats.get(relation_type, 0) + 1
-            
+
             # 更新统计标签
-            stats_text = self.lang_manager.get_text("statistics", 
-                                                  nodes=len(nodes), 
-                                                  edges=len(edges), 
-                                                  types=len(type_stats))
+            stats_text = self.lang_manager.get_text("statistics",
+                                                    nodes=len(nodes),
+                                                    edges=len(edges),
+                                                    types=len(type_stats))
             self.data_stats.setText(stats_text)
-            
+
             # 生成详细HTML
             html = self.generate_detailed_html(nodes, edges, type_stats, relation_stats)
             self.data_browser.setHtml(html)
-            
+
             print(f"✅ 数据模式渲染完成: {len(nodes)} 节点, {len(edges)} 关系")
-            
+
         except Exception as e:
             print(f"❌ 数据模式渲染失败: {e}")
             self.data_browser.setHtml(f"<h3>Data loading failed</h3><p>{str(e)}</p>")
 
     def generate_detailed_html(self, nodes, edges, type_stats, relation_stats):
         """生成详细的HTML显示 - 支持国际化"""
-        
+
         # 根据当前语言设置标题
         main_title = self.lang_manager.get_text("knowledge_graph_title")
         subtitle = self.lang_manager.get_text("knowledge_graph_subtitle")
-        
+
         html = f"""
         <html>
         <head>
@@ -1101,7 +1113,7 @@ class MainWindow(QMainWindow):
                     <h2>{main_title}</h2>
                     <p>{subtitle}</p>
                 </div>
-                
+
                 <div class="stats-grid">
                     <div class="stat-card">
                         <h3>{self.lang_manager.get_text("node_statistics")}</h3>
@@ -1115,13 +1127,13 @@ class MainWindow(QMainWindow):
                     </div>
                 </div>
         """
-        
+
         # 节点类型分布
         html += f'<div class="section"><h3>{self.lang_manager.get_text("node_type_distribution")}</h3>'
         for node_type, count in sorted(type_stats.items(), key=lambda x: x[1], reverse=True):
             percentage = (count / len(nodes)) * 100 if nodes else 0
             type_nodes = [n['name'] for n in nodes if n.get('type') == node_type]
-            
+
             html += f"""
             <div class="type-item">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -1138,23 +1150,23 @@ class MainWindow(QMainWindow):
                     <div id="nodes-{node_type}" style="display: none; margin-top: 10px;">
                         <div class="node-grid">
             """
-            
+
             # 显示该类型的所有节点
             for node_name in type_nodes[:10]:  # 限制显示数量
                 html += f'<div class="node-card"><div class="node-name">{node_name}</div></div>'
-            
+
             if len(type_nodes) > 10:
-                html += f'<div class="node-card" style="text-align: center; color: #666;">{self.lang_manager.get_text("more_nodes", count=len(type_nodes)-10)}</div>'
-            
+                html += f'<div class="node-card" style="text-align: center; color: #666;">{self.lang_manager.get_text("more_nodes", count=len(type_nodes) - 10)}</div>'
+
             html += '</div></div></div></div>'
-        
+
         html += '</div>'
-        
+
         # 关系类型分布
         html += f'<div class="section"><h3>{self.lang_manager.get_text("relationship_type_distribution")}</h3>'
         for relation_type, count in sorted(relation_stats.items(), key=lambda x: x[1], reverse=True):
             percentage = (count / len(edges)) * 100 if edges else 0
-            
+
             html += f"""
             <div class="relation-item">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -1166,18 +1178,18 @@ class MainWindow(QMainWindow):
                 </div>
             </div>
             """
-        
+
         html += '</div>'
-        
+
         # 关系示例
         html += f'<div class="section"><h3>{self.lang_manager.get_text("relationship_examples")}</h3>'
         html += '<div style="max-height: 400px; overflow-y: auto;">'
-        
+
         for i, edge in enumerate(edges[:15]):
             source = edge.get('source', 'Unknown')
             target = edge.get('target', 'Unknown')
             relation = edge.get('relation_type', 'Unknown')
-            
+
             html += f"""
             <div class="relation-item" style="margin: 8px 0;">
                 <strong style="color: #1565c0;">{source}</strong> 
@@ -1185,12 +1197,12 @@ class MainWindow(QMainWindow):
                 <strong style="color: #2e7d32;">{target}</strong>
             </div>
             """
-        
+
         if len(edges) > 15:
-            html += f'<div style="text-align: center; color: #666; padding: 15px;">{self.lang_manager.get_text("more_relationships", count=len(edges)-15)}</div>'
-        
+            html += f'<div style="text-align: center; color: #666; padding: 15px;">{self.lang_manager.get_text("more_relationships", count=len(edges) - 15)}</div>'
+
         html += '</div></div>'
-        
+
         # JavaScript交互
         html += """
             <script>
@@ -1206,7 +1218,7 @@ class MainWindow(QMainWindow):
         </body>
         </html>
         """
-        
+
         return html
 
     def export_data_view(self):
@@ -1220,39 +1232,39 @@ class MainWindow(QMainWindow):
                 "HTML Files (*.html);;Text Files (*.txt)",
                 options=options
             )
-            
+
             if file_path:
                 # 获取当前数据
                 data = self.graph_manager.get_graph_data()
                 nodes = data.get('nodes', [])
                 edges = data.get('edges', [])
-                
+
                 type_stats = {}
                 for node in nodes:
                     node_type = node.get('type', '未分类')
                     type_stats[node_type] = type_stats.get(node_type, 0) + 1
-                
+
                 relation_stats = {}
                 for edge in edges:
                     relation_type = edge.get('relation_type', '未知关系')
                     relation_stats[relation_type] = relation_stats.get(relation_type, 0) + 1
-                
+
                 # 生成完整HTML
                 html = self.generate_detailed_html(nodes, edges, type_stats, relation_stats)
-                
+
                 # 保存文件
                 with open(file_path, 'w', encoding='utf-8') as f:
                     f.write(html)
-                
-                QMessageBox.information(self, 
-                                      self.lang_manager.get_text("export_success"), 
-                                      f"Data view exported to:\n{file_path}")
-                
+
+                QMessageBox.information(self,
+                                        self.lang_manager.get_text("export_success"),
+                                        f"Data view exported to:\n{file_path}")
+
         except Exception as e:
             print(f"❌ Export failed: {e}")
-            QMessageBox.critical(self, 
-                               self.lang_manager.get_text("error"), 
-                               self.lang_manager.get_text("export_error", error=str(e)))
+            QMessageBox.critical(self,
+                                 self.lang_manager.get_text("error"),
+                                 self.lang_manager.get_text("export_error", error=str(e)))
 
     def update_all_modes(self):
         """更新所有显示模式"""
@@ -1260,13 +1272,13 @@ class MainWindow(QMainWindow):
             # 更新图形模式
             if hasattr(self, 'graph_view'):
                 self.graph_view.render()
-            
+
             # 如果当前在数据模式，也更新数据显示
             if self.current_mode == "data":
                 self.render_data_mode()
-            
+
             print("✅ 所有显示模式已更新")
-            
+
         except Exception as e:
             print(f"❌ 模式更新失败: {e}")
 
@@ -1300,6 +1312,7 @@ class MainWindow(QMainWindow):
 
         dialog.setLayout(layout)
         dialog.exec_()
+
     def add_node_from_dialog(self, name, node_type, attributes_str, dialog):
         """从对话框中添加节点"""
         try:
@@ -1310,9 +1323,9 @@ class MainWindow(QMainWindow):
             self.safe_update()
             dialog.close()
         except json.JSONDecodeError:
-            QMessageBox.critical(self, 
-                               self.lang_manager.get_text("error"), 
-                               self.lang_manager.get_text("invalid_json"))
+            QMessageBox.critical(self,
+                                 self.lang_manager.get_text("error"),
+                                 self.lang_manager.get_text("invalid_json"))
         except Exception as e:
             QMessageBox.critical(self, self.lang_manager.get_text("error"), str(e))
             QMessageBox.critical(self, self.lang_manager.get_text("error"), str(e))
@@ -1340,9 +1353,9 @@ class MainWindow(QMainWindow):
                     elif {"source", "target", "relation_type"}.issubset(data.columns):
                         self.data_importer.import_relationships_from_csv(filepath)
                     else:
-                        QMessageBox.warning(self, 
-                                          self.lang_manager.get_text("warning"), 
-                                          self.lang_manager.get_text("csv_column_error"))
+                        QMessageBox.warning(self,
+                                            self.lang_manager.get_text("warning"),
+                                            self.lang_manager.get_text("csv_column_error"))
                         continue
                 elif filepath.endswith(".json"):
                     with open(filepath, "r", encoding="utf-8") as f:
@@ -1361,24 +1374,26 @@ class MainWindow(QMainWindow):
                                     edge["relation_type"]
                                 )
                         else:
-                            QMessageBox.warning(self, 
-                                              self.lang_manager.get_text("warning"), 
-                                              self.lang_manager.get_text("json_format_error"))
+                            QMessageBox.warning(self,
+                                                self.lang_manager.get_text("warning"),
+                                                self.lang_manager.get_text("json_format_error"))
                             continue
                 else:
-                    QMessageBox.warning(self, 
-                                      self.lang_manager.get_text("warning"), 
-                                      self.lang_manager.get_text("unsupported_format"))
+                    QMessageBox.warning(self,
+                                        self.lang_manager.get_text("warning"),
+                                        self.lang_manager.get_text("unsupported_format"))
                     continue
 
                 self.safe_update()
-                QMessageBox.information(self, 
-                                      self.lang_manager.get_text("success"), 
-                                      self.lang_manager.get_text("import_success", filename=os.path.basename(filepath)))
+                QMessageBox.information(self,
+                                        self.lang_manager.get_text("success"),
+                                        self.lang_manager.get_text("import_success",
+                                                                   filename=os.path.basename(filepath)))
             except Exception as e:
-                QMessageBox.critical(self, 
-                                   self.lang_manager.get_text("error"), 
-                                   self.lang_manager.get_text("import_error", filename=os.path.basename(filepath), error=str(e)))
+                QMessageBox.critical(self,
+                                     self.lang_manager.get_text("error"),
+                                     self.lang_manager.get_text("import_error", filename=os.path.basename(filepath),
+                                                                error=str(e)))
 
     def save_data(self):
         """保存当前图数据到 JSON 文件"""
@@ -1386,9 +1401,9 @@ class MainWindow(QMainWindow):
             self.graph_manager.save_graph_to_json()
             self.status_bar.showMessage(self.lang_manager.get_text("save_success"), 3000)
         except Exception as e:
-            QMessageBox.critical(self, 
-                               self.lang_manager.get_text("error"), 
-                               self.lang_manager.get_text("save_error", error=str(e)))
+            QMessageBox.critical(self,
+                                 self.lang_manager.get_text("error"),
+                                 self.lang_manager.get_text("save_error", error=str(e)))
 
     def export_data(self):
         """导出知识图谱数据（支持JSON、CSV、GraphML、RDF、OWL格式）"""
@@ -1414,13 +1429,13 @@ class MainWindow(QMainWindow):
                 elif file.endswith(".owl"):
                     self.export_to_owl(file, data)
                 else:
-                    QMessageBox.warning(self, 
-                                      self.lang_manager.get_text("error"), 
-                                      self.lang_manager.get_text("unsupported_format"))
+                    QMessageBox.warning(self,
+                                        self.lang_manager.get_text("error"),
+                                        self.lang_manager.get_text("unsupported_format"))
             except Exception as e:
-                QMessageBox.critical(self, 
-                                   self.lang_manager.get_text("error"), 
-                                   self.lang_manager.get_text("export_error", error=str(e)))
+                QMessageBox.critical(self,
+                                     self.lang_manager.get_text("error"),
+                                     self.lang_manager.get_text("export_error", error=str(e)))
 
     def export_to_csv(self, file, data):
         """导出为 CSV 格式（包括节点和关系）"""
@@ -1442,25 +1457,25 @@ class MainWindow(QMainWindow):
                 edge_writer.writeheader()
                 edge_writer.writerows(edges_data)
 
-            QMessageBox.information(self, 
-                                  self.lang_manager.get_text("success"), 
-                                  self.lang_manager.get_text("export_csv_success"))
+            QMessageBox.information(self,
+                                    self.lang_manager.get_text("success"),
+                                    self.lang_manager.get_text("export_csv_success"))
         except Exception as e:
-            QMessageBox.critical(self, 
-                               self.lang_manager.get_text("error"), 
-                               self.lang_manager.get_text("export_error", error=str(e)))
+            QMessageBox.critical(self,
+                                 self.lang_manager.get_text("error"),
+                                 self.lang_manager.get_text("export_error", error=str(e)))
 
     def export_to_graphml(self, file, data):
         try:
             # GraphDataManager 内部保存了 actual networkx 图对象为 .graph
             nx.write_graphml(self.graph_manager.graph, file)
-            QMessageBox.information(self, 
-                                  self.lang_manager.get_text("success"), 
-                                  self.lang_manager.get_text("export_graphml_success"))
+            QMessageBox.information(self,
+                                    self.lang_manager.get_text("success"),
+                                    self.lang_manager.get_text("export_graphml_success"))
         except Exception as e:
-            QMessageBox.critical(self, 
-                               self.lang_manager.get_text("error"), 
-                               self.lang_manager.get_text("export_error", error=str(e)))
+            QMessageBox.critical(self,
+                                 self.lang_manager.get_text("error"),
+                                 self.lang_manager.get_text("export_error", error=str(e)))
 
     def export_to_rdf(self, file, data):
         """导出为 RDF 格式"""
@@ -1487,13 +1502,13 @@ class MainWindow(QMainWindow):
 
         try:
             g.serialize(destination=file, format="rdfxml")  # 导出为 RDF/XML 格式
-            QMessageBox.information(self, 
-                                  self.lang_manager.get_text("success"), 
-                                  self.lang_manager.get_text("export_rdf_success"))
+            QMessageBox.information(self,
+                                    self.lang_manager.get_text("success"),
+                                    self.lang_manager.get_text("export_rdf_success"))
         except Exception as e:
-            QMessageBox.critical(self, 
-                               self.lang_manager.get_text("error"), 
-                               self.lang_manager.get_text("export_error", error=str(e)))
+            QMessageBox.critical(self,
+                                 self.lang_manager.get_text("error"),
+                                 self.lang_manager.get_text("export_error", error=str(e)))
 
     def export_to_owl(self, file, data):
         """导出为 OWL 格式"""
@@ -1520,13 +1535,13 @@ class MainWindow(QMainWindow):
 
         try:
             g.serialize(destination=file, format="xml")  # 导出为 OWL 格式
-            QMessageBox.information(self, 
-                                  self.lang_manager.get_text("success"), 
-                                  self.lang_manager.get_text("export_owl_success"))
+            QMessageBox.information(self,
+                                    self.lang_manager.get_text("success"),
+                                    self.lang_manager.get_text("export_owl_success"))
         except Exception as e:
-            QMessageBox.critical(self, 
-                               self.lang_manager.get_text("error"), 
-                               self.lang_manager.get_text("export_error", error=str(e)))
+            QMessageBox.critical(self,
+                                 self.lang_manager.get_text("error"),
+                                 self.lang_manager.get_text("export_error", error=str(e)))
 
     def reset_layout(self):
         """重置窗口布局"""
@@ -1543,23 +1558,22 @@ class MainWindow(QMainWindow):
     def run_plugin(self, item):
         """当在插件列表中双击插件时运行该插件"""
         plugin_name = item.text()
-        result = self.plugin_manager.run_plugin(plugin_name, parent=self)
-        QMessageBox.information(self, 
-                              self.lang_manager.get_text("plugin_run_result"), 
-                              self.lang_manager.get_text("plugin_result", name=plugin_name, result=result))
+        result = self.plugin_manager.run_plugin(plugin_name)
+        QMessageBox.information(self,
+                                self.lang_manager.get_text("plugin_run_result"),
+                                self.lang_manager.get_text("plugin_result", name=plugin_name, result=result))
 
     def closeEvent(self, event):
         """退出时保存图数据"""
         try:
             self.graph_manager.save_graph_to_json()
         except Exception as e:
-            QMessageBox.critical(self, 
-                               self.lang_manager.get_text("error"), 
-                               self.lang_manager.get_text("save_error", error=str(e)))
+            QMessageBox.critical(self,
+                                 self.lang_manager.get_text("error"),
+                                 self.lang_manager.get_text("save_error", error=str(e)))
         event.accept()
-    
 
-    
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()
